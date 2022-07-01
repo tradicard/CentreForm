@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Assistant extends Utilisateur{
 
-	//ComTest
+	//ComTestfovzca
 	@OneToMany(mappedBy = "assistant",fetch = FetchType.LAZY, cascade = {CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonIgnore
 	private List<Relance> relances;
