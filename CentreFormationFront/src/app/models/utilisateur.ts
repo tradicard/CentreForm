@@ -4,16 +4,16 @@ export class Utilisateur
     password!:string;
     nom!:string;
     prenom!:string;
-    dateNaissance!:string;
+    mail!:string;
     
 
 
-    constructor (username:string,password:string,nom:string,prenom:string,dateNaissance:string){
+    constructor (username:string,password:string,nom:string,prenom:string,mail:string){
         this.username=username
         this.password=password
         this.nom=nom
         this.prenom=prenom
-        this.dateNaissance=dateNaissance
+        this.mail=mail
 
     }
 }

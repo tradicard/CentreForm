@@ -1,0 +1,9 @@
+<form (ngSubmit)="inscription()">
+    Username:<input type="text" name="username" [(ngModel)]="user.username"/><br>
+    Password:<input type="password" name="password" [(ngModel)]="user.password"/><br>
+    Nom:<input type="text" name="nom" [(ngModel)]="user.nom"/><br>
+    Prenom:<input type="text" name="prenom" [(ngModel)]="user.prenom"/><br>
+    Date de naissance:<input type="text" name="dateNaissance" [(ngModel)]="user.dateNaissance"/><br>
+    <button type="submit">Valider inscription</button>
+
+</form>

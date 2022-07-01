@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Utilisateur } from '../models/utilisateur';
+import { UtilisateurService } from '../service/utilisateur.service';
 
 @Component({
   selector: 'app-connection',

@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConnectionComponent } from './connection/connection.component';
 import { HttpInterceptorService } from './service/http-interceptor.service';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConnectionComponent
+    ConnectionComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
