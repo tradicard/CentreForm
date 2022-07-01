@@ -14,7 +14,7 @@ export class InscriptionComponent implements OnInit {
   constructor(private service:UtilisateurService,private router:Router) { }
 
   ngOnInit(): void {
-    this.user=new Utilisateur("","","","","")
+    this.user=new Utilisateur(0,"","","","","")
   }
 
   inscription() {
@@ -22,6 +22,7 @@ export class InscriptionComponent implements OnInit {
     console.log(this.user.prenom)
     console.log(this.user.password)
     console.log(this.user.username)
+    console.log(this.user.mail)
     this.service.inscrire(this.user).subscribe(
       response=>{this.router.navigateByUrl('Connection')})
   }

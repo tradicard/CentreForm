@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Utilisateur } from '../models/utilisateur';
-import { UtilisateurService } from '../service/utilisateur.service';
+import { Utilisateur } from '../../models/utilisateur';
+import { UtilisateurService } from '../../service/utilisateur.service';
 
 @Component({
   selector: 'app-connection',
@@ -16,7 +16,7 @@ export class ConnectionComponent implements OnInit {
   constructor(private service:UtilisateurService,private router:Router) { }
 
   ngOnInit(): void {
-    this.user=new Utilisateur("","","","","")
+    this.user=new Utilisateur(0,"","","","","")
   }
 
 
