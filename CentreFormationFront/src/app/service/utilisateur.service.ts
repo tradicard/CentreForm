@@ -12,7 +12,7 @@ export class UtilisateurService {
 
   authenticate(username:string,password:string) {
    
-    return this.http.post<any>('http://localhost:8015/authenticate',
+    return this.http.post<any>('http://localhost:8016/authenticate',
     {username,password})
   }
   deconnection (){
@@ -21,23 +21,23 @@ export class UtilisateurService {
   }
 
   getU() {
-    return this.http.get<Utilisateur>('http://localhost:8015/api/user')
+    return this.http.get<Utilisateur>('http://localhost:8016/api/user')
   }
 
   inscrire(user:Utilisateur){
-    return this.http.post('http://localhost:8015/inscription',user)
+    return this.http.post('http://localhost:8016/inscription',user)
   }
 
 
 
   getAllUtilisateurs()
   {
-    return this.http.get<Utilisateur[]>('http://localhost:8015/api/utilisateurs')
+    return this.http.get<Utilisateur[]>('http://localhost:8016/api/utilisateurs')
   }
 
   supprimerUtilisateur(id:number)
   {
-    return this.http.delete('http://localhost:8015/api/utilisateurs/'+id)
+    return this.http.delete('http://localhost:8016/api/utilisateurs/'+id)
   }
 
 }
