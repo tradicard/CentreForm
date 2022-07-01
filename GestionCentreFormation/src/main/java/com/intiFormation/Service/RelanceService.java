@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.intiFormation.dao.IAssistantDao;
 import com.intiFormation.dao.ICommercialDao;
@@ -25,7 +26,7 @@ import com.intiFormation.entity.Participant;
 import com.intiFormation.entity.Prospect;
 import com.intiFormation.entity.Relance;
 import com.intiFormation.entity.Role;
-
+@Service
 public class RelanceService implements IRelanceService{
 
 	@Autowired

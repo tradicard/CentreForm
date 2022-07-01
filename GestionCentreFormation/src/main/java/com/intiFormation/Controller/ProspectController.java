@@ -41,13 +41,13 @@ public class ProspectController {
 	@Autowired
 	IProspectService pros;
 	
-	@GetMapping("/propects")
+	@GetMapping("/prospects")
 	public List<Prospect> GestionProspect() {
 		List<Prospect> listec=pros.getAllService();
 		return listec;
 	}
 	
-	@GetMapping("/propects/{id}")
+	@GetMapping("/prospects/{id}")
 	public Prospect GestionProspect(@PathVariable("id") int id) {
 		Optional<Prospect> op=pros.selectByIdService(id);
 		Prospect c=new Prospect();
@@ -57,7 +57,7 @@ public class ProspectController {
 		return c;
 	}
 	
-	@PostMapping("/propects")
+	@PostMapping("/prospects")
 	public void SaveProspect(@RequestBody Prospect c) {
 		pros.ajouterService(c);
 	}
@@ -65,14 +65,14 @@ public class ProspectController {
 	
 	
 	
-	@DeleteMapping("/propects/{id}")
+	@DeleteMapping("/prospects/{id}")
 	public void SupprimerProspect(@PathVariable("id") int id) {
 		pros.supprimerService(id);
 	}
 	
 	
 	
-	@PutMapping("/propects")
+	@PutMapping("/prospects")
 	public void EditProspect(@RequestBody Prospect c) {
 		pros.modifierService(c);
 	}

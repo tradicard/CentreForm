@@ -27,4 +27,17 @@ export class UtilisateurService {
   inscrire(user:Utilisateur){
     return this.http.post('http://localhost:8015/inscription',user)
   }
+
+
+
+  getAllUtilisateurs()
+  {
+    return this.http.get<Utilisateur[]>('http://localhost:8015/api/utilisateurs')
+  }
+
+  supprimerUtilisateur(id:number)
+  {
+    return this.http.delete('http://localhost:8015/api/utilisateurs/'+id)
+  }
+
 }
