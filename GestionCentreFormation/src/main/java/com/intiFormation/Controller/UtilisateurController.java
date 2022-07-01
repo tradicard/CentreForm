@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,7 +44,10 @@ import com.intiFormation.entity.Utilisateur;
 @CrossOrigin(origins="http://localhost:4200")
 public class UtilisateurController {
 	
-	
+	@Autowired
+	IRoleService rs;
+	@Autowired
+	BCryptPasswordEncoder bc;
 	@Autowired
 	IUtilisateurService us;
 	
@@ -71,8 +75,21 @@ public class UtilisateurController {
 	}
 	
 	@PostMapping("/utilisateurs")
-	public void SaveUtilisateur(@RequestBody Utilisateur c) {
-		us.ajouterService(c);
+	public void SaveUtilisateur( @RequestBody Utilisateur u) {
+		List<Utilisateur> uts=us.getAllService();
+		for(int i=0;i<uts.size();i++) {
+			if (uts.get(i).getUsername()==u.getUsername()) {
+				break;
+			}
+		}
+		
+		Optional<Role> op=rs.selectByIdService(2);
+		Role r=op.get();
+		String pass=u.getPassword();
+		pass=bc.encode(pass);
+		u=new Utilisateur(u.getNom(),u.getPrenom(),u.getUsername(),pass,u.getMail(),r);
+		us.ajouterService(u);
+		
 	}
 	
 	
