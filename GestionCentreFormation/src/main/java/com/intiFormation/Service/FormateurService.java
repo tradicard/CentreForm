@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.intiFormation.dao.IAssistantDao;
 import com.intiFormation.dao.ICommercialDao;
@@ -17,7 +18,7 @@ import com.intiFormation.entity.Contact;
 import com.intiFormation.entity.Formateur;
 import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Role;
-
+@Service
 public class FormateurService implements IFormateurService{
 
 	@Autowired

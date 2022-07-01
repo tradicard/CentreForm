@@ -19,7 +19,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.intiFormation.Config.RequestFilter;
 
 
-@EnableWebSecurity
+//@EnableWebSecurity
 public class Security extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
