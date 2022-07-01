@@ -1,5 +1,7 @@
+import { Formation } from "./formation";
+
 export class Formateur {
 
-//willItWork
-//Maybe
+    historiqueFormation!:Formation[]
+
 }
