@@ -1,4 +1,6 @@
 import { Formateur } from "./formateur"
+import { HistoriqueFormateur } from "./historique-formateur"
+import { HistoriqueParticipant } from "./historique-participant"
 import { Participant } from "./participant"
 
 export class Formation {
@@ -9,7 +11,8 @@ export class Formation {
     dateDebut!:string
     dateFin!:string
     prix!:number
-
+    historiqueFormateur!:HistoriqueFormateur[]
+    historiqueParticipant!:HistoriqueParticipant[]
     formateur!:Formateur
 
     participants!:Participant[]

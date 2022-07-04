@@ -1,1 +1,32 @@
 <p>singleformation works!</p>
+
+<table>
+    <tr>
+        <td>id</td>
+        <td>libFormation</td>
+        <td>description</td>
+        <td>dateDebut</td>
+        <td>dateFin</td>
+        <td>prix</td>
+        <td>Inscription</td>
+    </tr>
+
+    
+    
+    <tr>
+        <td>{{f.idFormation}}</td>
+        <td>{{f.libFormation}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.dateDebut}}</td>
+        <td>{{f.dateFin}}</td>
+        <td>{{f.prix}}</td>
+        <div *ngIf="inscrit===false">
+        <td><button (click)="inscription(f.idFormation)" type="button" class="btn btn-primary">Inscription</button></td>
+        </div>
+        <div *ngIf="inscrit">
+            <td>Vous etes deja inscrit</td>
+        </div>
+    </tr>
+    
+    
+</table>

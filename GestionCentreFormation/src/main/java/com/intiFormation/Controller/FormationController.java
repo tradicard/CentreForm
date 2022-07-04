@@ -1,5 +1,6 @@
 package com.intiFormation.Controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,6 +50,19 @@ public class FormationController {
 			c=op.get();
 		}
 		return c;
+	}
+	
+	@GetMapping("/formationsch/{cherche}")
+	public List<Formation> Recherche(@PathVariable("cherche") String ch) {
+		List<Formation>liste=fns.getAllService();
+		List<Formation>listch=new ArrayList<>();
+		for(int i=0;i<liste.size();i++) {
+			if(liste.get(i).getLibFormation().toLowerCase().contains(ch.toLowerCase())) {
+				listch.add(liste.get(i));
+			}
+		}
+
+		return listch;
 	}
 	
 	@PostMapping("/formations")

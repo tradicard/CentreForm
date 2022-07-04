@@ -12,11 +12,13 @@ import { UtilisateurService } from 'src/app/service/utilisateur.service';
 export class InscriptionComponent implements OnInit {
 
   user!:Participant
+  
   constructor(private service:UtilisateurService,private router:Router) { }
 
   ngOnInit(): void {
     this.user=new Participant()
     this.user=new Utilisateur()
+    
   }
 
   inscription() {

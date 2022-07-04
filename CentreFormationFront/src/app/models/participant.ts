@@ -1,4 +1,5 @@
 import { Formation } from "./formation";
+import { HistoriqueParticipant } from "./historique-participant";
 import { Paiement } from "./paiement";
 import { Relance } from "./relance";
 import { Role } from "./role";
@@ -15,7 +16,7 @@ export class Participant
     role!: Role; 
 
     formations!: Formation[]
-
+    historique!: HistoriqueParticipant
     relances!:Relance[]
 
     paiements!:Paiement[]
