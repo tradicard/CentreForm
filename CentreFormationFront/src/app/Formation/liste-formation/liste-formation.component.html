@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">Formations Disponibles</h1>
+<h1 style="text-align: center;">Formations Actuelles</h1>
 
 <td><button (click)="ajouterFormation(f)">Ajouter une formation</button></td> <br> <br>
 
@@ -29,14 +29,16 @@
     <!--PB recup nom formateur-->
     <td *ngFor="let formateur of formateurs">{{f.formateur.nom}}</td> 
     <!--Faire meth apres ds ts-->
-
-  
+    <td><button (click)="participantsAssocies(f.idFormation)">Liste des participants</button></td> 
+    <td><button (click)="modifier(f.idFormation)">Modifier</button></td>
+    <td><button (click)="supprimer(f.idFormation)">Supprimer</button></td> <br> <br>
+    </tr>
  
     </table>
-    <td><button (click)="participantsAssocies(f.idFormation)">Liste des participants</button></td>
-    <td><button (click)="modifier(f.idFormation)">Modifier</button></td>
-    <td><button (click)="supprimer(f.idFormation)">Supprimer</button></td>
+ 
+ 
    
+
     
 
 <button (click)="retour()"> Retour Accueil </button> <br> <br>

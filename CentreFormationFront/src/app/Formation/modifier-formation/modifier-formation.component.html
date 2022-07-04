@@ -10,8 +10,8 @@
 
     
     Formateur: <td>Formateurs</td>
-    <select [(ngModel)]="selectedValue" name="selectedValue">
-        <option *ngFor="let form of formateurs" [ngValue]="form">{{form.nom}}</option>
+    <select [(ngModel)]="forma" name="forma">
+        <option *ngFor="let fo of formateurs" value="{{fo.id}}">{{fo.nom}}</option>
     </select>
 
     

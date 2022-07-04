@@ -15,34 +15,75 @@ import { ParticipantService } from 'src/app/service/participant.service';
 export class AjouterFormationComponent implements OnInit {
 
   f!:Formation;
-  p!:Participant;
+  forma!:number
 
-
+  formateur!:Formateur
   formations!:Formation[]
   participants!:Participant[]
 
   formateurs!:Formateur[]
 
-  selectedValue!:Formateur
+  Value!:Formateur
+
+  idF!:number
+
 
   constructor(private route:ActivatedRoute,private router:Router, private serviceFormation:FormationService, private serviceForm:FormateurService) { }
 
   ngOnInit(): void {
+    this.chargerLesFormateurs();
     this.f=new Formation()
-
-    this.serviceForm.getAll().subscribe(response=>this.formateurs=response)
   }
+
+//utiliser meth service Liste formateurs disponibles, faire pareil pour modifier
 
   ajouter()
   {
-    this.serviceFormation.ajouter(this.f).subscribe(
-      response=>{
-        this.router.navigateByUrl('GestionFormation');}
+    this.serviceForm.getById(this.forma).subscribe(
+      response=>
+      {
+        this.formateur=response
+        this.f.formateur=this.formateur
+        this.serviceFormation.ajouter(this.f).subscribe
+      (
+        response=> 
+        {this.router.navigateByUrl('GestionFormation')}
+      )}
+      
     )
+    
+   
+   
+   
+   /* let value=(<HTMLSelectElement>document.getElementById('id')).value
+    this.idF=+value
+   
+    this.serviceForm.getById(this.idF).subscribe
+    (
+     response=>{
+       this.Value=response
+     }
+    )
+
+   this.Value.historiqueFormation=this.forma
+   this.serviceForm.modifier(this.forma)
+   
+   this.serviceFormation.ajouter(this.f).subscribe()
+   this.router.navigateByUrl('afficherPassports')
+
+*/
+  }
+
+  chargerLesFormateurs()
+  {
+    this.serviceForm.getAll().subscribe(
+      response=>this.formateurs=response
+    )
+   
   }
 
   retour():void
   {
-    this.router.navigateByUrl('/Acceuil')
+    this.router.navigateByUrl('GestionFormation')
   }
 }

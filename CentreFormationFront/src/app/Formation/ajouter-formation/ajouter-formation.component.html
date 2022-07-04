@@ -7,16 +7,18 @@
     Date de Fin: <input type="text" name="dateFin" [(ngModel)]="f.dateFin"/> <br>
     Prix: <input type="number" name="prix" [(ngModel)]="f.prix"/> <br>
 
-    Formateur: <td>Formateurs</td>
-    <select [(ngModel)]="selectedValue" name="selectedValue">
-        <option *ngFor="let form of formateurs" [ngValue]="form">{{form.nom}}</option>
+  
+   
+    Attribuer un Formateur: 
+    <select [(ngModel)]="forma" name="forma">
+        <option *ngFor="let fo of formateurs" value="{{fo.id}}">{{fo.nom}}</option>
     </select>
 
-    
+   
     <button type="submit">Valider</button>
 </form> <br>
  
-<button (click)="retour()"> Retour Accueil </button> <br> <br>
+<button (click)="retour()"> Retour Gestion Formation </button> <br> <br>
 
 
 
