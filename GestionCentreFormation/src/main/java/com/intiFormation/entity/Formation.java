@@ -32,13 +32,29 @@ public class Formation {
 	@OneToMany(mappedBy = "formation",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE}, orphanRemoval = true)
 	@JsonIgnore
 	private List<HistoriqueFormateur> historiqueFormateur;
-	
+	@OneToMany(mappedBy = "formation",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE}, orphanRemoval = true)
+	@JsonIgnore
+	private List<HistoriqueParticipant> historiqueParticipant;
 	@ManyToMany(mappedBy = "formations")
 	private List<Participant> participants ;
 	
 	
 	
 	
+	public Formation(String libFormation, String description, String dateDebut, String dateFin, int prix,
+			Formateur formateur, List<HistoriqueFormateur> historiqueFormateur,
+			List<HistoriqueParticipant> historiqueParticipant, List<Participant> participants) {
+		super();
+		this.libFormation = libFormation;
+		this.description = description;
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+		this.prix = prix;
+		this.formateur = formateur;
+		this.historiqueFormateur = historiqueFormateur;
+		this.historiqueParticipant = historiqueParticipant;
+		this.participants = participants;
+	}
 	public Formation() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -90,6 +106,18 @@ public class Formation {
 	}
 	public void setParticipants(List<Participant> participants) {
 		this.participants = participants;
+	}
+	public List<HistoriqueFormateur> getHistoriqueFormateur() {
+		return historiqueFormateur;
+	}
+	public void setHistoriqueFormateur(List<HistoriqueFormateur> historiqueFormateur) {
+		this.historiqueFormateur = historiqueFormateur;
+	}
+	public List<HistoriqueParticipant> getHistoriqueParticipant() {
+		return historiqueParticipant;
+	}
+	public void setHistoriqueParticipant(List<HistoriqueParticipant> historiqueParticipant) {
+		this.historiqueParticipant = historiqueParticipant;
 	}
 	
 	
