@@ -7,16 +7,13 @@ import { ListeFormateurComponent } from './GestionFormateur/liste-formateur/list
 import { ModifierFormateurComponent } from './GestionFormateur/modifier-formateur/modifier-formateur.component';
 
 import { SearchComponent } from './search/search.component';
-<<<<<<< HEAD
 import { SingleformationComponent } from './singleformation/singleformation.component';
-=======
 import { AjouterFormationComponent } from './Formation/ajouter-formation/ajouter-formation.component';
 import { AppComponent } from './app.component';
 import { ConnectionComponent } from './EnsConnection/connection/connection.component';
 import { ListeFormationComponent } from './Formation/liste-formation/liste-formation.component';
 import { ModifierFormationComponent } from './Formation/modifier-formation/modifier-formation.component';
 import { ParticipantsAssociesComponent } from './Formation/participants-associes/participants-associes.component';
->>>>>>> cbd29b010b88526cc33d5a4c044a3e7dde527f91
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
