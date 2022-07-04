@@ -29,8 +29,8 @@ export class FormationService {
     return this.http.delete('http://localhost:8016/api/formations/'+idFormation)
   }
 
-  modifier(formData:FormData)
+  modifier(formation:Formation)
   {
-    return this.http.put<Formation>('http://localhost:8016/api/formations', formData)
+    return this.http.put<Formation>('http://localhost:8016/api/formations', formation)
   }
 }

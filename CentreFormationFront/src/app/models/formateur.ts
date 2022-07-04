@@ -12,9 +12,5 @@ export class Formateur {
     
 
 
-<<<<<<< HEAD
-=======
-   
->>>>>>> 69851a7b26d1828166f617bb4b2e6cd20fde2814
 
 }

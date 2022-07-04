@@ -10,13 +10,14 @@ import { InscriptionComponent } from './EnsConnection/inscription/inscription.co
 import { AjoutFormateurComponent } from './GestionFormateur/ajout-formateur/ajout-formateur.component';
 import { ListeFormateurComponent } from './GestionFormateur/liste-formateur/liste-formateur.component';
 import { ModifierFormateurComponent } from './GestionFormateur/modifier-formateur/modifier-formateur.component';
-<<<<<<< HEAD
 import { AcceuilParticipantComponent } from './Acceuil/acceuil-participant/acceuil-participant.component';
 import { AcceuilAdminComponent } from './Acceuil/acceuil-admin/acceuil-admin.component';
 import { SearchComponent } from './search/search.component';
 import { SingleformationComponent } from './singleformation/singleformation.component';
-=======
->>>>>>> 69851a7b26d1828166f617bb4b2e6cd20fde2814
+import { ListeFormationComponent } from './Formation/liste-formation/liste-formation.component';
+import { ModifierFormationComponent } from './Formation/modifier-formation/modifier-formation.component';
+import { AjouterFormationComponent } from './Formation/ajouter-formation/ajouter-formation.component';
+import { ParticipantsAssociesComponent } from './Formation/participants-associes/participants-associes.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +26,16 @@ import { SingleformationComponent } from './singleformation/singleformation.comp
     InscriptionComponent,
     AjoutFormateurComponent,
     ListeFormateurComponent,
-<<<<<<< HEAD
     ModifierFormateurComponent,
     AcceuilParticipantComponent,
     AcceuilAdminComponent,
     SearchComponent,
-    SingleformationComponent
-=======
-    ModifierFormateurComponent
->>>>>>> 69851a7b26d1828166f617bb4b2e6cd20fde2814
+    SingleformationComponent,
+    ModifierFormateurComponent,
+    ListeFormationComponent,
+    ModifierFormationComponent,
+    AjouterFormationComponent,
+    ParticipantsAssociesComponent
   ],
   imports: [
     BrowserModule,

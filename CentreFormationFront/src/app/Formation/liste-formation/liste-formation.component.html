@@ -1,0 +1,46 @@
+<h1 style="text-align: center;">Formations Disponibles</h1>
+
+<td><button (click)="ajouterFormation(f)">Ajouter une formation</button></td> <br> <br>
+
+<table>
+    <tr>
+        <td>IdFormation</td>
+        <td>Nom Formation</td>
+        <td>Description</td>
+        <td>Date de début</td>
+        <td>Date de fin</td>
+        <td>Prix</td>
+
+        <td>Nom Formateur</td>
+
+        <td>Participants</td>
+        <td>Modifier</td>
+        <td>Supprimer</td>
+    </tr>
+
+    <tr *ngFor="let f of formations">
+    <td>{{f.idFormation}}</td>
+    <td>{{f.libFormation}}</td>
+    <td>{{f.description}}</td>
+    <td>{{f.dateDebut}}</td>
+    <td>{{f.dateFin}}</td>
+    <td>{{f.prix}}</td>
+
+    <!--PB recup nom formateur-->
+    <td *ngFor="let formateur of formateurs">{{formateur.nom}}</td> 
+    <!--Faire meth apres ds ts-->
+
+    <td><button (click)="participantsAssocies(f.idFormation)">Liste des participants</button></td>
+    <td><button (click)="modifier(f.idFormation)">Modifier</button></td>
+    <td><button (click)="supprimer(f.idFormation)">Supprimer</button></td>
+    </tr>
+    
+ 
+    </table>
+
+
+<button (click)="retour()"> Retour Accueil </button> <br> <br>
+
+
+
+<button (click)=logout() style="text-align: right">Log Out</button>
