@@ -7,11 +7,11 @@
     Date de Fin: <input type="text" name="dateFin" [(ngModel)]="f.dateFin"/> <br>
     Prix: <input type="number" name="prix" [(ngModel)]="f.prix"/> <br>
 
-    Formateur: <input type="Formateur" name="text" [(ngModel)]="f.formateur.nom"/> <br>
+    Formateur: <td>Formateurs</td>
+    <select [(ngModel)]="selectedValue" name="selectedValue">
+        <option *ngFor="let form of formateurs" [ngValue]="form">{{form.nom}}</option>
+    </select>
 
-    Participants: <select name="selectedValue" [(ngModel)]="selectedValue" >
-        <option *ngFor="let p of participants" [ngValue]="p">{{p.nom}}</option>
-         </select>
     
     <button type="submit">Valider</button>
 </form> <br>

@@ -27,7 +27,7 @@
     <td>{{f.prix}}</td>
 
     <!--PB recup nom formateur-->
-    <td *ngFor="let formateur of formateurs">{{formateur.nom}}</td> 
+    <td *ngFor="let formateur of formateurs">{{f.formateur.nom}}</td> 
     <!--Faire meth apres ds ts-->
 
     <td><button (click)="participantsAssocies(f.idFormation)">Liste des participants</button></td>

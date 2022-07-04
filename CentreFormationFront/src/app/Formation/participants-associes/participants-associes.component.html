@@ -10,13 +10,11 @@
             <td>Mail</td>
         </tr>
     
-        <tr *ngFor="let p of participants">
-        <td>{{p.idProduit}}</td>
-        <td>{{p.libProduit}}</td>
-    
-        <td><img src="http://localhost:8030{{p.img}}" height="50" width="50"></td>
-    
-        <td>{{p.quantite}}</td>
+        <tr *ngFor="let p of f.participants">
+        <td>{{p.id}}</td>
+        <td>{{p.nom}}</td>
+        <td>{{p.prenom}}</td>
+        <td>{{p.mail}}</td>
     
         
      <!-- <a routerLink="/AjouterP">Ajouter Passport</a> -->  

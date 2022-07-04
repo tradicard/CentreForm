@@ -32,7 +32,12 @@ export class ListeFormationComponent implements OnInit {
     this.recupererFormations()
   }
 
-
+  recupererFormations()
+  {
+    this.serviceFormation.getAll().subscribe(
+      response=>{this.formations=response}
+    )
+  }
 
   ajouterFormation(f:Formation)
   {
@@ -63,13 +68,6 @@ export class ListeFormationComponent implements OnInit {
     )
   }
 
-  recupererFormations()
-  {
-    this.serviceFormation.getAll().subscribe(
-      response=>{this.formations=response}
-    )
-  }
- 
 
 
   retour():void{

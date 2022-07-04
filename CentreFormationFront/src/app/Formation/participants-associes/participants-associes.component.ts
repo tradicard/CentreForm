@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Formation } from 'src/app/models/formation';
 import { Utilisateur } from 'src/app/models/utilisateur';
 import { ParticipantService } from 'src/app/service/participant.service';
 
@@ -14,6 +15,8 @@ export class ParticipantsAssociesComponent implements OnInit {
 
   idFormation!:number
 
+  f!:Formation
+
   constructor(private router:Router, private route:ActivatedRoute, private serviceParticipant:ParticipantService) { }
 
   ngOnInit(): void {
@@ -23,18 +26,14 @@ export class ParticipantsAssociesComponent implements OnInit {
   ParticipantsAssocies(idFormation:number)
   {
     const id=this.route.snapshot.params['idFormation']
-   /* this.serviceParticipant.//Faire fonction get Formation Par participant dans controller/service
-    getByIdFormation(id).subscribe
-    (
-      response=>{this.participants=response}
-     
-      
-    )*/
+    
   }
 
 
   retour():void
   {
     this.router.navigateByUrl('/Acceuil')
+ 
+    
   }
 }

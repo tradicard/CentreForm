@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Formateur } from 'src/app/models/formateur';
 import { Formation } from 'src/app/models/formation';
 import { Participant } from 'src/app/models/participant';
+import { FormateurService } from 'src/app/service/formateur.service';
 import { FormationService } from 'src/app/service/formation.service';
 import { ParticipantService } from 'src/app/service/participant.service';
 
@@ -18,9 +20,10 @@ export class ModifierFormationComponent implements OnInit {
   participants!:Participant[]
   p!:Participant
 
-  selectedValue!:Participant[]
+  selectedValue!:Formateur
+  formateurs!:Formateur[]
 
-  constructor(private route:ActivatedRoute,private router:Router, private serviceFormation:FormationService, private serviceParticipant:ParticipantService) { }
+  constructor(private route:ActivatedRoute,private router:Router, private serviceFormation:FormationService, private serviceForm:FormateurService) { }
 
  //PROBLEME : reconnait pas les méthodes du service
 
@@ -29,14 +32,16 @@ export class ModifierFormationComponent implements OnInit {
     this.recupererFormation(this.idF)
     this.f=new Formation()
 
-    this.serviceParticipant.getAll().subscribe(response=>this.participants=response)
+    this.serviceForm.getAll().subscribe(response=>this.formateurs=response)
+
   }
 
  
 
   recupererFormation(idFormation:number) {
     //PROBLEME
-    this.serviceFormation.getById(idFormation).subscribe(
+    this.serviceFormation.getById(idFormation).subscribe
+    (
     response=>this.f=response
     )
   }

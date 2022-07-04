@@ -39,6 +39,9 @@ public class ParticipantController {
 	@Autowired
 	IParticipantService parts;
 	
+	@Autowired
+	IFormationService formationService;
+	
 	@GetMapping("/participants")
 	public List<Participant> GestionParticipant() {
 		List<Participant> listec=parts.getAllService();
@@ -54,6 +57,8 @@ public class ParticipantController {
 		}
 		return c;
 	}
+	
+
 	
 	@PostMapping("/participants")
 	public void SaveParticipant(@RequestBody Participant c) {
