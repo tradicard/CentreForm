@@ -13,7 +13,7 @@ import com.intiFormation.entity.Role;
 
 
 public interface IParticipantService {
-	
+	public Participant chercherParUsername(String username);
 	public void modifierService(Participant r);
 	public void supprimerService(int id);
 	public List<Participant> getAllService();

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,14 +21,24 @@ import com.intiFormation.Service.IAssistantService;
 import com.intiFormation.Service.ICommercialService;
 import com.intiFormation.Service.IContactService;
 import com.intiFormation.Service.IFormateurService;
+<<<<<<< HEAD
 import com.intiFormation.Service.IFormationService;
+=======
+import com.intiFormation.Service.IRoleService;
+import com.intiFormation.Service.IUtilisateurService;
+>>>>>>> 505edf3f621584326a14ff1ae782d42bc8a9be91
 import com.intiFormation.entity.Assistant;
 
 import com.intiFormation.entity.Commercial;
 import com.intiFormation.entity.Contact;
 import com.intiFormation.entity.Formateur;
+<<<<<<< HEAD
 import com.intiFormation.entity.Formation;
 
+=======
+import com.intiFormation.entity.Role;
+import com.intiFormation.entity.Utilisateur;
+>>>>>>> 505edf3f621584326a14ff1ae782d42bc8a9be91
 
 @RestController
 @RequestMapping("/api")
@@ -38,7 +49,15 @@ public class FormateurController {
 	@Autowired
 	IFormateurService frs;
 	@Autowired
+<<<<<<< HEAD
 	IFormationService fos;
+=======
+	IRoleService rs;
+	@Autowired
+	BCryptPasswordEncoder bc;
+	@Autowired
+	IUtilisateurService us;
+>>>>>>> 505edf3f621584326a14ff1ae782d42bc8a9be91
 	
 	@GetMapping("/formateurs")
 	public List<Formateur> GestionFormateur() {
@@ -82,10 +101,27 @@ public class FormateurController {
 		}
 		return c;
 	}
-	
+	@GetMapping("/formateurs/{username}")
+	public Formateur GestionUtilisateur(@PathVariable("username") String username) {
+		Formateur op=frs.chercherParUsername(username);
+
+		return op;
+	}
 	@PostMapping("/formateurs")
-	public void SaveContact(@RequestBody Formateur c) {
-		frs.ajouterService(c);
+	public void SaveContact(@RequestBody Formateur u) {
+		List<Utilisateur> uts=us.getAllService();
+		for(int i=0;i<uts.size();i++) {
+			if (uts.get(i).getUsername()==u.getUsername()) {
+				break;
+			}
+		}
+		
+		Optional<Role> op=rs.selectByIdService(3);
+		Role r=op.get();
+		String pass=u.getPassword();
+		pass=bc.encode(pass);
+		u=new Formateur(u.getNom(),u.getPrenom(),u.getUsername(),pass,u.getMail(),r);
+		frs.ajouterService(u);
 	}
 	
 	
