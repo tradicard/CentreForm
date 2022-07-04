@@ -28,7 +28,7 @@ formations!:Formation[]
   }
 
   inscription(idFormation:number){
-    this.router.navigateByUrl('search/'+this.cherche)
+    this.router.navigateByUrl('inscriptionformation/'+idFormation)
   }
 
 }
