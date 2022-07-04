@@ -7,6 +7,7 @@ import { ListeFormateurComponent } from './GestionFormateur/liste-formateur/list
 import { ModifierFormateurComponent } from './GestionFormateur/modifier-formateur/modifier-formateur.component';
 
 import { SearchComponent } from './search/search.component';
+import { SingleformationComponent } from './singleformation/singleformation.component';
 import { AjouterFormationComponent } from './Formation/ajouter-formation/ajouter-formation.component';
 import { AppComponent } from './app.component';
 import { ConnectionComponent } from './EnsConnection/connection/connection.component';
@@ -21,7 +22,9 @@ const routes: Routes = [
   {path:'modifierFormateur/:id',component:ModifierFormateurComponent},
   {path:'searchformation/:ch',component:SearchComponent},
   {path:'Acceuil',component:AcceuilParticipantComponent},
-  {path:'AAcceuilAdmin',component:AcceuilAdminComponent},
+  {path:'AcceuilAdmin',component:AcceuilAdminComponent},
+  {path:'inscriptionformation/:id',component:SingleformationComponent},
+  
   
   
   

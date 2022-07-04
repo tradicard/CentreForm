@@ -12,10 +12,16 @@ import { UtilisateurService } from 'src/app/service/utilisateur.service';
 export class InscriptionComponent implements OnInit {
 
   user!:Participant
+  
   constructor(private service:UtilisateurService,private router:Router) { }
 
   ngOnInit(): void {
     this.user=new Participant()
+<<<<<<< HEAD
+=======
+   // this.user=new Utilisateur()
+    
+>>>>>>> 3e195c41770e24f94559d9163ae09da51768e103
   }
 
   inscription() {

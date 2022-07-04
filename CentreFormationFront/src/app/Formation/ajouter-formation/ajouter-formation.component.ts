@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Formateur } from 'src/app/models/formateur';
 import { Formation } from 'src/app/models/formation';
 import { Participant } from 'src/app/models/participant';
+import { FormateurService } from 'src/app/service/formateur.service';
 import { FormationService } from 'src/app/service/formation.service';
 import { ParticipantService } from 'src/app/service/participant.service';
 
@@ -15,14 +17,20 @@ export class AjouterFormationComponent implements OnInit {
   f!:Formation;
   p!:Participant;
 
+
   formations!:Formation[]
   participants!:Participant[]
 
-  constructor(private route:ActivatedRoute,private router:Router, private serviceFormation:FormationService, private serviceParticipant:ParticipantService) { }
+  formateurs!:Formateur[]
+
+  selectedValue!:Formateur
+
+  constructor(private route:ActivatedRoute,private router:Router, private serviceFormation:FormationService, private serviceForm:FormateurService) { }
 
   ngOnInit(): void {
     this.f=new Formation()
-    
+
+    this.serviceForm.getAll().subscribe(response=>this.formateurs=response)
   }
 
   ajouter()
@@ -35,7 +43,6 @@ export class AjouterFormationComponent implements OnInit {
 
   retour():void
   {
-    //mettre url accueil
-    this.router.navigateByUrl('/accueil')
+    this.router.navigateByUrl('/Acceuil')
   }
 }

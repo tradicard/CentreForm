@@ -7,7 +7,32 @@
     <input type="search" name="cherche" (ngModel)="cherche">
     <button type="submit">Valider (probleme de cache)</button>
 </form>
+<h3>Vos formations</h3>
+<table>
+    <tr>
+        <td>id</td>
+        <td>libFormation</td>
+        <td>description</td>
+        <td>dateDebut</td>
+        <td>dateFin</td>
+        <td>prix</td>
+    </tr>
 
+    
+    
+    <tr *ngFor="let f of formationsparu">
+        <td>{{f.idFormation}}</td>
+        <td>{{f.libFormation}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.dateDebut}}</td>
+        <td>{{f.dateFin}}</td>
+        <td>{{f.prix}}</td>
+    </tr>
+
+    
+    
+</table>
+<br>
 <table>
     <tr>
         <td>id</td>

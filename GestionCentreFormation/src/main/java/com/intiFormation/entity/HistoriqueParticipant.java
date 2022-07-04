@@ -19,4 +19,36 @@ public class HistoriqueParticipant {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="idParticipant")
 	Participant participant;
+	
+	
+	
+	public HistoriqueParticipant(Formation formation, Participant participant) {
+		super();
+		this.formation = formation;
+		this.participant = participant;
+	}
+	public HistoriqueParticipant() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public int getIdHistoriqueFormateur() {
+		return idHistoriqueFormateur;
+	}
+	public void setIdHistoriqueFormateur(int idHistoriqueFormateur) {
+		this.idHistoriqueFormateur = idHistoriqueFormateur;
+	}
+	public Formation getFormation() {
+		return formation;
+	}
+	public void setFormation(Formation formation) {
+		this.formation = formation;
+	}
+	public Participant getParticipant() {
+		return participant;
+	}
+	public void setParticipant(Participant participant) {
+		this.participant = participant;
+	}
+	
+	
 }
