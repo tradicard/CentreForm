@@ -26,17 +26,14 @@ public class AssistantService implements IAssistantService{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-<<<<<<< HEAD
+
 	
 	public Assistant chercherParUsername(String username) {
 		return adao.findByUsername(username);
 	}
 
-=======
-	public Assistant chercherParUsername(String username) {
-		return adao.findByUsername(username);
-	}
->>>>>>> 505edf3f621584326a14ff1ae782d42bc8a9be91
+
+
 	public void ajouterService(Assistant r) {
 		adao.save(r);
 	}
