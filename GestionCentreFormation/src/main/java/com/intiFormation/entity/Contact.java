@@ -17,6 +17,7 @@ public class Contact {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idContact;
+	private String dateContact;
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="idProspect")
 	private Prospect prospect;
@@ -26,8 +27,10 @@ public class Contact {
 	
 	
 	
-	public Contact(Prospect prospect, Commercial commercial) {
+	
+	public Contact(String dateContact, Prospect prospect, Commercial commercial) {
 		super();
+		this.dateContact = dateContact;
 		this.prospect = prospect;
 		this.commercial = commercial;
 	}
@@ -52,6 +55,12 @@ public class Contact {
 	}
 	public void setCommercial(Commercial commercial) {
 		this.commercial = commercial;
+	}
+	public String getDateContact() {
+		return dateContact;
+	}
+	public void setDateContact(String dateContact) {
+		this.dateContact = dateContact;
 	}
 	
 	

@@ -18,6 +18,9 @@ import { ListeFormationComponent } from './Formation/liste-formation/liste-forma
 import { ModifierFormationComponent } from './Formation/modifier-formation/modifier-formation.component';
 import { AjouterFormationComponent } from './Formation/ajouter-formation/ajouter-formation.component';
 import { ParticipantsAssociesComponent } from './Formation/participants-associes/participants-associes.component';
+import { ListeProspectComponent } from './GestionProspect/liste-prospect/liste-prospect.component';
+import { ModifProspectComponent } from './GestionProspect/modif-prospect/modif-prospect.component';
+import { SingleProspectComponent } from './GestionProspect/single-prospect/single-prospect.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { ParticipantsAssociesComponent } from './Formation/participants-associes
     ListeFormationComponent,
     ModifierFormationComponent,
     AjouterFormationComponent,
-    ParticipantsAssociesComponent
+    ParticipantsAssociesComponent,
+    ListeProspectComponent,
+    ModifProspectComponent,
+    SingleProspectComponent
   ],
   imports: [
     BrowserModule,

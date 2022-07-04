@@ -11,6 +11,7 @@ import com.intiFormation.dao.ICommercialDao;
 import com.intiFormation.dao.IRoleDao;
 import com.intiFormation.entity.Assistant;
 import com.intiFormation.entity.Commercial;
+import com.intiFormation.entity.Formateur;
 import com.intiFormation.entity.Role;
 @Service
 public class CommercialService implements ICommercialService{
@@ -26,7 +27,9 @@ public class CommercialService implements ICommercialService{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	public Commercial chercherParUsername(String username) {
+		return comdao.findByUsername(username);
+	}
 	public void ajouterService(Commercial r) {
 		comdao.save(r);
 	}

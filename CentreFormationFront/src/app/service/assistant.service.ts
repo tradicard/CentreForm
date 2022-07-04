@@ -19,6 +19,11 @@ export class AssistantService {
     return this.http.get<Assistant>('http://localhost:8016/api/assistants/'+idAssistant)
   }
 
+  getByUsername(username:string)
+  {
+    return this.http.get<Assistant>('http://localhost:8016/api/assistantsus/'+username)
+  }
+
   ajouter(commercial:Assistant)
   {
     return this.http.post<Assistant>('http://localhost:8016/api/assistants',commercial)
