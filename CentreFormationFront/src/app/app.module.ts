@@ -7,12 +7,20 @@ import { AppComponent } from './app.component';
 import { ConnectionComponent } from './EnsConnection/connection/connection.component';
 import { HttpInterceptorService } from './service/http-interceptor.service';
 import { InscriptionComponent } from './EnsConnection/inscription/inscription.component';
+import { ListeFormationComponent } from './Formation/liste-formation/liste-formation.component';
+import { ModifierFormationComponent } from './Formation/modifier-formation/modifier-formation.component';
+import { AjouterFormationComponent } from './Formation/ajouter-formation/ajouter-formation.component';
+import { ParticipantsAssociesComponent } from './Formation/participants-associes/participants-associes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnectionComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    ListeFormationComponent,
+    ModifierFormationComponent,
+    AjouterFormationComponent,
+    ParticipantsAssociesComponent
   ],
   imports: [
     BrowserModule,
