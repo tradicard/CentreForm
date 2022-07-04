@@ -20,8 +20,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.intiFormation.Config.RequestFilter;
 
 
-@EnableWebSecurity
 @Configuration
+@EnableWebSecurity
 public class Security extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
@@ -45,7 +45,7 @@ public class Security extends WebSecurityConfigurerAdapter{
 	}
 	
 	
-	@Override
+	
 	@Bean
 	protected AuthenticationManager authenticationManager() throws Exception {
 		// TODO Auto-generated method stub
@@ -62,7 +62,7 @@ public class Security extends WebSecurityConfigurerAdapter{
 		.antMatchers("/authenticate").permitAll()
 		.antMatchers("/api/utilisateurs").permitAll()
 		.antMatchers("/").permitAll()
-		.antMatchers("/**").hasAuthority("admin")
+		//.antMatchers("/**").hasAuthority("admin")
 		//.antMatchers("/**").hasAuthority("client")
 		
 		.anyRequest().authenticated()

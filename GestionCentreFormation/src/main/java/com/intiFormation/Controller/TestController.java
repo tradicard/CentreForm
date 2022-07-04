@@ -1,5 +1,6 @@
 package com.intiFormation.Controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,6 @@ import com.intiFormation.Config.AuthentificationRequest;
 import com.intiFormation.Config.AuthentificationResponse;
 import com.intiFormation.Config.jwtUtil;
 import com.intiFormation.Service.CustemUserDetailsService2;
-
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")

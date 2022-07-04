@@ -8,7 +8,7 @@ import { Utilisateur } from '../models/utilisateur';
 })
 export class UtilisateurService {
 
-  constructor(private http:HttpClient,private router:Router) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
   authenticate(username:string,password:string) {
    
@@ -35,9 +35,30 @@ export class UtilisateurService {
     return this.http.get<Utilisateur[]>('http://localhost:8016/api/utilisateurs')
   }
 
+ 
+  getById(id:number)
+  {
+    return this.http.get<Utilisateur>('http://localhost:8016/api/utilisateurs/'+id)
+  }
+
+  getByUsername(username:string)
+  {
+    return this.http.get<Utilisateur>('http://localhost:8016/api/utilisateurs/'+username)
+  }
+
+  ajouterUtilisateur(utilisateur:Utilisateur)
+  {
+    return this.http.post<Utilisateur>('http://localhost:8016/api/utilisateurs',utilisateur)
+  }
+
   supprimerUtilisateur(id:number)
   {
     return this.http.delete('http://localhost:8016/api/utilisateurs/'+id)
+  }
+
+  modifierUtilisateur(formData:FormData)
+  {
+    return this.http.put<Utilisateur>('http://localhost:8016/api/utilisateurs', formData)
   }
 
 }

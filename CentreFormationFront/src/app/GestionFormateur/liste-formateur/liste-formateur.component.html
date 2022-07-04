@@ -1,0 +1,33 @@
+<style>
+    table {
+        border:1px solid black;
+        text-align: center;
+    }
+    td {
+        border:1px solid black;
+    }
+
+
+</style>
+
+<button (click)="versadd()">Ajouter produit</button>
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Nom formateur</td>
+        <td>Prenom formateur</td>
+        <td>Formation</td>
+        <td>Action 1</td>
+        <td>Action 2</td>
+    </tr>
+    <tr *ngFor="let n of formateurs">
+            <td>{{n.id}}</td>
+            <td>{{n.nom}}</td>
+            <td>{{n.prenom}}</td>
+            <td>{{n.historiqueFormation}}</td>
+            <td><button (click)="supprimer(n.id)">Supprimer</button></td>
+            <td><button (click)="versmodif(n.id)">Modifier</button></td>
+        
+    </tr>
+</table>
