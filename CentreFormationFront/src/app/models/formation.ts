@@ -14,14 +14,6 @@ export class Formation {
 
     participants!:Participant[]
 
-    constructor(idFormation:number, libFormation:string, description:string, dateDebut:string, dateFin:string, prix:number)
-    {
-        this.idFormation=idFormation
-        this.libFormation=libFormation
-        this.description=description
-        this.dateDebut=dateDebut
-        this.dateFin=dateFin
-        this.prix=prix
-    }
+
 
 }

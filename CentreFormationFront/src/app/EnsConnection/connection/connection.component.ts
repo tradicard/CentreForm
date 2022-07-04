@@ -16,7 +16,7 @@ export class ConnectionComponent implements OnInit {
   constructor(private service:UtilisateurService,private router:Router) { }
 
   ngOnInit(): void {
-    this.user=new Utilisateur(0,"","","","","")
+    this.user=new Utilisateur()
   }
 
 
@@ -36,7 +36,13 @@ export class ConnectionComponent implements OnInit {
            
            
          sessionStorage.setItem("u",JSON.stringify(this.user))
+         if (this.user.role.libRole==="participant"){
+          this.router.navigateByUrl('Acceuil')
+         }else{
+          this.router.navigateByUrl('AcceuilAdmin')
+         }
          
+
          }
        )
      },

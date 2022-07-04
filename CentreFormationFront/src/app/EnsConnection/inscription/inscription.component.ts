@@ -14,7 +14,7 @@ export class InscriptionComponent implements OnInit {
   constructor(private service:UtilisateurService,private router:Router) { }
 
   ngOnInit(): void {
-    this.user=new Utilisateur(0,"","","","","")
+    this.user=new Utilisateur()
   }
 
   inscription() {

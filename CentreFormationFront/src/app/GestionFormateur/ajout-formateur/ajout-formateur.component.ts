@@ -18,7 +18,7 @@ export class AjoutFormateurComponent implements OnInit {
 
   ngOnInit(): void {
     this.historiqueFormation=[]
-    this.formateur=new Formateur (0,this.historiqueFormation,"","","","","")
+    this.formateur=new Formateur ()
   }
 
 
