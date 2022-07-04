@@ -1,0 +1,27 @@
+<p>Les participants de la formation</p>
+
+<form (ngSubmit)="ParticipantsAssocies(f.idFormation)">
+ 
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Nom</td>
+            <td>Prenom</td>
+            <td>Mail</td>
+        </tr>
+    
+        <tr *ngFor="let p of participants">
+        <td>{{p.idProduit}}</td>
+        <td>{{p.libProduit}}</td>
+    
+        <td><img src="http://localhost:8030{{p.img}}" height="50" width="50"></td>
+    
+        <td>{{p.quantite}}</td>
+    
+        
+     <!-- <a routerLink="/AjouterP">Ajouter Passport</a> -->  
+        </table>
+    
+    </form>
+    
+    <button (click)="retour()"> Retour Accueil </button> <br> <br>
