@@ -3,7 +3,7 @@ import { Utilisateur } from "./utilisateur";
 export class Role
 {
     idRole!: number; 
-    libRole!:string; 
+    librole!:string; 
     description!:string; 
 
     utilisateurs!:Utilisateur[]

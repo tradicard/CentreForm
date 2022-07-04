@@ -10,6 +10,7 @@ import com.intiFormation.dao.IAssistantDao;
 import com.intiFormation.dao.IRoleDao;
 import com.intiFormation.entity.Assistant;
 import com.intiFormation.entity.Role;
+import com.intiFormation.entity.Utilisateur;
 @Service
 public class AssistantService implements IAssistantService{
 
@@ -23,6 +24,10 @@ public class AssistantService implements IAssistantService{
 	public AssistantService() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Assistant chercherParUsername(String username) {
+		return adao.findByUsername(username);
 	}
 
 	public void ajouterService(Assistant r) {

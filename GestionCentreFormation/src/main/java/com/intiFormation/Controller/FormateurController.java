@@ -1,5 +1,6 @@
 package com.intiFormation.Controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,10 +20,14 @@ import com.intiFormation.Service.IAssistantService;
 import com.intiFormation.Service.ICommercialService;
 import com.intiFormation.Service.IContactService;
 import com.intiFormation.Service.IFormateurService;
+import com.intiFormation.Service.IFormationService;
 import com.intiFormation.entity.Assistant;
+
 import com.intiFormation.entity.Commercial;
 import com.intiFormation.entity.Contact;
 import com.intiFormation.entity.Formateur;
+import com.intiFormation.entity.Formation;
+
 
 @RestController
 @RequestMapping("/api")
@@ -32,11 +37,40 @@ public class FormateurController {
 	
 	@Autowired
 	IFormateurService frs;
+	@Autowired
+	IFormationService fos;
 	
 	@GetMapping("/formateurs")
 	public List<Formateur> GestionFormateur() {
 		List<Formateur> listec=frs.getAllService();
 		return listec;
+	}
+	
+	@GetMapping("/formateurssansformation")
+	public List<Formateur> GestionFormateur2() {
+		
+		List<Formateur> liste=frs.getAllService();
+		List<Formation> pass=fos.getAllService();
+		List<Formateur> citoyens=new ArrayList<Formateur>();
+		boolean verif;
+		
+		for (int i = 0; i < liste.size(); i++) {
+		      verif=true;
+		      for (int j = 0; j < pass.size(); j++) {
+		        
+		        if (pass.get(j).getFormateur().getId()==liste.get(i).getId()) {
+		          verif=false;
+		          System.out.println("Verif boucle 2ème boucle for"+verif);
+		        }
+		      }
+		      if(verif){
+		    	System.out.println("verif 1ère boucle for"+verif);
+		        citoyens.add(liste.get(i));
+		      }
+		    }
+		System.out.println(liste.size());
+		System.out.println(citoyens.size());
+		return citoyens;
 	}
 	
 	@GetMapping("/formateurs/{id}")

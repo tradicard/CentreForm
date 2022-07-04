@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.intiFormation.Service.IAssistantService;
 
 import com.intiFormation.entity.Assistant;
+import com.intiFormation.entity.Utilisateur;
 
 @RestController
 @RequestMapping("/api")
@@ -42,6 +43,13 @@ public class AssistantController {
 			c=op.get();
 		}
 		return c;
+	}
+	
+	@GetMapping("/assistantsus/{username}")
+	public Assistant GestionUtilisateur(@PathVariable("username") String username) {
+		Assistant op=as.chercherParUsername(username);
+
+		return op;
 	}
 	
 	@PostMapping("/assistants")

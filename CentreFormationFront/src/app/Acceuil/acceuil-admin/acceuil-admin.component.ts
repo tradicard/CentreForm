@@ -19,5 +19,8 @@ export class AcceuilAdminComponent implements OnInit {
   gestionformateur(){
     this.router.navigateByUrl('afficherFormateur')
   }
+  gestionprospect(){
+    this.router.navigateByUrl('afficherProspects')
+  }
   
 }

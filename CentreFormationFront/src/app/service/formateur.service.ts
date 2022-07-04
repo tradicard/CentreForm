@@ -13,6 +13,11 @@ export class FormateurService {
   {
     return this.http.get<Formateur[]>('http://localhost:8016/api/formateurs')
   }
+
+  getAllLibre()
+  {
+    return this.http.get<Formateur[]>('http://localhost:8016/api/formateurssansformation')
+  }
  
   getById(idFormateur:number)
   {

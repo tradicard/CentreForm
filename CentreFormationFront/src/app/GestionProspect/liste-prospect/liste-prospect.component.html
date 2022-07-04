@@ -1,0 +1,27 @@
+<p>liste-prospect works!</p>
+<table>
+    <tr>
+        <td>id</td>
+        <td>Nom</td>
+        <td>Prenom</td>
+        <td>mail</td>
+        <td>tel</td>
+        <td>Supprimmer</td>
+        <td>Modifier</td>
+        <td>Contacts</td>
+    </tr>
+
+    
+    
+    <tr *ngFor="let p of prospects">
+        <td>{{p.idProspect}}</td>
+        <td>{{p.nom}}</td>
+        <td>{{p.prenom}}</td>
+        <td>{{p.mail}}</td>
+        <td>{{p.tel}}</td>
+        <td><button (click)="cont(p.idProspect)" type="button" class="btn btn-primary">Contacts</button></td>
+    </tr>
+
+    
+    
+</table>
