@@ -17,7 +17,7 @@ export class InscriptionComponent implements OnInit {
 
   ngOnInit(): void {
     this.user=new Participant()
-    this.user=new Utilisateur()
+   // this.user=new Utilisateur()
     
   }
 

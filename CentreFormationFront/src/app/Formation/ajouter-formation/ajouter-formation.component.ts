@@ -23,6 +23,8 @@ export class AjouterFormationComponent implements OnInit {
 
   formateurs!:Formateur[]
 
+  selectedValue!:Formateur
+
   constructor(private route:ActivatedRoute,private router:Router, private serviceFormation:FormationService, private serviceForm:FormateurService) { }
 
   ngOnInit(): void {
