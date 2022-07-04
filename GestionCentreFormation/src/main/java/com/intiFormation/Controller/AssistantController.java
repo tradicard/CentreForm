@@ -21,11 +21,10 @@ import com.intiFormation.Service.IAssistantService;
 import com.intiFormation.Service.IRoleService;
 import com.intiFormation.Service.IUtilisateurService;
 import com.intiFormation.entity.Assistant;
-<<<<<<< HEAD
-=======
+
 import com.intiFormation.entity.Relance;
 import com.intiFormation.entity.Role;
->>>>>>> 505edf3f621584326a14ff1ae782d42bc8a9be91
+
 import com.intiFormation.entity.Utilisateur;
 
 @RestController
@@ -58,22 +57,16 @@ public class AssistantController {
 		}
 		return c;
 	}
-<<<<<<< HEAD
+
 	
 	@GetMapping("/assistantsus/{username}")
 	public Assistant GestionUtilisateur(@PathVariable("username") String username) {
-=======
-	@GetMapping("/assistants/{username}")
-	public Utilisateur GestionUtilisateur(@PathVariable("username") String username) {
->>>>>>> 505edf3f621584326a14ff1ae782d42bc8a9be91
+
 		Assistant op=as.chercherParUsername(username);
 
 		return op;
 	}
-<<<<<<< HEAD
-	
-=======
->>>>>>> 505edf3f621584326a14ff1ae782d42bc8a9be91
+
 	@PostMapping("/assistants")
 	public void SaveAssistant(@RequestBody Assistant u) {
 		List<Utilisateur> uts=us.getAllService();

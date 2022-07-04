@@ -57,7 +57,7 @@ public class CommercialController {
 		}
 		return c;
 	}
-	@GetMapping("/commercials/{username}")
+	@GetMapping("/commercialsus/{username}")
 	public Commercial GestionUtilisateur(@PathVariable("username") String username) {
 		Commercial op=coms.chercherParUsername(username);
 

@@ -69,7 +69,7 @@ public class ParticipantController {
 		return c;
 	}
 	
-	@GetMapping("/participants/{username}")
+	@GetMapping("/participantsus/{username}")
 	public Participant GestionUtilisateur(@PathVariable("username") String username) {
 		Participant op=parts.chercherParUsername(username);
 

@@ -21,24 +21,24 @@ import com.intiFormation.Service.IAssistantService;
 import com.intiFormation.Service.ICommercialService;
 import com.intiFormation.Service.IContactService;
 import com.intiFormation.Service.IFormateurService;
-<<<<<<< HEAD
+
 import com.intiFormation.Service.IFormationService;
-=======
+
 import com.intiFormation.Service.IRoleService;
 import com.intiFormation.Service.IUtilisateurService;
->>>>>>> 505edf3f621584326a14ff1ae782d42bc8a9be91
+
 import com.intiFormation.entity.Assistant;
 
 import com.intiFormation.entity.Commercial;
 import com.intiFormation.entity.Contact;
 import com.intiFormation.entity.Formateur;
-<<<<<<< HEAD
+
 import com.intiFormation.entity.Formation;
 
-=======
+
 import com.intiFormation.entity.Role;
 import com.intiFormation.entity.Utilisateur;
->>>>>>> 505edf3f621584326a14ff1ae782d42bc8a9be91
+
 
 @RestController
 @RequestMapping("/api")
@@ -49,15 +49,15 @@ public class FormateurController {
 	@Autowired
 	IFormateurService frs;
 	@Autowired
-<<<<<<< HEAD
+
 	IFormationService fos;
-=======
+
 	IRoleService rs;
 	@Autowired
 	BCryptPasswordEncoder bc;
 	@Autowired
 	IUtilisateurService us;
->>>>>>> 505edf3f621584326a14ff1ae782d42bc8a9be91
+
 	
 	@GetMapping("/formateurs")
 	public List<Formateur> GestionFormateur() {
@@ -101,7 +101,7 @@ public class FormateurController {
 		}
 		return c;
 	}
-	@GetMapping("/formateurs/{username}")
+	@GetMapping("/formateursus/{username}")
 	public Formateur GestionUtilisateur(@PathVariable("username") String username) {
 		Formateur op=frs.chercherParUsername(username);
 
