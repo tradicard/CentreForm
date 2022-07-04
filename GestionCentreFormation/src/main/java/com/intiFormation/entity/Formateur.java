@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -17,18 +18,27 @@ public class Formateur extends Utilisateur{
 
 
 	
-	@OneToMany(mappedBy = "formateur",fetch = FetchType.EAGER, cascade = {CascadeType.REMOVE, CascadeType.MERGE})
+	@OneToOne(mappedBy = "formateur",fetch = FetchType.EAGER, cascade = {CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonIgnore
-	private List<Formation> historiqueFormation;
+	private Formation formation;
+	@OneToMany(mappedBy = "formateur",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE}, orphanRemoval = true)
+	@JsonIgnore
+	private List<HistoriqueFormateur> historique;
 	
 	
 	
 	
 	
+	
+	
+
+	
+
 	public Formateur(String nom, String prenom, String username, String password, String mail, Role role,
-			 List<Formation> historiqueFormation) {
+			Formation formation, List<HistoriqueFormateur> historique) {
 		super(nom, prenom, username, password, mail, role);
-		this.historiqueFormation = historiqueFormation;
+		this.formation = formation;
+		this.historique = historique;
 	}
 
 	public Formateur() {
@@ -44,12 +54,20 @@ public class Formateur extends Utilisateur{
 
 
 
-	public List<Formation> getHistoriqueFormation() {
-		return historiqueFormation;
+	public Formation getFormation() {
+		return formation;
 	}
 
-	public void setHistoriqueFormation(List<Formation> historiqueFormation) {
-		this.historiqueFormation = historiqueFormation;
+	public void setFormation(Formation formation) {
+		this.formation = formation;
+	}
+
+	public List<HistoriqueFormateur> getHistorique() {
+		return historique;
+	}
+
+	public void setHistorique(List<HistoriqueFormateur> historique) {
+		this.historique = historique;
 	}
 
 	

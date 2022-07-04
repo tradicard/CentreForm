@@ -6,11 +6,16 @@ import { AjoutFormateurComponent } from './GestionFormateur/ajout-formateur/ajou
 import { ListeFormateurComponent } from './GestionFormateur/liste-formateur/liste-formateur.component';
 import { ModifierFormateurComponent } from './GestionFormateur/modifier-formateur/modifier-formateur.component';
 
+import { SearchComponent } from './search/search.component';
+
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
   {path:'afficherFormateur',component:ListeFormateurComponent},
   {path:'ajouterFormateur',component:AjoutFormateurComponent},
   {path:'modifierFormateur/:id',component:ModifierFormateurComponent},
+  {path:'searchformation/:ch',component:SearchComponent},
+  
+  
 
 ];
 
