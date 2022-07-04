@@ -69,7 +69,12 @@ public class ParticipantController {
 		return c;
 	}
 	
+	@GetMapping("/participants/{username}")
+	public Participant GestionUtilisateur(@PathVariable("username") String username) {
+		Participant op=parts.chercherParUsername(username);
 
+		return op;
+	}
 	
 	@PostMapping("/participants")
 	public void SaveParticipant(@RequestBody Participant u) {

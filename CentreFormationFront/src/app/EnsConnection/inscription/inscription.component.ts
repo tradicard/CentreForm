@@ -17,11 +17,7 @@ export class InscriptionComponent implements OnInit {
 
   ngOnInit(): void {
     this.user=new Participant()
-<<<<<<< HEAD
-=======
-   // this.user=new Utilisateur()
-    
->>>>>>> 3e195c41770e24f94559d9163ae09da51768e103
+
   }
 
   inscription() {

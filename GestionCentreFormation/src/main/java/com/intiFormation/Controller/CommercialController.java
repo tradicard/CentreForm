@@ -57,7 +57,12 @@ public class CommercialController {
 		}
 		return c;
 	}
-	
+	@GetMapping("/commercials/{username}")
+	public Commercial GestionUtilisateur(@PathVariable("username") String username) {
+		Commercial op=coms.chercherParUsername(username);
+
+		return op;
+	}
 	@PostMapping("/commercials")
 	public void SaveCommercial(@RequestBody Commercial u) {
 		List<Utilisateur> uts=us.getAllService();

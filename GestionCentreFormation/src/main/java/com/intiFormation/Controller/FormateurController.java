@@ -59,7 +59,12 @@ public class FormateurController {
 		}
 		return c;
 	}
-	
+	@GetMapping("/formateurs/{username}")
+	public Formateur GestionUtilisateur(@PathVariable("username") String username) {
+		Formateur op=frs.chercherParUsername(username);
+
+		return op;
+	}
 	@PostMapping("/formateurs")
 	public void SaveContact(@RequestBody Formateur u) {
 		List<Utilisateur> uts=us.getAllService();

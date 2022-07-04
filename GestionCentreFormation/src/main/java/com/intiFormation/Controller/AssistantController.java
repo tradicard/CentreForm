@@ -55,7 +55,12 @@ public class AssistantController {
 		}
 		return c;
 	}
-	
+	@GetMapping("/assistants/{username}")
+	public Utilisateur GestionUtilisateur(@PathVariable("username") String username) {
+		Assistant op=as.chercherParUsername(username);
+
+		return op;
+	}
 	@PostMapping("/assistants")
 	public void SaveAssistant(@RequestBody Assistant u) {
 		List<Utilisateur> uts=us.getAllService();

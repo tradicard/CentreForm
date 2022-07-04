@@ -20,13 +20,6 @@ export class Participant
     relances!:Relance[]
 
     paiements!:Paiement[]
-    id!:number
-    username!:string;
-    password!:string;
-    nom!:string;
-    prenom!:string;
-    mail!:string;
-    role!: Role;
 
    
 
