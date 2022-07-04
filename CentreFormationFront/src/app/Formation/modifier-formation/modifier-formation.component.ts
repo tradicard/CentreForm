@@ -52,8 +52,8 @@ export class ModifierFormationComponent implements OnInit {
   }
 
   retour(): void {
-    //Reotur à l'accueil mettre redirect
-    this.router.navigateByUrl('')
+    
+    this.router.navigateByUrl('/Acceuil')
   }
 
 }

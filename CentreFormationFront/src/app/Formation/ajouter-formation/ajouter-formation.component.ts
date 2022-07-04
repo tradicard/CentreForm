@@ -35,7 +35,6 @@ export class AjouterFormationComponent implements OnInit {
 
   retour():void
   {
-    //mettre url accueil
-    this.router.navigateByUrl('/accueil')
+    this.router.navigateByUrl('/Acceuil')
   }
 }

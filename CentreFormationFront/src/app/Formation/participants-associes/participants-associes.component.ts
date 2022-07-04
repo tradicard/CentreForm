@@ -31,4 +31,10 @@ export class ParticipantsAssociesComponent implements OnInit {
       
     )*/
   }
+
+
+  retour():void
+  {
+    this.router.navigateByUrl('/Acceuil')
+  }
 }

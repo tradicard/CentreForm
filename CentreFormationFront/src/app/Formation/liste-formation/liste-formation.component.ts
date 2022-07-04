@@ -73,9 +73,7 @@ export class ListeFormationComponent implements OnInit {
 
 
   retour():void{
-
-    //mettre redirection accueil
-    this.router.navigateByUrl('/accueil')
+    this.router.navigateByUrl('/Acceuil')
   }
 
   logout()
