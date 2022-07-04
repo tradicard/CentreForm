@@ -11,7 +11,7 @@ import com.intiFormation.entity.Role;
 
 
 public interface IFormateurService {
-	
+	public Formateur chercherParUsername(String username);
 	public void modifierService(Formateur r);
 	public void supprimerService(int id);
 	public List<Formateur> getAllService();

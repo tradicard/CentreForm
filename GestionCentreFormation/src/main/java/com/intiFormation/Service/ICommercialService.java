@@ -11,7 +11,7 @@ import com.intiFormation.entity.Role;
 
 
 public interface ICommercialService {
-	
+	public Commercial chercherParUsername(String username);
 	public void modifierService(Commercial r);
 	public void supprimerService(int id);
 	public List<Commercial> getAllService();

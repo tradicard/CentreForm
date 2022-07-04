@@ -34,7 +34,9 @@ public class Participant extends Utilisateur {
 	private List<Paiement> paiements;
 	
 	
-	
+	public Participant(String nom, String prenom, String username, String password, String mail, Role role) {
+		super(nom, prenom, username, password, mail, role);
+	}
 	
 	
 	

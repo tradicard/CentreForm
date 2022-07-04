@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.intiFormation.dao.IAssistantDao;
 import com.intiFormation.dao.IRoleDao;
 import com.intiFormation.entity.Assistant;
+import com.intiFormation.entity.Commercial;
 import com.intiFormation.entity.Role;
 @Service
 public class AssistantService implements IAssistantService{
@@ -24,7 +25,9 @@ public class AssistantService implements IAssistantService{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	public Assistant chercherParUsername(String username) {
+		return adao.findByUsername(username);
+	}
 	public void ajouterService(Assistant r) {
 		adao.save(r);
 	}

@@ -59,6 +59,14 @@ public class Formation {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public Formation(String libFormation, String description, String dateDebut, String dateFin, int prix) {
+		super();
+		this.libFormation = libFormation;
+		this.description = description;
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+		this.prix = prix;
+	}
 	public int getIdFormation() {
 		return idFormation;
 	}

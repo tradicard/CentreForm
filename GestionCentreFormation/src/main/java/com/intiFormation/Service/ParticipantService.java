@@ -22,6 +22,7 @@ import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Paiement;
 import com.intiFormation.entity.Participant;
 import com.intiFormation.entity.Role;
+import com.intiFormation.entity.Utilisateur;
 @Service
 public class ParticipantService implements IParticipantService{
 
@@ -37,6 +38,9 @@ public class ParticipantService implements IParticipantService{
 		// TODO Auto-generated constructor stub
 	}
 
+	public Participant chercherParUsername(String username) {
+		return pdao.findByUsername(username);
+	}
 	public void ajouterService(Participant r) {
 		pdao.save(r);
 	}

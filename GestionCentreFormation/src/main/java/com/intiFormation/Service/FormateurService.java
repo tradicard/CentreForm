@@ -17,6 +17,7 @@ import com.intiFormation.entity.Commercial;
 import com.intiFormation.entity.Contact;
 import com.intiFormation.entity.Formateur;
 import com.intiFormation.entity.Formation;
+import com.intiFormation.entity.Participant;
 import com.intiFormation.entity.Role;
 @Service
 public class FormateurService implements IFormateurService{
@@ -33,6 +34,9 @@ public class FormateurService implements IFormateurService{
 		// TODO Auto-generated constructor stub
 	}
 
+	public Formateur chercherParUsername(String username) {
+		return fordao.findByUsername(username);
+	}
 	public void ajouterService(Formateur r) {
 		fordao.save(r);
 	}

@@ -10,7 +10,7 @@ import com.intiFormation.entity.Role;
 
 
 public interface IAssistantService {
-	
+	public Assistant chercherParUsername(String username);
 	public void modifierService(Assistant r);
 	public void supprimerService(int id);
 	public List<Assistant> getAllService();
