@@ -36,7 +36,13 @@ export class ConnectionComponent implements OnInit {
            
            
          sessionStorage.setItem("u",JSON.stringify(this.user))
+         if (this.user.role.libRole==="participant"){
+          this.router.navigateByUrl('Acceuil')
+         }else{
+          this.router.navigateByUrl('AcceuilAdmin')
+         }
          
+
          }
        )
      },

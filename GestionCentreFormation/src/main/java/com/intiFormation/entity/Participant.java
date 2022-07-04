@@ -23,6 +23,9 @@ public class Participant extends Utilisateur {
 	joinColumns=@JoinColumn(name="idParticipant"),
 	inverseJoinColumns=@JoinColumn(name="idFormation"))
 	private List<Formation> formations;
+	@OneToMany(mappedBy = "participant",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE}, orphanRemoval = true)
+	@JsonIgnore
+	private List<HistoriqueParticipant> historique;
 	@OneToMany(mappedBy = "participant",fetch = FetchType.LAZY, cascade = {CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonIgnore
 	private List<Relance> relances;
@@ -34,10 +37,14 @@ public class Participant extends Utilisateur {
 	
 	
 	
+	
+
 	public Participant(String nom, String prenom, String username, String password, String mail, Role role,
-			List<Formation> formations, List<Relance> relances, List<Paiement> paiements) {
+			List<Formation> formations, List<HistoriqueParticipant> historique, List<Relance> relances,
+			List<Paiement> paiements) {
 		super(nom, prenom, username, password, mail, role);
 		this.formations = formations;
+		this.historique = historique;
 		this.relances = relances;
 		this.paiements = paiements;
 	}
@@ -66,6 +73,14 @@ public class Participant extends Utilisateur {
 
 	public void setPaiements(List<Paiement> paiements) {
 		this.paiements = paiements;
+	}
+
+	public List<HistoriqueParticipant> getHistorique() {
+		return historique;
+	}
+
+	public void setHistorique(List<HistoriqueParticipant> historique) {
+		this.historique = historique;
 	}
 	
 	

@@ -12,13 +12,5 @@ export class Prospect
 
     contacts!:Contact[]
 
-    constructor(idProspect:number, nom:string, prenom:string, mail:string, tel:string)
-    {
-       
-        this.idProspect=idProspect
-        this.nom=nom
-        this.prenom=prenom
-        this.mail=mail
-        this.tel=tel
-    }
+    
 }

@@ -8,6 +8,10 @@ export class Utilisateur
     nom!:string;
     prenom!:string;
     mail!:string;
+<<<<<<< HEAD
     role!:Role
     
+=======
+    role!: Role; 
+>>>>>>> 69851a7b26d1828166f617bb4b2e6cd20fde2814
 }
