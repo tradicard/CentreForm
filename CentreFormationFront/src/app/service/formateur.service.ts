@@ -29,8 +29,8 @@ export class FormateurService {
     return this.http.delete('http://localhost:8016/api/formateurs/'+idFormateur)
   }
 
-  modifier(formData:FormData)
+  modifier(Formateur:Formateur)
   {
-    return this.http.put<Formateur>('http://localhost:8016/api/formateurs', formData)
+    return this.http.put<Formateur>('http://localhost:8016/api/formateurs', Formateur)
   }
 }
