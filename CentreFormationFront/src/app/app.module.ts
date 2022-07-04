@@ -7,32 +7,26 @@ import { AppComponent } from './app.component';
 import { ConnectionComponent } from './EnsConnection/connection/connection.component';
 import { HttpInterceptorService } from './service/http-interceptor.service';
 import { InscriptionComponent } from './EnsConnection/inscription/inscription.component';
-<<<<<<< HEAD
 import { AjoutFormateurComponent } from './GestionFormateur/ajout-formateur/ajout-formateur.component';
 import { ListeFormateurComponent } from './GestionFormateur/liste-formateur/liste-formateur.component';
 import { ModifierFormateurComponent } from './GestionFormateur/modifier-formateur/modifier-formateur.component';
-=======
 import { AcceuilParticipantComponent } from './Acceuil/acceuil-participant/acceuil-participant.component';
 import { AcceuilAdminComponent } from './Acceuil/acceuil-admin/acceuil-admin.component';
 import { SearchComponent } from './search/search.component';
 import { SingleformationComponent } from './singleformation/singleformation.component';
->>>>>>> 4156730ac4e0f1cf5ddf44c22a1b419442ba6262
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnectionComponent,
     InscriptionComponent,
-<<<<<<< HEAD
     AjoutFormateurComponent,
     ListeFormateurComponent,
-    ModifierFormateurComponent
-=======
+    ModifierFormateurComponent,
     AcceuilParticipantComponent,
     AcceuilAdminComponent,
     SearchComponent,
     SingleformationComponent
->>>>>>> 4156730ac4e0f1cf5ddf44c22a1b419442ba6262
   ],
   imports: [
     BrowserModule,
