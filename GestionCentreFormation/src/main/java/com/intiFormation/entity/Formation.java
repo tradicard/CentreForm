@@ -2,6 +2,7 @@ package com.intiFormation.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Formation {
@@ -21,25 +26,19 @@ public class Formation {
 	private String dateDebut;
 	private String dateFin;
 	private int prix;
-	@ManyToOne(fetch=FetchType.EAGER)
+	@OneToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="idFormateur")
 	private Formateur formateur ;
+	@OneToMany(mappedBy = "formation",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE}, orphanRemoval = true)
+	@JsonIgnore
+	private List<HistoriqueFormateur> historiqueFormateur;
+	
 	@ManyToMany(mappedBy = "formations")
 	private List<Participant> participants ;
 	
 	
 	
-	public Formation(String libFormation, String description, String dateDebut, String dateFin, int prix,
-			Formateur formateur, List<Participant> participants) {
-		super();
-		this.libFormation = libFormation;
-		this.description = description;
-		this.dateDebut = dateDebut;
-		this.dateFin = dateFin;
-		this.prix = prix;
-		this.formateur = formateur;
-		this.participants = participants;
-	}
+	
 	public Formation() {
 		super();
 		// TODO Auto-generated constructor stub
