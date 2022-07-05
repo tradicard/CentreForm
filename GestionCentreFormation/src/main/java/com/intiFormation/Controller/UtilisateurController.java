@@ -83,11 +83,8 @@ public class UtilisateurController {
 			}
 		}
 		
-		Optional<Role> op=rs.selectByIdService(2);
-		Role r=op.get();
-		String pass=u.getPassword();
-		pass=bc.encode(pass);
-		u=new Utilisateur(u.getNom(),u.getPrenom(),u.getUsername(),pass,u.getMail(),r);
+		String pass=bc.encode(u.getPassword());
+		u.setPassword(pass);
 		us.ajouterService(u);
 		
 	}

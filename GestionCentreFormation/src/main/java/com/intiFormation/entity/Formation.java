@@ -37,6 +37,7 @@ public class Formation {
 	@JsonIgnore
 	private List<HistoriqueParticipant> historiqueParticipant;
 	@ManyToMany(mappedBy = "formations")
+
 	private List<Participant> participants ;
 	
 	

@@ -72,12 +72,8 @@ public class CommercialController {
 			}
 		}
 		
-		Optional<Role> op=rs.selectByIdService(4);
-		Role r=op.get();
-		String pass=u.getPassword();
-		pass=bc.encode(pass);
-		List<Contact> liste=new ArrayList <Contact>();
-		u=new Commercial(u.getNom(),u.getPrenom(),u.getUsername(),pass,u.getMail(),r,liste);
+		String pass=bc.encode(u.getPassword());
+		u.setPassword(pass);
 		coms.ajouterService(u);
 	}
 	

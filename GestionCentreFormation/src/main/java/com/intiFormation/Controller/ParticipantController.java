@@ -85,11 +85,8 @@ public class ParticipantController {
 			}
 		}
 		
-		Optional<Role> op=rs.selectByIdService(1);
-		Role r=op.get();
-		String pass=u.getPassword();
-		pass=bc.encode(pass);
-		u=new Participant(u.getNom(),u.getPrenom(),u.getUsername(),pass,u.getMail(),r);
+		String pass=bc.encode(u.getPassword());
+		u.setPassword(pass);
 		parts.ajouterService(u);
 	}
 	

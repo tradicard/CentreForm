@@ -42,7 +42,6 @@ export class UtilisateurService {
   }
 
 
-
   getAllUtilisateurs()
   {
     return this.http.get<Utilisateur[]>('http://localhost:8016/api/utilisateurs')
