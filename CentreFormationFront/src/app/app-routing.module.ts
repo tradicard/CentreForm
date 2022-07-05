@@ -16,6 +16,9 @@ import { ModifierFormationComponent } from './Formation/modifier-formation/modif
 import { ParticipantsAssociesComponent } from './Formation/participants-associes/participants-associes.component';
 import { ListeProspectComponent } from './GestionProspect/liste-prospect/liste-prospect.component';
 import { ModifProspectComponent } from './GestionProspect/modif-prospect/modif-prospect.component';
+import { SingleProspectComponent } from './GestionProspect/single-prospect/single-prospect.component';
+import { ModifierContactComponent } from './GestionProspect/modifier-contact/modifier-contact.component';
+import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajouter-contact.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -26,12 +29,13 @@ const routes: Routes = [
   {path:'Acceuil',component:AcceuilParticipantComponent},
   {path:'AcceuilAdmin',component:AcceuilAdminComponent},
   {path:'inscriptionformation/:id',component:SingleformationComponent},
+  
+  //Prospect
   {path:'afficherProspects',component:ListeProspectComponent},
-  {path:'ModifProspects/:id',component:ModifProspectComponent},
-  
-  
-  
-  
+  {path:'modifierProspect/:id',component:ModifProspectComponent},
+  {path:'contactduProspect/:id',component:SingleProspectComponent},
+  {path:'modifierContact/:id',component:ModifierContactComponent},
+  {path:'ajouterContact',component:AjouterContactComponent},
 
   //Formation
   {path:'GestionFormation',component:ListeFormationComponent},

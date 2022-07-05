@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.intiFormation.Service.IAssistantService;
 import com.intiFormation.Service.ICommercialService;
 import com.intiFormation.Service.IContactService;
+import com.intiFormation.Service.IProspectService;
 import com.intiFormation.entity.Assistant;
 import com.intiFormation.entity.Commercial;
 import com.intiFormation.entity.Contact;
+import com.intiFormation.entity.Prospect;
 
 @RestController
 @RequestMapping("/api")
@@ -30,6 +32,8 @@ public class ContactController {
 	
 	@Autowired
 	IContactService cos;
+	@Autowired
+	IProspectService pros;
 	
 	@GetMapping("/contacts")
 	public List<Contact> GestionContact() {
@@ -45,6 +49,16 @@ public class ContactController {
 			c=op.get();
 		}
 		return c;
+	}
+	@GetMapping("/contactsnom/{id}")
+	public List<Contact> findByProspect_nom(@PathVariable("id") int id) {
+		Optional<Prospect> op=pros.selectByIdService(id);
+		Prospect c=new Prospect();
+		if (op.isPresent()) {
+			c=op.get();
+		}
+		List<Contact> liste=cos.findByProspect_nom(c.getNom());
+		return liste;
 	}
 	
 	@PostMapping("/contacts")

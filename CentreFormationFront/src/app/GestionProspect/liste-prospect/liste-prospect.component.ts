@@ -21,23 +21,18 @@ prospects!:Prospect[]
       response=>this.prospects=response
     )
   }
-  recuperer2(){
-    this.service.getAll().subscribe(
-      response=>this.prospects=response
-    )
-  }
   cont(idProspect:number){
-
+    this.router.navigateByUrl('contactduProspect/'+idProspect)
   }
 
-  suppr(id:number){
-    this.service.supprimer(id).subscribe(
-      response=>{
-        this.recuperer2();
-      }
+  modif(idProspect:number){
+    this.router.navigateByUrl('modifierProspect/'+idProspect)
+  }
+
+  suppr (idProspect:number){
+    this.service.supprimer(idProspect).subscribe(
+      response=>this.recuperer()
     )
   }
-  modif(id:number){
-    this.router.navigateByUrl('ModifProspects/'+id)
-  }
+
 }

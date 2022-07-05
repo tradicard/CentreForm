@@ -29,8 +29,8 @@ export class ProspectService {
     return this.http.delete('http://localhost:8016/api/propects/'+idProspect)
   }
 
-  modifier(formData:FormData)
+  modifier(prospect:Prospect)
   {
-    return this.http.put<Prospect>('http://localhost:8016/api/propects', formData)
+    return this.http.put<Prospect>('http://localhost:8016/api/propects', prospect)
   }
 }
