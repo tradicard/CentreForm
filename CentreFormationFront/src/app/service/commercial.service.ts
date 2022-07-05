@@ -19,6 +19,11 @@ export class CommercialService {
     return this.http.get<Commercial>('http://localhost:8016/api/commercials/'+idCommercial)
   }
 
+  getByUsername(username:string)
+  {
+    return this.http.get<Commercial>('http://localhost:8016/api/commercialsus/'+username)
+  }
+
   ajouter(commercial:Commercial)
   {
     return this.http.post<Commercial>('http://localhost:8016/api/commercials',commercial)

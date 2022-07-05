@@ -15,6 +15,7 @@ import { ListeFormationComponent } from './Formation/liste-formation/liste-forma
 import { ModifierFormationComponent } from './Formation/modifier-formation/modifier-formation.component';
 import { ParticipantsAssociesComponent } from './Formation/participants-associes/participants-associes.component';
 import { ListeProspectComponent } from './GestionProspect/liste-prospect/liste-prospect.component';
+import { ModifProspectComponent } from './GestionProspect/modif-prospect/modif-prospect.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path:'AcceuilAdmin',component:AcceuilAdminComponent},
   {path:'inscriptionformation/:id',component:SingleformationComponent},
   {path:'afficherProspects',component:ListeProspectComponent},
+  {path:'ModifProspects/:id',component:ModifProspectComponent},
   
   
   

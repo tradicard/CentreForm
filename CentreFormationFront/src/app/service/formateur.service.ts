@@ -24,6 +24,11 @@ export class FormateurService {
     return this.http.get<Formateur>('http://localhost:8016/api/formateurs/'+idFormateur)
   }
 
+  getByUsername(username:string)
+  {
+    return this.http.get<Formateur>('http://localhost:8016/api/formateursus/'+username)
+  }
+
   ajouter(formateur:Formateur)
   {
     return this.http.post<Formateur>('http://localhost:8016/api/formateurs',formateur)
