@@ -25,10 +25,10 @@ export class ParticipantsAssociesComponent implements OnInit {
   constructor(private serviceFormation:FormationService, private router:Router, private route:ActivatedRoute, private serviceParticipant:ParticipantService) { }
 
   ngOnInit(): void {
-    this.ParticipantsAssocies(this.idFormation)
+    //this.ParticipantsAssocies(this.idFormation)
   }
 
-  ParticipantsAssocies(idFormation:number)
+  /*ParticipantsAssocies(idFormation:number)
   {
     const id=this.route.snapshot.params['idFormation']
     this.serviceFormation.getById(id).subscribe
@@ -36,7 +36,7 @@ export class ParticipantsAssociesComponent implements OnInit {
       this.f.
     )
     
-  }
+  }*/
 
 
   retour():void
