@@ -47,6 +47,6 @@ export class SingleProspectComponent implements OnInit {
   }
 
   ajoutRDV () {
-    this.router.navigateByUrl('modifierContact/'+this.prospect.idProspect)
+    this.router.navigateByUrl('ajouterContact/'+this.prospect.idProspect)
   }
 }

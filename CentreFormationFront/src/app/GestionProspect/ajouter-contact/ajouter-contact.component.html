@@ -1,8 +1,7 @@
-<!--<form (ngSubmit)="SaveContact()">
-    <input type="hidden" name="idContact"  [(ngModel)]="prospect.idProspect"/><br>
-    Nom:<input type="text" name="nom"  [(ngModel)]="prospect.nom"/><br>
-    Prenom:<input type="text" name="prenom" [(ngModel)]="prospect.prenom"/><br>
-    Mail:<input type="text" name="mail" [(ngModel)]="prospect.mail"/><br>
-    Tel:<input type="text" name="tel" [(ngModel)]="prospect.tel"/><br>
-    <button type="submit">Valider</button>
-</form>-->
+
+<form (ngSubmit)="SaveContact()">
+    Date du Contact:<input type="text" name="dateContact"  (ngModel)="contact.dateContact"/><br>
+    Commercial:<select [(ngModel)]="selectedOption" name="selectedOption">
+        <option *ngFor="let c of commercials" value="{{c.id}}">{{c.nom}}</option>   
+    </select>
+</form>

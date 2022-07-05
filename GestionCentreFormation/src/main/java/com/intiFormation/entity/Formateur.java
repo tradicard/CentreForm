@@ -21,7 +21,7 @@ public class Formateur extends Utilisateur{
 	@OneToOne(mappedBy = "formateur",fetch = FetchType.EAGER, cascade = {CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonIgnore
 	private Formation formation;
-	@OneToMany(mappedBy = "formateur",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE}, orphanRemoval = true)
+	@OneToMany(mappedBy = "formateur",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonIgnore
 	private List<HistoriqueFormateur> historique;
 	

@@ -49,12 +49,13 @@ public class FormateurController {
 	@Autowired
 	IFormateurService frs;
 	@Autowired
-
 	IFormationService fos;
-
+	@Autowired
 	IRoleService rs;
+	
 	@Autowired
 	BCryptPasswordEncoder bc;
+	
 	@Autowired
 	IUtilisateurService us;
 

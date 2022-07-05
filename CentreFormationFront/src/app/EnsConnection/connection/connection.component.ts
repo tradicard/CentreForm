@@ -33,8 +33,12 @@ export class ConnectionComponent implements OnInit {
     private serviceform:FormateurService, private servicecom:CommercialService,private servicepart:ParticipantService) { }
 
   ngOnInit(): void {
+     this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['Connection']);
+      });  
     this.user=new Utilisateur()
     this.recupererR()
+    
   }
 
 
@@ -111,7 +115,7 @@ export class ConnectionComponent implements OnInit {
       response=>{ this.f=response
       console.log("fine")
 
-      sessionStorage.setItem("f",JSON.stringify(this.a))
+      sessionStorage.setItem("f",JSON.stringify(this.f))
       let uStr = sessionStorage.getItem("f");
       if (uStr) {
         this.f = JSON.parse(uStr) as Formateur;
@@ -128,7 +132,7 @@ export class ConnectionComponent implements OnInit {
       response=>{ this.c=response
       console.log("fine")
 
-      sessionStorage.setItem("c",JSON.stringify(this.a))
+      sessionStorage.setItem("c",JSON.stringify(this.c))
       let uStr = sessionStorage.getItem("c");
       if (uStr) {
         this.c = JSON.parse(uStr) as Commercial;
@@ -145,7 +149,7 @@ export class ConnectionComponent implements OnInit {
       response=>{ this.p=response
       console.log("fine")
 
-      sessionStorage.setItem("p",JSON.stringify(this.a))
+      sessionStorage.setItem("p",JSON.stringify(this.p))
       let uStr = sessionStorage.getItem("p");
       if (uStr) {
         this.p = JSON.parse(uStr) as Participant;
