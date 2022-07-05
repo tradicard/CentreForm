@@ -23,7 +23,7 @@ public class Participant extends Utilisateur {
 	joinColumns=@JoinColumn(name="idParticipant"),
 	inverseJoinColumns=@JoinColumn(name="idFormation"))
 	private List<Formation> formations;
-	@OneToMany(mappedBy = "participant",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE}, orphanRemoval = true)
+	@OneToMany(mappedBy = "participant",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonIgnore
 	private List<HistoriqueParticipant> historique;
 	@OneToMany(mappedBy = "participant",fetch = FetchType.LAZY, cascade = {CascadeType.REMOVE, CascadeType.MERGE})
