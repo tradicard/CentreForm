@@ -1,5 +1,6 @@
 import { Formation } from "./formation";
 import { HistoriqueFormateur } from "./historique-formateur";
+import { Role } from "./role";
 
 export class Formateur {
 
@@ -9,6 +10,7 @@ export class Formateur {
     nom!:string;
     prenom!:string;
     mail!:string;
+    role!:Role
     formation!:Formation
     historique!:HistoriqueFormateur[]
     

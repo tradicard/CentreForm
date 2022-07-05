@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -49,10 +50,10 @@ public class FormateurController {
 	@Autowired
 	IFormateurService frs;
 	@Autowired
-
 	IFormationService fos;
-
+	@Autowired
 	IRoleService rs;
+	
 	@Autowired
 	BCryptPasswordEncoder bc;
 	@Autowired
@@ -116,13 +117,23 @@ public class FormateurController {
 			}
 		}
 		
-		Optional<Role> op=rs.selectByIdService(3);
-		Role r=op.get();
-		String pass=u.getPassword();
-		pass=bc.encode(pass);
-		u=new Formateur(u.getNom(),u.getPrenom(),u.getUsername(),pass,u.getMail(),r);
-		frs.ajouterService(u);
-	}
+		
+		Optional<Role> op=rs.selectByIdService(u.getRole().getIdRole());
+		//Optional<Role> op=rs.selectByIdService(2);
+		if(op.isPresent()) {
+			
+			Role r=op.get();
+			String pass=u.getPassword();
+			pass=bc.encode(pass);
+			u=new Formateur(u.getNom(),u.getPrenom(),u.getUsername(),pass,u.getMail(),r);
+			frs.ajouterService(u);
+		}
+		
+		
+		
+		}
+		
+	
 	
 	
 	
