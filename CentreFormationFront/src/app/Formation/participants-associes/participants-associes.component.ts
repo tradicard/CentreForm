@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Formation } from 'src/app/models/formation';
+import { Participant } from 'src/app/models/participant';
 import { Utilisateur } from 'src/app/models/utilisateur';
+import { FormationService } from 'src/app/service/formation.service';
 import { ParticipantService } from 'src/app/service/participant.service';
 
 @Component({
@@ -16,8 +18,11 @@ export class ParticipantsAssociesComponent implements OnInit {
   idFormation!:number
 
   f!:Formation
+  p!:Participant
 
-  constructor(private router:Router, private route:ActivatedRoute, private serviceParticipant:ParticipantService) { }
+  participants!:Participant[]
+
+  constructor(private serviceFormation:FormationService, private router:Router, private route:ActivatedRoute, private serviceParticipant:ParticipantService) { }
 
   ngOnInit(): void {
     this.ParticipantsAssocies(this.idFormation)
@@ -26,13 +31,17 @@ export class ParticipantsAssociesComponent implements OnInit {
   ParticipantsAssocies(idFormation:number)
   {
     const id=this.route.snapshot.params['idFormation']
+    this.serviceFormation.getById(id).subscribe
+    (
+      this.f.
+    )
     
   }
 
 
   retour():void
   {
-    this.router.navigateByUrl('/Acceuil')
+    this.router.navigateByUrl('GestionFormation')
  
     
   }
