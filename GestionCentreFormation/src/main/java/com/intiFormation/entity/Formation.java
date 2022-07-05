@@ -29,10 +29,10 @@ public class Formation {
 	@OneToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="idFormateur")
 	private Formateur formateur ;
-	@OneToMany(mappedBy = "formation",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE}, orphanRemoval = true)
+	@OneToMany(mappedBy = "formation",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonIgnore
 	private List<HistoriqueFormateur> historiqueFormateur;
-	@OneToMany(mappedBy = "formation",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE}, orphanRemoval = true)
+	@OneToMany(mappedBy = "formation",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonIgnore
 	private List<HistoriqueParticipant> historiqueParticipant;
 	@ManyToMany(mappedBy = "formations")

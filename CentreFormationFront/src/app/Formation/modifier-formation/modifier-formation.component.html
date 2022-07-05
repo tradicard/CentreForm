@@ -9,7 +9,7 @@
     Prix: <input type="number" name="prix" [(ngModel)]="f.prix"/> <br>
 
     
-    Formateur: <td>Formateurs</td>
+    Attribuer un Formateur: 
     <select [(ngModel)]="forma" name="forma">
         <option *ngFor="let fo of formateurs" value="{{fo.id}}">{{fo.nom}}</option>
     </select>
@@ -18,7 +18,7 @@
     <button type="submit">Valider</button>
 </form> <br>
 
-<button (click)="retour()"> Retour Accueil </button> <br> <br>
+<button (click)="retour()"> Retour </button> <br> <br>
 
 
 

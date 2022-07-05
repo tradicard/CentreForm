@@ -69,14 +69,14 @@ export class AjouterFormationComponent implements OnInit {
    this.serviceForm.modifier(this.forma)
    
    this.serviceFormation.ajouter(this.f).subscribe()
-   this.router.navigateByUrl('afficherPassports')
+   this.router.navigateByUrl('GestionFormation')
 
 */
   }
 
   chargerLesFormateurs()
   {
-    this.serviceForm.getAll().subscribe(
+    this.serviceForm.getAllLibre().subscribe(
       response=>this.formateurs=response
     )
    
