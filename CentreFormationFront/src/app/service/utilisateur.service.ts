@@ -17,6 +17,11 @@ export class UtilisateurService {
   }
   deconnection (){
     sessionStorage.removeItem('token')
+    sessionStorage.removeItem('a')
+    sessionStorage.removeItem('u')
+    sessionStorage.removeItem('f')
+    sessionStorage.removeItem('c')
+    sessionStorage.removeItem('p')
     this.router.navigateByUrl('Connection')
   }
 
@@ -27,7 +32,6 @@ export class UtilisateurService {
   inscrire(user:Utilisateur){
     return this.http.post('http://localhost:8016/inscription',user)
   }
-
 
 
   getAllUtilisateurs()

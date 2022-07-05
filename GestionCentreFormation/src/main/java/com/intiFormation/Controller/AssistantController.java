@@ -76,12 +76,8 @@ public class AssistantController {
 			}
 		}
 		
-		Optional<Role> op=rs.selectByIdService(5);
-		Role r=op.get();
-		String pass=u.getPassword();
-		pass=bc.encode(pass);
-		List<Relance> liste=new ArrayList<Relance> ();
-		u=new Assistant(u.getNom(),u.getPrenom(),u.getUsername(),pass,u.getMail(),r,liste);
+		String pass=bc.encode(u.getPassword());
+		u.setPassword(pass);
 		as.ajouterService(u);
 	}
 	

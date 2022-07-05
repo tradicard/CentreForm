@@ -117,6 +117,7 @@ public class FormateurController {
 			}
 		}
 		
+
 		
 		Optional<Role> op=rs.selectByIdService(u.getRole().getIdRole());
 		//Optional<Role> op=rs.selectByIdService(2);
@@ -134,6 +135,12 @@ public class FormateurController {
 		}
 		
 	
+
+//		String pass=bc.encode(u.getPassword());
+//		u.setPassword(pass);
+//		frs.ajouterService(u);
+//	}
+
 	
 	
 	

@@ -1,0 +1,9 @@
+<header>
+    <div>
+        <a (click)="retourPP()">Retour accueil</a>
+        <p>
+        <button (click)="versconnection()" *ngIf="token==undefined">Se connecter</button>
+        <button (click)="deconnection()" *ngIf="token!=undefined">Se deconnecter</button>
+        </p>
+    </div>
+    </header>
