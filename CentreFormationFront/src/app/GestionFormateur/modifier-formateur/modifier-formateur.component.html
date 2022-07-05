@@ -5,5 +5,13 @@
     Username:<input type="text" name="username" [(ngModel)]="formateur.username"/><br>
     Password:<input type="password" name="password" [(ngModel)]="formateur.password"/><br>
     Mail:<input type="text" name="mail" [(ngModel)]="formateur.mail"/><br>
+
+    Role:
+    <select [(ngModel)]="selectedValue" name="selectedValue">
+        <option *ngFor="let r of roles" value="{{r.idRole}}">{{r.librole}}</option>
+    </select>
     <button type="submit">Valider</button>
+
+    <button type="submit">Valider</button>
+
 </form>
