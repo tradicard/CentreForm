@@ -21,6 +21,7 @@ import { ParticipantsAssociesComponent } from './Formation/participants-associes
 import { ListeProspectComponent } from './GestionProspect/liste-prospect/liste-prospect.component';
 import { ModifProspectComponent } from './GestionProspect/modif-prospect/modif-prospect.component';
 import { SingleProspectComponent } from './GestionProspect/single-prospect/single-prospect.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { SingleProspectComponent } from './GestionProspect/single-prospect/singl
     ListeProspectComponent,
     ModifProspectComponent,
     SingleProspectComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

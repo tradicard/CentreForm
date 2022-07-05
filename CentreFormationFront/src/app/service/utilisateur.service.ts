@@ -17,6 +17,11 @@ export class UtilisateurService {
   }
   deconnection (){
     sessionStorage.removeItem('token')
+    sessionStorage.removeItem('a')
+    sessionStorage.removeItem('u')
+    sessionStorage.removeItem('f')
+    sessionStorage.removeItem('c')
+    sessionStorage.removeItem('p')
     this.router.navigateByUrl('Connection')
   }
 
