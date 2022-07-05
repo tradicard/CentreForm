@@ -22,7 +22,6 @@ public class Participant extends Utilisateur {
 	@JoinTable(name="T_Participant_Formation",
 	joinColumns=@JoinColumn(name="idParticipant"),
 	inverseJoinColumns=@JoinColumn(name="idFormation"))
-	@JsonIgnore
 	private List<Formation> formations;
 	@OneToMany(mappedBy = "participant",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonIgnore
