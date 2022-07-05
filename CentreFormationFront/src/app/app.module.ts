@@ -21,6 +21,8 @@ import { ParticipantsAssociesComponent } from './Formation/participants-associes
 import { ListeProspectComponent } from './GestionProspect/liste-prospect/liste-prospect.component';
 import { ModifProspectComponent } from './GestionProspect/modif-prospect/modif-prospect.component';
 import { SingleProspectComponent } from './GestionProspect/single-prospect/single-prospect.component';
+import { ModifierContactComponent } from './GestionProspect/modifier-contact/modifier-contact.component';
+import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajouter-contact.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { SingleProspectComponent } from './GestionProspect/single-prospect/singl
     ParticipantsAssociesComponent,
     ListeProspectComponent,
     ModifProspectComponent,
-    SingleProspectComponent
+    SingleProspectComponent,
+    ModifierContactComponent,
+    AjouterContactComponent
   ],
   imports: [
     BrowserModule,

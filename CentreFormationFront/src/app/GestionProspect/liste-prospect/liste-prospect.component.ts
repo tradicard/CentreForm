@@ -22,6 +22,16 @@ prospects!:Prospect[]
     )
   }
   cont(idProspect:number){
+    this.router.navigateByUrl('contactduProspect/'+idProspect)
+  }
 
+  modif(idProspect:number){
+    this.router.navigateByUrl('modifierProspect/'+idProspect)
+  }
+
+  supp (idProspect:number){
+    this.service.supprimer(idProspect).subscribe(
+      response=>this.recuperer()
+    )
   }
 }

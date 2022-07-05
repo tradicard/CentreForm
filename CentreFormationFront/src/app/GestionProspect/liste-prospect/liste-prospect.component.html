@@ -1,4 +1,4 @@
-<p>liste-prospect works!</p>
+
 <table>
     <tr>
         <td>id</td>
@@ -19,7 +19,10 @@
         <td>{{p.prenom}}</td>
         <td>{{p.mail}}</td>
         <td>{{p.tel}}</td>
+        <td><button (click)="supp(p.idProspect)" type="button" class="btn btn-primary">Supprimer</button></td>
+        <td><button (click)="modif(p.idProspect)" type="button" class="btn btn-primary">Modifier</button></td>
         <td><button (click)="cont(p.idProspect)" type="button" class="btn btn-primary">Contacts</button></td>
+        
     </tr>
 
     

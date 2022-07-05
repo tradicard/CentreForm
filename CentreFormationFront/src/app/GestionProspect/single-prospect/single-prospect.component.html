@@ -1,1 +1,30 @@
-<p>single-prospect works!</p>
+<h1>Liste des contacts de :</h1>
+<h2>{{prospect.nom}} {{prospect.prenom}}</h2>
+<br>
+
+
+<table>
+    <tr>
+        <td>ID Contact</td>
+        <td>Date Contact</td>
+        <td>Pass&eacute; avec:</td>
+        <td>Supprimmer</td>
+        <td>Modifier</td>
+    </tr>
+
+    
+    
+    <tr *ngFor="let c of contacts">
+        <td>{{c.idContact}}</td>
+        <td>{{c.dateContact}}</td>
+        <td>{{c.commercial.nom}} {{c.commercial.prenom}}</td>
+        <td><button (click)="supp(c.idContact)" type="button" class="btn btn-primary">Supprimer</button></td>
+        <td><button (click)="modif(c.idContact)" type="button" class="btn btn-primary">Modifier</button></td>
+        
+    </tr>
+
+    <tr>
+        <button (click)="ajoutRDV()">Ajouter un contact</button>
+    </tr>
+    
+</table>

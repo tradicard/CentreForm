@@ -32,7 +32,10 @@ public class ContactService implements IContactService{
 	public void ajouterService(Contact r) {
 		condao.save(r);
 	}
-	
+	public List<Contact> findByProspect_nom(String nom){
+		List<Contact> liste=condao.findByProspect_nom(nom);
+		return liste;
+	}
 	public Optional<Contact> selectByIdService(int id){
 		Optional<Contact>op=condao.findById(id);
 		return op;

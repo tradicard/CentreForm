@@ -11,7 +11,7 @@ import com.intiFormation.entity.Role;
 
 
 public interface IContactService {
-	
+	public List<Contact> findByProspect_nom(String nom);
 	public void modifierService(Contact r);
 	public void supprimerService(int id);
 	public List<Contact> getAllService();

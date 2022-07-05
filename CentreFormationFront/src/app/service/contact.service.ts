@@ -19,6 +19,11 @@ export class ContactService {
     return this.http.get<Contact>('http://localhost:8016/api/contacts/'+idContact)
   }
 
+  getByProspect(idProspect:number) 
+  {
+    return this.http.get<Contact[]>('http://localhost:8016/api/contactsnom/'+idProspect)
+  }
+
   ajouter(contact:Contact)
   {
     return this.http.post<Contact>('http://localhost:8016/api/contacts',contact)
