@@ -49,9 +49,8 @@ public class FormateurController {
 	@Autowired
 	IFormateurService frs;
 	@Autowired
-
 	IFormationService fos;
-
+	@Autowired
 	IRoleService rs;
 	@Autowired
 	BCryptPasswordEncoder bc;
@@ -116,11 +115,8 @@ public class FormateurController {
 			}
 		}
 		
-		Optional<Role> op=rs.selectByIdService(3);
-		Role r=op.get();
-		String pass=u.getPassword();
-		pass=bc.encode(pass);
-		u=new Formateur(u.getNom(),u.getPrenom(),u.getUsername(),pass,u.getMail(),r);
+		String pass=bc.encode(u.getPassword());
+		u.setPassword(pass);
 		frs.ajouterService(u);
 	}
 	

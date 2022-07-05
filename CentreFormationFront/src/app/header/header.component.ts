@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Utilisateur } from '../models/utilisateur';
 import { UtilisateurService } from '../service/utilisateur.service';
 
@@ -19,10 +20,14 @@ export class HeaderComponent implements OnInit {
 
   deconnection (){
     this.service.deconnection()
+      console.log("deco reussi")
+        this.router.navigateByUrl('Connection')
+      
   }
 
   versconnection() {
     this.router.navigateByUrl('Connection')
+
   }
   
   
