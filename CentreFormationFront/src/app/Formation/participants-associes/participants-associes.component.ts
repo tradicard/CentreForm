@@ -38,14 +38,11 @@ export class ParticipantsAssociesComponent implements OnInit {
     
     )
     
-<<<<<<< HEAD
   
     
     
   }
-=======
   }*/
->>>>>>> 9110b65ee7ea3b98e55ad047ce8894521f7537df
 
 
   retour():void
