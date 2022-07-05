@@ -21,8 +21,13 @@ import { ParticipantsAssociesComponent } from './Formation/participants-associes
 import { ListeProspectComponent } from './GestionProspect/liste-prospect/liste-prospect.component';
 import { ModifProspectComponent } from './GestionProspect/modif-prospect/modif-prospect.component';
 import { SingleProspectComponent } from './GestionProspect/single-prospect/single-prospect.component';
+<<<<<<< HEAD
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+=======
 import { ModifierContactComponent } from './GestionProspect/modifier-contact/modifier-contact.component';
 import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajouter-contact.component';
+>>>>>>> 591faea4e6a08150466787e6410553fbcafa3ef1
 
 @NgModule({
   declarations: [
@@ -44,8 +49,13 @@ import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajout
     ListeProspectComponent,
     ModifProspectComponent,
     SingleProspectComponent,
+<<<<<<< HEAD
+    HeaderComponent,
+    FooterComponent
+=======
     ModifierContactComponent,
     AjouterContactComponent
+>>>>>>> 591faea4e6a08150466787e6410553fbcafa3ef1
   ],
   imports: [
     BrowserModule,
