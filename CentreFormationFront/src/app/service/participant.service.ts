@@ -19,6 +19,11 @@ export class ParticipantService {
     return this.http.get<Participant>('http://localhost:8016/api/participants/'+idParticipant)
   }
 
+  getByUsername(username:string)
+  {
+    return this.http.get<Participant>('http://localhost:8016/api/participantsus/'+username)
+  }
+
   ajouter(participant:Participant)
   {
     return this.http.post<Participant>('http://localhost:8016/api/participants',participant)

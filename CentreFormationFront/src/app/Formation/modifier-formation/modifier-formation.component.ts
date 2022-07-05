@@ -16,6 +16,8 @@ export class ModifierFormationComponent implements OnInit {
 
   f!:Formation
   idF!:number
+  forma!:number
+  
 
   participants!:Participant[]
   p!:Participant
@@ -25,21 +27,27 @@ export class ModifierFormationComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,private router:Router, private serviceFormation:FormationService, private serviceForm:FormateurService) { }
 
- //PROBLEME : reconnait pas les méthodes du service
+
 
   ngOnInit(): void {
     const id=+this.route.snapshot.params['idFormation']
-    this.recupererFormation(this.idF)
-    this.f=new Formation()
-
-    this.serviceForm.getAll().subscribe(response=>this.formateurs=response)
+    this.recupererFormation(id)
+    this.chargerLesFormateurs();
+    
+  
 
   }
 
- 
+  chargerLesFormateurs()
+  {
+    this.serviceForm.getAllLibre().subscribe(
+      response=>this.formateurs=response
+    )
+   
+  }
 
   recupererFormation(idFormation:number) {
-    //PROBLEME
+    
     this.serviceFormation.getById(idFormation).subscribe
     (
     response=>this.f=response
@@ -58,7 +66,7 @@ export class ModifierFormationComponent implements OnInit {
 
   retour(): void {
     
-    this.router.navigateByUrl('/Acceuil')
+    this.router.navigateByUrl('GestionFormation')
   }
 
 }

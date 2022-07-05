@@ -29,9 +29,10 @@ prospects!:Prospect[]
     this.router.navigateByUrl('modifierProspect/'+idProspect)
   }
 
-  supp (idProspect:number){
+  suppr (idProspect:number){
     this.service.supprimer(idProspect).subscribe(
       response=>this.recuperer()
     )
   }
+
 }

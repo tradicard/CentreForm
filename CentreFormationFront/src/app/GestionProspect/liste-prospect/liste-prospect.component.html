@@ -19,10 +19,9 @@
         <td>{{p.prenom}}</td>
         <td>{{p.mail}}</td>
         <td>{{p.tel}}</td>
-        <td><button (click)="supp(p.idProspect)" type="button" class="btn btn-primary">Supprimer</button></td>
-        <td><button (click)="modif(p.idProspect)" type="button" class="btn btn-primary">Modifier</button></td>
-        <td><button (click)="cont(p.idProspect)" type="button" class="btn btn-primary">Contacts</button></td>
-        
+        <td><button (click)="suppr(p.idProspect)" type="button" class="btn btn-primary">Supprimer {{p.nom}}</button></td>
+        <td><button (click)="modif(p.idProspect)" type="button" class="btn btn-primary">Modifier {{p.nom}}</button></td>
+        <td><button (click)="cont(p.idProspect)" type="button" class="btn btn-primary">Contacts de {{p.nom}}</button></td>
     </tr>
 
     
