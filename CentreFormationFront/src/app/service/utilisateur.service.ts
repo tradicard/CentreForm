@@ -43,7 +43,7 @@ export class UtilisateurService {
 
   getByUsername(username:string)
   {
-    return this.http.get<Utilisateur>('http://localhost:8016/api/utilisateurs/'+username)
+    return this.http.get<Utilisateur>('http://localhost:8016/api/utilisateursus/'+username)
   }
 
   ajouterUtilisateur(utilisateur:Utilisateur)

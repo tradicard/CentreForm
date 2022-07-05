@@ -11,26 +11,26 @@ export class ProspectService {
 
   getAll()
   {
-    return this.http.get<Prospect[]>('http://localhost:8016/api/propects')
+    return this.http.get<Prospect[]>('http://localhost:8016/api/prospects')
   }
  
   getById(idProspect:number)
   {
-    return this.http.get<Prospect>('http://localhost:8016/api/propects/'+idProspect)
+    return this.http.get<Prospect>('http://localhost:8016/api/prospects/'+idProspect)
   }
 
   ajouter(prospect:Prospect)
   {
-    return this.http.post<Prospect>('http://localhost:8016/api/propects',prospect)
+    return this.http.post<Prospect>('http://localhost:8016/api/prospects',prospect)
   }
 
   supprimer(idProspect:number)
   {
-    return this.http.delete('http://localhost:8016/api/propects/'+idProspect)
+    return this.http.delete('http://localhost:8016/api/prospects/'+idProspect)
   }
 
   modifier(prospect:Prospect)
   {
-    return this.http.put<Prospect>('http://localhost:8016/api/propects', prospect)
+    return this.http.put<Prospect>('http://localhost:8016/api/prospects', prospect)
   }
 }

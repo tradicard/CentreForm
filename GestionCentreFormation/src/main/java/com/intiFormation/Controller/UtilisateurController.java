@@ -67,7 +67,7 @@ public class UtilisateurController {
 		return c;
 	}
 	
-	@GetMapping("/utilisateurs/{username}")
+	@GetMapping("/utilisateursus/{username}")
 	public Utilisateur GestionUtilisateur(@PathVariable("username") String username) {
 		Utilisateur op=us.chercherParUsername(username);
 
