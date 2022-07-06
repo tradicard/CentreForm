@@ -35,7 +35,7 @@ const routes: Routes = [
   {path:'modifierProspect/:id',component:ModifProspectComponent},
   {path:'contactduProspect/:id',component:SingleProspectComponent},
   {path:'modifierContact/:id',component:ModifierContactComponent},
-  {path:'ajouterContact',component:AjouterContactComponent},
+  {path:'ajouterContact/:id',component:AjouterContactComponent},
 
   //Formation
   {path:'GestionFormation',component:ListeFormationComponent},

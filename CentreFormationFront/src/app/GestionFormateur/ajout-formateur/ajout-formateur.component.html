@@ -1,9 +1,20 @@
-<form (ngSubmit)="SaveFormateur()">
+<form (ngSubmit)="ajouter()">
     <input type="hidden" name="id"  [(ngModel)]="formateur.id"/><br>
     Nom:<input type="text" name="nom"  [(ngModel)]="formateur.nom"/><br>
     Prenom:<input type="text" name="prenom" [(ngModel)]="formateur.prenom"/><br>
     Username:<input type="text" name="username" [(ngModel)]="formateur.username"/><br>
     Password:<input type="password" name="password" [(ngModel)]="formateur.password"/><br>
     Mail:<input type="text" name="mail" [(ngModel)]="formateur.mail"/><br>
+
+
+   
+
+    Role:
+    <select [(ngModel)]="selectedValue" name="selectedValue">
+        <option *ngFor="let r of roles" value="{{r.idRole}}">{{r.librole}}</option>
+    </select>
     <button type="submit">Valider</button>
-</form>
+
+</form> <br>
+
+<button (click)="retour()"> Retour Gestion formateurs</button> <br> <br>

@@ -16,6 +16,7 @@ export class ParticipantsAssociesComponent implements OnInit {
   @Input() u!:Utilisateur
 
   idFormation!:number
+  idParticipant!:number
 
   f!:Formation
   p!:Participant
@@ -33,9 +34,14 @@ export class ParticipantsAssociesComponent implements OnInit {
     const id=this.route.snapshot.params['idFormation']
     this.serviceFormation.getById(id).subscribe
     (
-      this.f.
+     response=>this.f=response
+    
     )
     
+  
+    
+    
+  }
   }*/
 
 

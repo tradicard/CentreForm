@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Assistant } from '../models/assistant';
 import { Utilisateur } from '../models/utilisateur';
 
 @Injectable({
@@ -17,12 +18,19 @@ export class UtilisateurService {
   }
   deconnection (){
     sessionStorage.removeItem('token')
+    console.log("plus de token")
     sessionStorage.removeItem('a')
+    console.log("plus de a")
+    
     sessionStorage.removeItem('u')
+    console.log("plus de u")
     sessionStorage.removeItem('f')
+    console.log("plus de f")
     sessionStorage.removeItem('c')
+    console.log("plus de c")
     sessionStorage.removeItem('p')
-    return this.router.navigateByUrl('Connection')
+    console.log("plus de p")
+    this.router.navigateByUrl('Connection')
   }
 
   getU() {
