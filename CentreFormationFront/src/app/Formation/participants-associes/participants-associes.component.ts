@@ -37,7 +37,10 @@ export class ParticipantsAssociesComponent implements OnInit {
      response=>this.f=response
     
     )
-    
+    this.serviceParticipant.getAll().subscribe
+    (
+      response=>this.f.participants
+    )
   
     
     

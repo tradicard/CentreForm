@@ -1,14 +1,30 @@
 package com.intiFormation.Controller;
 
+
+import java.sql.Date;
+import java.time.ZonedDateTime;
+import java.util.UUID;
+
+import org.quartz.JobBuilder;
+import org.quartz.JobDataMap;
+import org.quartz.JobDetail;
 import org.quartz.Scheduler;
+import org.quartz.SchedulerException;
+import org.quartz.SimpleScheduleBuilder;
+import org.quartz.Trigger;
+import org.quartz.TriggerBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.intiFormation.entity.ScheduleEmailRequest;
 import com.intiFormation.entity.ScheduleEmailResponse;
 
 @RestController
@@ -21,7 +37,7 @@ public class EmailSchedulerController {
     private Scheduler scheduler;
 
     @PostMapping("/scheduleEmail")
-    public ResponseEntity<ScheduleEmailResponse> scheduleEmail(@Valid @RequestBody ScheduleEmailRequest scheduleEmailRequest) {
+    public ResponseEntity<ScheduleEmailResponse> scheduleEmail(@Validated @RequestBody ScheduleEmailRequest scheduleEmailRequest) {
         try {
             ZonedDateTime dateTime = ZonedDateTime.of(scheduleEmailRequest.getDateTime(), scheduleEmailRequest.getTimeZone());
             if(dateTime.isBefore(ZonedDateTime.now())) {

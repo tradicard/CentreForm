@@ -33,12 +33,8 @@ export class ConnectionComponent implements OnInit {
     private serviceform:FormateurService, private servicecom:CommercialService,private servicepart:ParticipantService) { }
 
   ngOnInit(): void {
-     this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
-      this.router.navigate(['Connection']);
-      });  
     this.user=new Utilisateur()
     this.recupererR()
-    
   }
 
 
@@ -156,6 +152,9 @@ export class ConnectionComponent implements OnInit {
       }
       console.log(this.p.id)
 
+      sessionStorage.setItem("idp",this.p.id.toString())
+      console.log(this.p.id)
+      
 
        this.router.navigateByUrl('Acceuil')})
 

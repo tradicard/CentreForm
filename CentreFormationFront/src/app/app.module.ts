@@ -23,7 +23,14 @@ import { ModifProspectComponent } from './GestionProspect/modif-prospect/modif-p
 import { SingleProspectComponent } from './GestionProspect/single-prospect/single-prospect.component';
 import { HeaderComponent } from './header/header.component';
 import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajouter-contact.component';
+import { PaiementComponent } from './GestionPaiement/Participant/paiement/paiement.component';
+import { VoirPaiementduParticipantAdminComponent } from './GestionPaiement/Admin/voir-paiementdu-participant-admin/voir-paiementdu-participant-admin.component';
+import { AfficherPaiementAdminComponent } from './GestionPaiement/Admin/afficher-paiement-admin/afficher-paiement-admin.component';
+import { AfficherPaiementComponent } from './GestionPaiement/Participant/afficher-paiement/afficher-paiement.component';
+import { ModifierContactsComponent } from './GestionProspect/modifier-contacts/modifier-contacts.component'
+
 import { DatePipe } from '@angular/common';
+import { SingleFormateurFormationsComponent } from './GestionFormateur/single-formateur-formations/single-formateur-formations.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +54,13 @@ import { DatePipe } from '@angular/common';
     SingleProspectComponent,
     HeaderComponent,
     AjouterContactComponent,
+    AfficherPaiementComponent,
+    AfficherPaiementAdminComponent,
+    VoirPaiementduParticipantAdminComponent,
+    PaiementComponent,
+    ModifierContactsComponent,
+    SingleFormateurFormationsComponent
+ 
   ],
   imports: [
     BrowserModule,

@@ -18,5 +18,5 @@ public interface IPaiementService {
 	public List<Paiement> getAllService();
 	public Optional<Paiement> selectByIdService(int id);
 	public void ajouterService(Paiement r);
-
+	public List<Paiement> findByParticipant_Id(int id);
 }

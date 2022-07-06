@@ -33,4 +33,8 @@ export class PaiementService {
   {
     return this.http.put<Paiement>('http://localhost:8016/api/paiements', formData)
   }
+
+  getByIdParticipant (idParticipant:number) {
+    return this.http.get<Paiement[]>('http://localhost:8016/api/paiementsidp/'+idParticipant)
+  }
 }

@@ -18,6 +18,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Participant extends Utilisateur {
 	
 	//private int idParticipant;
+
+	
+
+	private int compte;
+	
 	@ManyToMany(mappedBy = "participants",fetch = FetchType.EAGER, cascade = {CascadeType.MERGE})
 	@JsonIgnore
 	private List<Formation> formations;
@@ -53,6 +58,16 @@ public class Participant extends Utilisateur {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	
+	public int getCompte() {
+		return compte;
+	}
+
+	public void setCompte(int compte) {
+		this.compte = compte;
+	}
+
 
 	public List<Formation> getFormations() {
 		return formations;

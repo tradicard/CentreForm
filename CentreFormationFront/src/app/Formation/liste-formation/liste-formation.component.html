@@ -25,10 +25,9 @@
     <td>{{f.dateDebut}}</td>
     <td>{{f.dateFin}}</td>
     <td>{{f.prix}}</td>
-
-    <!--PB recup nom formateur-->
+    
     <td>{{f.formateur.nom}}</td> 
-    <!--Faire meth apres ds ts-->
+
     <td><button (click)="participantsAssocies(f.idFormation)">Liste des participants</button></td> 
     <td><button (click)="modifier(f.idFormation)">Modifier</button></td>
     <td><button (click)="supprimer(f.idFormation)">Supprimer</button></td> <br> <br>

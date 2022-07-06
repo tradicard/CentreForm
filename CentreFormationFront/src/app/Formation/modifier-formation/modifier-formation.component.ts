@@ -27,6 +27,8 @@ export class ModifierFormationComponent implements OnInit {
   formateur!:Formateur
   participants!:Participant[]
   p!:Participant
+
+  
   historique!:HistoriqueFormateur
   selectedValue!:Formateur
   formateurs!:Formateur[]
@@ -88,7 +90,7 @@ export class ModifierFormationComponent implements OnInit {
 
   retour(): void {
     
-    this.router.navigateByUrl('GestionFormation')
+    this.router.navigateByUrl('GestionFormateur')
   }
 
 }

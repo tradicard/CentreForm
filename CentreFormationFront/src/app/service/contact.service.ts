@@ -39,8 +39,8 @@ export class ContactService {
     return this.http.delete('http://localhost:8016/api/contacts/'+idContact)
   }
 
-  modifier(formData:FormData)
+  modifier(contact:Contact)
   {
-    return this.http.put<Contact>('http://localhost:8016/api/contacts', formData)
+    return this.http.put<Contact>('http://localhost:8016/api/contacts', contact)
   }
 }

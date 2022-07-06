@@ -30,6 +30,7 @@ export class UtilisateurService {
     console.log("plus de c")
     sessionStorage.removeItem('p')
     console.log("plus de p")
+    sessionStorage.removeItem('idp')
     this.router.navigateByUrl('Connection')
   }
 

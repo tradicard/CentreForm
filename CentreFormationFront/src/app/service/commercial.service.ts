@@ -39,8 +39,8 @@ export class CommercialService {
     return this.http.delete('http://localhost:8016/api/commercials/'+idCommercial)
   }
 
-  modifier(formData:FormData)
+  modifier(commercial:Commercial)
   {
-    return this.http.put<Commercial>('http://localhost:8016/api/commercials', formData)
+    return this.http.put<Commercial>('http://localhost:8016/api/commercials', commercial)
   }
 }
