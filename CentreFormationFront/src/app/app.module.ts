@@ -23,6 +23,7 @@ import { ModifProspectComponent } from './GestionProspect/modif-prospect/modif-p
 import { SingleProspectComponent } from './GestionProspect/single-prospect/single-prospect.component';
 import { HeaderComponent } from './header/header.component';
 import { TestComponent } from './test/test.component';
+import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajouter-contact.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { TestComponent } from './test/test.component';
     SingleProspectComponent,
     HeaderComponent,
     TestComponent,
+    AjouterContactComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,6 @@ import { ModifProspectComponent } from './GestionProspect/modif-prospect/modif-p
 import { SingleProspectComponent } from './GestionProspect/single-prospect/single-prospect.component';
 import { ModifierContactComponent } from './GestionProspect/modifier-contact/modifier-contact.component';
 import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajouter-contact.component';
-import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -43,7 +42,6 @@ const routes: Routes = [
   {path:'AjouterFormation',component:AjouterFormationComponent},
   {path:'ModifierFormation/:idFormation',component:ModifierFormationComponent},
   {path:'ParticipantsAssocies/:idFormation',component:ParticipantsAssociesComponent},
-  {path:'test',component:TestComponent},
 
 ];
 

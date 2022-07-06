@@ -13,7 +13,6 @@ import { ProspectService } from 'src/app/service/prospect.service';
   styleUrls: ['./ajouter-contact.component.css']
 })
 export class AjouterContactComponent implements OnInit {
-
   prospect!:Prospect
   commercials!:Commercial[]
   contact!:Contact
@@ -45,4 +44,5 @@ export class AjouterContactComponent implements OnInit {
   SaveContact() {
     console.log(this.datecontact)
   }
+
 }
