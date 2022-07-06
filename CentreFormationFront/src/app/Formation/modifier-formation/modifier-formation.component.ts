@@ -90,7 +90,7 @@ export class ModifierFormationComponent implements OnInit {
 
   retour(): void {
     
-    this.router.navigateByUrl('GestionFormation')
+    this.router.navigateByUrl('GestionFormateur')
   }
 
 }

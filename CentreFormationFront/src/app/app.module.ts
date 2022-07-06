@@ -26,6 +26,7 @@ import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajout
 import { ModifierContactsComponent } from './GestionProspect/modifier-contacts/modifier-contacts.component'
 
 import { DatePipe } from '@angular/common';
+import { SingleFormateurFormationsComponent } from './GestionFormateur/single-formateur-formations/single-formateur-formations.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { DatePipe } from '@angular/common';
     SingleProspectComponent,
     HeaderComponent,
     AjouterContactComponent,
-    ModifierContactsComponent
+    ModifierContactsComponent,
+    SingleFormateurFormationsComponent
  
   ],
   imports: [

@@ -8,6 +8,7 @@ import { HistoriqueFormateur } from '../models/historique-formateur';
 export class HistoriqueformateurService {
 
   constructor(private http:HttpClient) { }
+
   getAll()
   {
     return this.http.get<HistoriqueFormateur[]>('http://localhost:8016/api/historiqueformateurs')
@@ -15,12 +16,15 @@ export class HistoriqueformateurService {
 
 
  
-  getById(idFormateur:number)
+  getById(id:number)
   {
-    return this.http.get<HistoriqueFormateur>('http://localhost:8016/api/historiqueformateurs/'+idFormateur)
+    return this.http.get<HistoriqueFormateur>('http://localhost:8016/api/historiqueformateurs/'+id)
   }
 
- 
+ getByIdFormateur(id:number)
+ {
+  return this.http.get<HistoriqueFormateur>('http://localhost:8016/api/historiqueformateursidFormateur/'+id)
+ }
 
   ajouter(formateur:HistoriqueFormateur)
   {

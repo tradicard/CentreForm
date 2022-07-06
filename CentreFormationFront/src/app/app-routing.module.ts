@@ -20,12 +20,14 @@ import { SingleProspectComponent } from './GestionProspect/single-prospect/singl
 
 import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajouter-contact.component';
 import { ModifierContactsComponent } from './GestionProspect/modifier-contacts/modifier-contacts.component';
+import { SingleFormateurFormationsComponent } from './GestionFormateur/single-formateur-formations/single-formateur-formations.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
   {path:'afficherFormateur',component:ListeFormateurComponent},
   {path:'ajouterFormateur',component:AjoutFormateurComponent},
   {path:'modifierFormateur/:id',component:ModifierFormateurComponent},
+  {path:'formationsDuFormateur/:id',component:SingleFormateurFormationsComponent},
   {path:'searchformation/:ch',component:SearchComponent},
   {path:'Acceuil',component:AcceuilParticipantComponent},
   {path:'AcceuilAdmin',component:AcceuilAdminComponent},
@@ -43,6 +45,8 @@ const routes: Routes = [
   {path:'AjouterFormation',component:AjouterFormationComponent},
   {path:'ModifierFormation/:idFormation',component:ModifierFormationComponent},
   {path:'ParticipantsAssocies/:idFormation',component:ParticipantsAssociesComponent},
+
+  {path:'GestionFormateur',component:ListeFormateurComponent},
 
 ];
 

@@ -5,6 +5,7 @@ import { Contact } from 'src/app/models/contact';
 import { CommercialService } from 'src/app/service/commercial.service';
 import { ContactService } from 'src/app/service/contact.service';
 import { ProspectService } from 'src/app/service/prospect.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-modifier-contacts',
@@ -14,14 +15,20 @@ import { ProspectService } from 'src/app/service/prospect.service';
 export class ModifierContactsComponent implements OnInit {
 
   contact!:Contact
-  datecontact!:string
+  datecontact!:Date
   selectedValue!:number
   idp!:number
 
   c!:Commercial
   commercials!:Commercial[]
 
-  constructor(private router:Router, private route:ActivatedRoute, private serviceProsp:ProspectService, private servicecont:ContactService, private serviceCom:CommercialService) { }
+
+
+  datec!:string
+
+  constructor(private router:Router, private route:ActivatedRoute, private serviceProsp:ProspectService, 
+    private servicecont:ContactService, private serviceCom:CommercialService, 
+    public datepipe: DatePipe) { }
 
   ngOnInit(): void {
     //recup idContact a modif->recup contact 
@@ -51,6 +58,10 @@ export class ModifierContactsComponent implements OnInit {
 
   ModifContact()
   {
+    let latest_date =this.datepipe.transform(this.datecontact, 'M/d/yy, h:mm a');
+    this.datec=latest_date!
+    console.log(this.datec)
+    this.contact.dateContact=this.datec
     this.serviceCom.getById(this.selectedValue).subscribe
     (
       response=>
@@ -66,4 +77,8 @@ export class ModifierContactsComponent implements OnInit {
   }
   )
 }
+
+
+
+
 }

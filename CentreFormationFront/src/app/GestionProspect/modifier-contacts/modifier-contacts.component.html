@@ -1,8 +1,8 @@
 <p>Modifier Contact</p>
 
 <form (ngSubmit)="ModifContact()">
-    
-    Date du Contact:<input type="text" name="dateContact"  [(ngModel)]="contact.dateContact"/><br>
+
+    Date du Contact:<input type="datetime-local" name="datecontact"  [(ngModel)]="datecontact"/><br>
     
     Commercial:
     <select [(ngModel)]="selectedValue" name="selectedValue">
