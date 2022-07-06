@@ -24,6 +24,10 @@ import { SingleProspectComponent } from './GestionProspect/single-prospect/singl
 import { HeaderComponent } from './header/header.component';
 import { TestComponent } from './test/test.component';
 import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajouter-contact.component';
+import { AjouterPaiementComponent } from './GestionPaiement/ajouter-paiement/ajouter-paiement.component';
+import { AfficherPaiementComponent } from './GestionPaiement/afficher-paiement/afficher-paiement.component';
+import { AfficherPaiementAdminComponent } from './GestionPaiement/afficher-paiement-admin/afficher-paiement-admin.component';
+import { ModifierPaiementAdminComponent } from './GestionPaiement/modifier-paiement-admin/modifier-paiement-admin.component';
 
 
 @NgModule({
@@ -49,6 +53,10 @@ import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajout
     HeaderComponent,
     TestComponent,
     AjouterContactComponent,
+    AjouterPaiementComponent,
+    AfficherPaiementComponent,
+    AfficherPaiementAdminComponent,
+    ModifierPaiementAdminComponent,
   ],
   imports: [
     BrowserModule,

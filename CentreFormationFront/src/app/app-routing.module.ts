@@ -19,6 +19,8 @@ import { ModifProspectComponent } from './GestionProspect/modif-prospect/modif-p
 import { SingleProspectComponent } from './GestionProspect/single-prospect/single-prospect.component';
 import { ModifierContactComponent } from './GestionProspect/modifier-contact/modifier-contact.component';
 import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajouter-contact.component';
+import { ModifierPaiementAdminComponent } from './GestionPaiement/modifier-paiement-admin/modifier-paiement-admin.component';
+import { AfficherPaiementAdminComponent } from './GestionPaiement/afficher-paiement-admin/afficher-paiement-admin.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -43,6 +45,9 @@ const routes: Routes = [
   {path:'ModifierFormation/:idFormation',component:ModifierFormationComponent},
   {path:'ParticipantsAssocies/:idFormation',component:ParticipantsAssociesComponent},
 
+  //Paiement
+  {path:'modifierPaiementAdmin/:idPaiement',component:ModifierPaiementAdminComponent},
+  {path:'afficherPaiementAdmin',component:AfficherPaiementAdminComponent},
 ];
 
 @NgModule({

@@ -1,0 +1,27 @@
+
+<table>
+    <tr>
+        <td>ID Paiement</td>
+        <td>Date Paiement</td>
+        <td>Montant</td>
+        <td>Reste</td>
+        <td>Participant</td>
+        <td>Supprimmer</td>
+        <td>Modifier</td>
+    </tr>
+
+    
+    
+    <tr *ngFor="let p of paiements">
+        <td>{{p.idPaiement}}</td>
+        <td>{{p.datePaiement}}</td>
+        <td>{{p.montant}}</td>
+        <td>{{p.reste}}</td>
+        <td>{{p.participant.nom}} {{p.participant.prenom}}</td>
+        <td><button (click)="suppr(p.idPaiement)" type="button" class="btn btn-primary">Supprimer</button></td>
+        <td><button (click)="modif(p.idPaiement)" type="button" class="btn btn-primary">Modifier</button></td>
+    </tr>
+
+    
+    
+</table>
