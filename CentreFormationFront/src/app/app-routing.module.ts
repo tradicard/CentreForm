@@ -19,8 +19,10 @@ import { ModifProspectComponent } from './GestionProspect/modif-prospect/modif-p
 import { SingleProspectComponent } from './GestionProspect/single-prospect/single-prospect.component';
 import { ModifierContactComponent } from './GestionProspect/modifier-contact/modifier-contact.component';
 import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajouter-contact.component';
-import { ModifierPaiementAdminComponent } from './GestionPaiement/modifier-paiement-admin/modifier-paiement-admin.component';
-import { AfficherPaiementAdminComponent } from './GestionPaiement/afficher-paiement-admin/afficher-paiement-admin.component';
+import { VoirPaiementduParticipantAdminComponent } from './GestionPaiement/Admin/voir-paiementdu-participant-admin/voir-paiementdu-participant-admin.component';
+import { AfficherPaiementAdminComponent } from './GestionPaiement/Admin/afficher-paiement-admin/afficher-paiement-admin.component';
+import { AfficherPaiementComponent } from './GestionPaiement/Participant/afficher-paiement/afficher-paiement.component';
+import { PaiementComponent } from './GestionPaiement/Participant/paiement/paiement.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -46,8 +48,11 @@ const routes: Routes = [
   {path:'ParticipantsAssocies/:idFormation',component:ParticipantsAssociesComponent},
 
   //Paiement
-  {path:'modifierPaiementAdmin/:idPaiement',component:ModifierPaiementAdminComponent},
   {path:'afficherPaiementAdmin',component:AfficherPaiementAdminComponent},
+  {path:'PaiementParticipantAdmin/:id',component:VoirPaiementduParticipantAdminComponent},
+  {path:'PaiementParticipant',component:AfficherPaiementComponent},
+  {path:'Paiement',component:PaiementComponent},
+  
 ];
 
 @NgModule({

@@ -20,6 +20,7 @@ export class Participant
     relances!:Relance[]
 
     paiements!:Paiement[]
+    compte!:number
 
    
 

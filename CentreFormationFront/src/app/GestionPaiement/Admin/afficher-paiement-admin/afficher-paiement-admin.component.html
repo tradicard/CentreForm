@@ -2,9 +2,11 @@
 <table>
     <tr>
         <td>ID Paiement</td>
-        <td>Date Paiement</td>
+        <td>Date Facturation</td>
         <td>Montant</td>
         <td>Reste</td>
+        <td>Date Dernier Paiement</td>
+        <td>Date Prochain Paiement</td>
         <td>Participant</td>
         <td>Supprimmer</td>
         <td>Modifier</td>
@@ -14,10 +16,12 @@
     
     <tr *ngFor="let p of paiements">
         <td>{{p.idPaiement}}</td>
-        <td>{{p.datePaiement}}</td>
+        <td>{{p.dateFacture}}</td>
         <td>{{p.montant}}</td>
         <td>{{p.reste}}</td>
-        <td>{{p.participant.nom}} {{p.participant.prenom}}</td>
+        <td>{{p.dateDernierPaiement}}</td>
+        <td>{{p.dateProchainPaiement}}</td>
+        <td><button (click)="versPaiementParticipant(p.participant.id)" type="button" class="btn btn-primary">{{p.participant.nom}} {{p.participant.prenom}}</button></td>
         <td><button (click)="suppr(p.idPaiement)" type="button" class="btn btn-primary">Supprimer</button></td>
         <td><button (click)="modif(p.idPaiement)" type="button" class="btn btn-primary">Modifier</button></td>
     </tr>

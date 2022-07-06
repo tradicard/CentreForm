@@ -13,7 +13,9 @@ public class Paiement {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPaiement;
-	private String datePaiement;
+	private String dateFacture;
+	private String dateDernierPaiement;
+	private String dateProchainPaiement;
 	private int montant;
 	private int reste;
 	
@@ -23,9 +25,9 @@ public class Paiement {
 	
 	
 	
-	public Paiement(String datePaiement, int montant, int reste, Participant participant) {
+	public Paiement(String dateFacture, int montant, int reste, Participant participant) {
 		super();
-		this.datePaiement = datePaiement;
+		this.dateFacture = dateFacture;
 		this.montant = montant;
 		this.reste = reste;
 		this.participant = participant;
@@ -52,14 +54,41 @@ public class Paiement {
 
 
 
-	public String getDatePaiement() {
-		return datePaiement;
+
+
+
+	public String getDateFacture() {
+		return dateFacture;
 	}
 
 
 
-	public void setDatePaiement(String datePaiement) {
-		this.datePaiement = datePaiement;
+	public void setDateFacture(String dateFacture) {
+		this.dateFacture = dateFacture;
+	}
+
+
+
+	public String getDateDernierPaiement() {
+		return dateDernierPaiement;
+	}
+
+
+
+	public void setDateDernierPaiement(String dateDernierPaiement) {
+		this.dateDernierPaiement = dateDernierPaiement;
+	}
+
+
+
+	public String getDateProchainPaiement() {
+		return dateProchainPaiement;
+	}
+
+
+
+	public void setDateProchainPaiement(String dateProchainPaiement) {
+		this.dateProchainPaiement = dateProchainPaiement;
 	}
 
 

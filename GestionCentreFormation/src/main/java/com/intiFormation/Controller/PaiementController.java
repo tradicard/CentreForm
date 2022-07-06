@@ -1,5 +1,8 @@
 package com.intiFormation.Controller;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,8 +56,19 @@ public class PaiementController {
 		return c;
 	}
 	
+	@GetMapping("/paiementsidp/{id}")
+	public List<Paiement> PaiementAvecIdParticipant(@PathVariable("id") int idParticipant) {
+		List<Paiement> c=pts.findByParticipant_Id(idParticipant);
+		return c;
+	}
+	
 	@PostMapping("/paiements")
 	public void SavePaiement(@RequestBody Paiement c) {
+		LocalDate localDate = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		String formattedString = localDate.format(formatter);
+		
+		c.setDateFacture(formattedString);
 		pts.ajouterService(c);
 	}
 	

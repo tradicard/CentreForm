@@ -1,0 +1,28 @@
+
+
+<table>
+    <tr>
+        <td>ID Paiement</td>
+        <td>Date Facturation</td>
+        <td>Montant</td>
+        <td>Reste</td>
+        <td>Date Dernier Paiement</td>
+        <td>Date Prochain Paiement</td>
+        <td>Payer</td>
+    </tr>
+
+    
+    
+    <tr *ngFor="let p of paiements">
+        <td>{{p.idPaiement}}</td>
+        <td>{{p.dateFacture}}</td>
+        <td>{{p.montant}}</td>
+        <td>{{p.reste}}</td>
+        <td>{{p.dateDernierPaiement}}</td>
+        <td>{{p.dateProchainPaiement}}</td>
+        <td><button (click)="payer()" type="button" class="btn btn-primary">Payer</button></td>
+    </tr>
+
+    
+    
+</table>

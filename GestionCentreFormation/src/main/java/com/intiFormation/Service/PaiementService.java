@@ -43,7 +43,11 @@ public class PaiementService implements IPaiementService{
 		Optional<Paiement>op=padao.findById(id);
 		return op;
 	}
-	
+	public List<Paiement> findByParticipant_Id(int id)
+	{
+		List<Paiement> op=padao.findByParticipant_Id(id);
+		return op;
+	}
 	public List<Paiement> getAllService(){
 		List<Paiement> liste=padao.findAll();
 		return liste;

@@ -33,4 +33,8 @@ export class AfficherPaiementAdminComponent implements OnInit {
       response=>this.recupererTt()
     )
   }
+
+  versPaiementParticipant(idParticipant:number) {
+    this.router.navigateByUrl('PaiementParticipantAdmin/'+idParticipant)
+  }
 }
