@@ -22,9 +22,8 @@ import { ListeProspectComponent } from './GestionProspect/liste-prospect/liste-p
 import { ModifProspectComponent } from './GestionProspect/modif-prospect/modif-prospect.component';
 import { SingleProspectComponent } from './GestionProspect/single-prospect/single-prospect.component';
 import { HeaderComponent } from './header/header.component';
-import { TestComponent } from './test/test.component';
 import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajouter-contact.component';
-
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -47,17 +46,18 @@ import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajout
     ModifProspectComponent,
     SingleProspectComponent,
     HeaderComponent,
-    TestComponent,
     AjouterContactComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS, useClass:HttpInterceptorService, multi:true}
+    {provide:HTTP_INTERCEPTORS, useClass:HttpInterceptorService, multi:true},
+    DatePipe,
   ],
   bootstrap: [AppComponent]
 })

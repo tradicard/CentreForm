@@ -4,17 +4,20 @@
 <form (ngSubmit)="modif()" >
     Nom de la Formation: <input type="text" name="libFormation" [(ngModel)]="f.libFormation" /><br>
     Description: <input type="text" name="description" [(ngModel)]="f.description" /><br>
-    Date de Debut: <input type="text" name="dateDebut" [(ngModel)]="f.dateDebut"/> <br>
-    Date de Fin: <input type="text" name="dateFin" [(ngModel)]="f.dateFin"/> <br>
+    Date de Debut: {{f.dateDebut}} <br>
+    nouvelle Date de Debut: <input type="date" name="datedebu" [(ngModel)]="datedebu"/> <br>
+    Date de Fin: {{f.dateFin}} <br>
+    nouvelle Date de Fin: <input type="date" name="datefin" [(ngModel)]="datefin"/> <br>
     Prix: <input type="number" name="prix" [(ngModel)]="f.prix"/> <br>
 
-    
+  
+   
     Attribuer un Formateur: 
     <select [(ngModel)]="forma" name="forma">
         <option *ngFor="let fo of formateurs" value="{{fo.id}}">{{fo.nom}}</option>
     </select>
 
-    
+   
     <button type="submit">Valider</button>
 </form> <br>
 

@@ -66,8 +66,9 @@ public class FormationController {
 	}
 	
 	@PostMapping("/formations")
-	public void SaveFormation(@RequestBody Formation c) {
+	public Formation SaveFormation(@RequestBody Formation c) {
 		fns.ajouterService(c);
+		return c;
 	}
 	
 	
@@ -81,8 +82,9 @@ public class FormationController {
 	
 	
 	@PutMapping("/formations")
-	public void EditFormation(@RequestBody Formation c) {
+	public Formation EditFormation(@RequestBody Formation c) {
 		fns.modifierService(c);
+		return c;
 	}
 
 }
