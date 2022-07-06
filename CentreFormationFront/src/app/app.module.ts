@@ -25,6 +25,7 @@ import { HeaderComponent } from './header/header.component';
 import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajouter-contact.component';
 import { ModifierContactsComponent } from './GestionProspect/modifier-contacts/modifier-contacts.component'
 
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -55,10 +56,12 @@ import { ModifierContactsComponent } from './GestionProspect/modifier-contacts/m
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS, useClass:HttpInterceptorService, multi:true}
+    {provide:HTTP_INTERCEPTORS, useClass:HttpInterceptorService, multi:true},
+    DatePipe,
   ],
   bootstrap: [AppComponent]
 })
