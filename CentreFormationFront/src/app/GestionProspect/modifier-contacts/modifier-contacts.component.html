@@ -1,0 +1,13 @@
+<p>Modifier Contact</p>
+
+<form (ngSubmit)="ModifContact()">
+    
+    Date du Contact:<input type="text" name="dateContact"  [(ngModel)]="contact.dateContact"/><br>
+    
+    Commercial:
+    <select [(ngModel)]="selectedValue" name="selectedValue">
+        <option *ngFor="let c of commercials" value="{{c.id}}">{{c.nom}}</option>   
+    </select> <br> <br>
+    
+    <button type="submit">Valider Modifications</button>
+</form>

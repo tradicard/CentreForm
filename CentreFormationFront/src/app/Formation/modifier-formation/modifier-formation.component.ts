@@ -22,7 +22,7 @@ export class ModifierFormationComponent implements OnInit {
   participants!:Participant[]
   p!:Participant
 
-  selectedValue!:Formateur
+  
   formateurs!:Formateur[]
 
   constructor(private route:ActivatedRoute,private router:Router, private serviceFormation:FormationService, private serviceForm:FormateurService) { }

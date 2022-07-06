@@ -17,8 +17,9 @@ import { ParticipantsAssociesComponent } from './Formation/participants-associes
 import { ListeProspectComponent } from './GestionProspect/liste-prospect/liste-prospect.component';
 import { ModifProspectComponent } from './GestionProspect/modif-prospect/modif-prospect.component';
 import { SingleProspectComponent } from './GestionProspect/single-prospect/single-prospect.component';
-import { ModifierContactComponent } from './GestionProspect/modifier-contact/modifier-contact.component';
+
 import { AjouterContactComponent } from './GestionProspect/ajouter-contact/ajouter-contact.component';
+import { ModifierContactsComponent } from './GestionProspect/modifier-contacts/modifier-contacts.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -34,7 +35,7 @@ const routes: Routes = [
   {path:'afficherProspects',component:ListeProspectComponent},
   {path:'modifierProspect/:id',component:ModifProspectComponent},
   {path:'contactduProspect/:id',component:SingleProspectComponent},
-  {path:'modifierContact/:id',component:ModifierContactComponent},
+  {path:'modifierContact/:id',component:ModifierContactsComponent},
   {path:'ajouterContact/:id',component:AjouterContactComponent},
 
   //Formation
