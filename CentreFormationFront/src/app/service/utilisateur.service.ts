@@ -22,7 +22,7 @@ export class UtilisateurService {
     sessionStorage.removeItem('f')
     sessionStorage.removeItem('c')
     sessionStorage.removeItem('p')
-    this.router.navigateByUrl('Connection')
+    return this.router.navigateByUrl('Connection')
   }
 
   getU() {

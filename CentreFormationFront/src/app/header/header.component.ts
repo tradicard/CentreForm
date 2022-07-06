@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
   deconnection (){
     this.service.deconnection()
       console.log("deco reussi")
-        this.router.navigateByUrl('Connection')
       
   }
 
