@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Commercial } from 'src/app/models/commercial';
@@ -15,17 +16,20 @@ import { ProspectService } from 'src/app/service/prospect.service';
 export class AjouterContactComponent implements OnInit {
   prospect!:Prospect
   commercials!:Commercial[]
+  com!:Commercial
   contact!:Contact
   selectedOption!:number
-  datecontact!:string
+  datecontact!:Date
+  datec!:string
 
   constructor(private serviceContact:ContactService,private serviceProspect:ProspectService,private serviceCommercial:CommercialService,
-    private route:ActivatedRoute,private router:Router) { }
+    private route:ActivatedRoute,private router:Router, public datepipe: DatePipe) { }
 
   ngOnInit(): void {
     this.recupererP()
     this.recupererC()
     this.contact=new Contact()
+    this.datecontact=new Date()
   }
 
   recupererP () {
@@ -42,7 +46,22 @@ export class AjouterContactComponent implements OnInit {
   }
 
   SaveContact() {
-    console.log(this.datecontact)
+    const idProspect=+this.route.snapshot.params['id']
+  let latest_date =this.datepipe.transform(this.datecontact, 'M/d/yy, h:mm a');
+  this.datec=latest_date!
+  console.log(this.datec)
+  this.contact.dateContact=this.datec
+  this.contact.prospect=this.prospect
+  this.serviceCommercial.getById(this.selectedOption).subscribe(
+    response=>{
+      this.com=response
+      this.contact.commercial=this.com
+      this.serviceContact.ajouter(this.contact).subscribe(
+        response=> this.router.navigateByUrl('contactduProspect/'+idProspect)
+      )
+    }
+  )
+
   }
 
 }

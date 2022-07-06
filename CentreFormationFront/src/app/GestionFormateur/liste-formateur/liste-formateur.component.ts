@@ -44,4 +44,9 @@ export class ListeFormateurComponent implements OnInit {
     this.router.navigateByUrl('modifierFormateur/'+idFormateur)
   }
 
+  formationsAssociees(id:number)
+  {
+    this.router.navigateByUrl('formationsDuFormateur/'+id)
+  }
+
 }

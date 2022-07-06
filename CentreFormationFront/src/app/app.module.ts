@@ -27,7 +27,10 @@ import { PaiementComponent } from './GestionPaiement/Participant/paiement/paieme
 import { VoirPaiementduParticipantAdminComponent } from './GestionPaiement/Admin/voir-paiementdu-participant-admin/voir-paiementdu-participant-admin.component';
 import { AfficherPaiementAdminComponent } from './GestionPaiement/Admin/afficher-paiement-admin/afficher-paiement-admin.component';
 import { AfficherPaiementComponent } from './GestionPaiement/Participant/afficher-paiement/afficher-paiement.component';
+import { ModifierContactsComponent } from './GestionProspect/modifier-contacts/modifier-contacts.component'
 
+import { DatePipe } from '@angular/common';
+import { SingleFormateurFormationsComponent } from './GestionFormateur/single-formateur-formations/single-formateur-formations.component';
 
 @NgModule({
   declarations: [
@@ -55,15 +58,20 @@ import { AfficherPaiementComponent } from './GestionPaiement/Participant/affiche
     AfficherPaiementAdminComponent,
     VoirPaiementduParticipantAdminComponent,
     PaiementComponent,
+    ModifierContactsComponent,
+    SingleFormateurFormationsComponent
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS, useClass:HttpInterceptorService, multi:true}
+    {provide:HTTP_INTERCEPTORS, useClass:HttpInterceptorService, multi:true},
+    DatePipe,
   ],
   bootstrap: [AppComponent]
 })

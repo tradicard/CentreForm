@@ -34,8 +34,8 @@ export class AssistantService {
     return this.http.delete('http://localhost:8016/api/assistants/'+idAssistant)
   }
 
-  modifier(formData:FormData)
+  modifier(assistant:Assistant)
   {
-    return this.http.put<Assistant>('http://localhost:8016/api/assistants', formData)
+    return this.http.put<Assistant>('http://localhost:8016/api/assistants', assistant)
   }
 }

@@ -20,6 +20,7 @@ import com.intiFormation.Service.ICommercialService;
 import com.intiFormation.Service.IHistoriqueFormateurService;
 import com.intiFormation.entity.Assistant;
 import com.intiFormation.entity.Commercial;
+import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.HistoriqueFormateur;
 
 @RestController
@@ -46,6 +47,17 @@ public class HistoriqueFormateurController {
 		}
 		return c;
 	}
+	
+	//recup HistoriqueFormateurs en fonction de leur id 
+	@GetMapping("/historiqueformateursidFormateur/{id}")
+	public List<HistoriqueFormateur> listeFormationsIdFormateur(@PathVariable ("id") int id)
+	{
+		//en cours
+		List<HistoriqueFormateur>liste=hfs.findByFormateur_id(id); 
+		return liste; 
+	}
+	
+	
 	
 	@PostMapping("/historiqueformateurs")
 	public void SaveHistoriqueFormateur(@RequestBody HistoriqueFormateur c) {

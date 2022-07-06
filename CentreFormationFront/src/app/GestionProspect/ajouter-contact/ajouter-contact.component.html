@@ -1,7 +1,10 @@
+<p>ajouter-contact works!</p>
+
 
 <form (ngSubmit)="SaveContact()">
-    Date du Contact:<input type="text" name="dateContact"  [(ngModel)]="contact.dateContact"/><br>
+    Date du Contact:<input type="datetime-local" name="datecontact"  [(ngModel)]="datecontact"/><br>
     Commercial:<select [(ngModel)]="selectedOption" name="selectedOption">
         <option *ngFor="let c of commercials" value="{{c.id}}">{{c.nom}}</option>   
-    </select> 
+    </select> <br>
+    <button type="submit">Valider</button>
 </form>

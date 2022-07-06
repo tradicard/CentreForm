@@ -36,8 +36,8 @@ public class Formation {
 	@OneToMany(mappedBy = "formation",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonIgnore
 	private List<HistoriqueParticipant> historiqueParticipant;
-	@ManyToMany(mappedBy = "formations",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
 
+	@ManyToMany(mappedBy = "formations",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
 	private List<Participant> participants ;
 	
 	
