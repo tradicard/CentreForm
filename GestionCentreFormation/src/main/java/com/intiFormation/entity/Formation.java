@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -36,7 +37,10 @@ public class Formation {
 	@OneToMany(mappedBy = "formation",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonIgnore
 	private List<HistoriqueParticipant> historiqueParticipant;
-	@ManyToMany(mappedBy = "formations")
+	@ManyToMany
+	@JoinTable(name="T_Formation_Participant",
+	joinColumns=@JoinColumn(name="idFormation"),
+	inverseJoinColumns=@JoinColumn(name="idParticipant"))
 	private List<Participant> participants ;
 	
 	

@@ -29,6 +29,11 @@ export class ContactService {
     return this.http.post<Contact>('http://localhost:8016/api/contacts',contact)
   }
 
+  sendemail(c:Contact)
+  {
+    return this.http.post<any>('http://localhost:8016/sendSimpleEmail',c)
+  }
+
   supprimer(idContact:number)
   {
     return this.http.delete('http://localhost:8016/api/contacts/'+idContact)

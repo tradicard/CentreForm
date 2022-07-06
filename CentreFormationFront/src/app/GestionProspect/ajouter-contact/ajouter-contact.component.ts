@@ -57,7 +57,13 @@ export class AjouterContactComponent implements OnInit {
       this.com=response
       this.contact.commercial=this.com
       this.serviceContact.ajouter(this.contact).subscribe(
-        response=> this.router.navigateByUrl('contactduProspect/'+idProspect)
+        response=> {this.router.navigateByUrl('contactduProspect/'+idProspect)
+        console.log("avant envoi")
+        this.serviceContact.sendemail(this.contact).subscribe(
+          response=>console.log("apres envoi")
+        )
+        
+      }
       )
     }
   )

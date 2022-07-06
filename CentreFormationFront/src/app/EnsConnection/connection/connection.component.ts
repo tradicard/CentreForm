@@ -154,7 +154,7 @@ export class ConnectionComponent implements OnInit {
       if (uStr) {
         this.p = JSON.parse(uStr) as Participant;
       }
-      console.log(this.c.id)
+      console.log(this.p.id)
 
 
        this.router.navigateByUrl('Acceuil')})

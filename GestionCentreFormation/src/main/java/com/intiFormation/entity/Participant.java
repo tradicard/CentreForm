@@ -18,10 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Participant extends Utilisateur {
 	
 	//private int idParticipant;
-	@ManyToMany
-	@JoinTable(name="T_Participant_Formation",
-	joinColumns=@JoinColumn(name="idParticipant"),
-	inverseJoinColumns=@JoinColumn(name="idFormation"))
+	@ManyToMany(mappedBy = "participants",fetch = FetchType.EAGER, cascade = {CascadeType.MERGE})
 	@JsonIgnore
 	private List<Formation> formations;
 	@OneToMany(mappedBy = "participant",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
