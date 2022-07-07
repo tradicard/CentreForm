@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.intiFormation.Service.IAssistantService;
 import com.intiFormation.Service.IHistoriqueParticipantService;
 import com.intiFormation.entity.Assistant;
+import com.intiFormation.entity.HistoriqueFormateur;
 import com.intiFormation.entity.HistoriqueParticipant;
 
 @RestController
@@ -44,6 +45,15 @@ public class HistoriqueParticipantController {
 		}
 		return c;
 	}
+	
+	//recup HistoriqueFormateurs en fonction de leur id 
+		@GetMapping("/historiqueparticipantIdParticipant/{id}")
+		public List<HistoriqueParticipant> listeFormationsIdFormateur(@PathVariable ("id") int id)
+		{
+			//en cours
+			List<HistoriqueParticipant>liste=hps.findByParticipant_Id(id); 
+			return liste; 
+		}
 	
 	@PostMapping("/historiqueparticipants")
 	public void SaveHistoriqueParticipant(@RequestBody HistoriqueParticipant c) {

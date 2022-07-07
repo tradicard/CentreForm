@@ -3,6 +3,8 @@ package com.intiFormation.Controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -105,4 +108,12 @@ public class ParticipantController {
 		parts.modifierService(c);
 	}
 
+	@PutMapping("/crediterCompte")
+	public void crediter (@RequestParam("idp") int id,@RequestParam("valeur") int valeur) {
+		Participant c = parts.selectByIdService(id).get();
+		int compte=c.getCompte();
+		compte+=valeur;
+		c.setCompte(compte);
+		parts.modifierService(c);
+	}
 }

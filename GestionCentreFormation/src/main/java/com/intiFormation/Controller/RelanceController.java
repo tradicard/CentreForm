@@ -49,6 +49,8 @@ public class RelanceController {
 		return listec;
 	}
 	
+	
+	
 	@GetMapping("/relances/{id}")
 	public Relance GestionRelance(@PathVariable("id") int id) {
 		Optional<Relance> op=res.selectByIdService(id);
@@ -60,8 +62,9 @@ public class RelanceController {
 	}
 	
 	@PostMapping("/relances")
-	public void SaveRelance(@RequestBody Relance c) {
+	public Relance SaveRelance(@RequestBody Relance c) {
 		res.ajouterService(c);
+		return c;
 	}
 	
 	
