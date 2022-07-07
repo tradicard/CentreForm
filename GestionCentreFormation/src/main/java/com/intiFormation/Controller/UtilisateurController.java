@@ -57,6 +57,12 @@ public class UtilisateurController {
 		return listec;
 	}
 	
+	@GetMapping("/utilisateursByRole/{id}")
+	public List<Utilisateur> GestionUtilisateur2(@PathVariable("id") int id) {
+		List<Utilisateur> listec=us.findByRole_IdRole(id);
+		return listec;
+	}
+	
 	@GetMapping("/utilisateurs/{id}")
 	public Utilisateur GestionUtilisateur(@PathVariable("id") int id) {
 		Optional<Utilisateur> op=us.selectByIdService(id);

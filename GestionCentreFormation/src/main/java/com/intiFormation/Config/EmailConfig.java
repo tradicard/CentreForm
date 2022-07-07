@@ -14,6 +14,9 @@ import com.intiFormation.entity.MyConstants;
 @Configuration
 public class EmailConfig {
 	
+
+
+	
 	@Bean
     public JavaMailSender getJavaMailSender() {
 		

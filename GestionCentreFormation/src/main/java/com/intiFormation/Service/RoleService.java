@@ -44,6 +44,10 @@ public class RoleService implements IRoleService {
 	public void supprimerService(int id) {
 		rdao.deleteById(id);
 	}
+	public Role findByLibrole(String librole) {
+		Role r=rdao.findByLibrole(librole);
+		return r;
+	}
 	public void modifierService(Role r) {
 		rdao.save(r);
 	}

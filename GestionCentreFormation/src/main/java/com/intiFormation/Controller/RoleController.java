@@ -61,6 +61,13 @@ public class RoleController {
 		return c;
 	}
 	
+	@GetMapping("/rolesBylib/{librole}")
+	public Role GestionRole(@PathVariable("librole") String librole) {
+		Role op=ros.findByLibrole(librole);
+
+		return op;
+	}
+	
 	@PostMapping("/roles")
 	public void SaveRole(@RequestBody Role c) {
 		ros.ajouterService(c);
