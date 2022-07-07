@@ -7,5 +7,5 @@ export class HistoriqueParticipant {
 
 	 formation!:Formation
 
-	formateur!:Participant
+	participant!:Participant
 }

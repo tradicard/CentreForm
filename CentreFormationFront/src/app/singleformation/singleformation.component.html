@@ -21,7 +21,7 @@
         <td>{{f.dateFin}}</td>
         <td>{{f.prix}}</td>
         <div *ngIf="inscrit===false">
-        <td><button (click)="inscription(f.idFormation)" type="button" class="btn btn-primary">Inscription</button></td>
+        <td><button (click)="inscription()" type="button" class="btn btn-primary">Inscription</button></td>
         </div>
         <div *ngIf="inscrit">
             <td>Vous etes deja inscrit</td>

@@ -62,6 +62,10 @@ public class Contact {
 	public void setDateContact(String dateContact) {
 		this.dateContact = dateContact;
 	}
+	@Override
+	public String toString() {
+		return "Vous avez une réunion prévue avec "+ commercial.getNom()+" "+commercial.getPrenom()+"le "+ dateContact;
+	}
 	
 	
 	

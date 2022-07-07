@@ -150,6 +150,8 @@ export class ConnectionComponent implements OnInit {
       if (uStr) {
         this.p = JSON.parse(uStr) as Participant;
       }
+      console.log(this.p.id)
+
       sessionStorage.setItem("idp",this.p.id.toString())
       console.log(this.p.id)
       
