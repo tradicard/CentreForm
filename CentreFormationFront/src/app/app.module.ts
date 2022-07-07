@@ -33,6 +33,7 @@ import { DatePipe } from '@angular/common';
 import { SingleFormateurFormationsComponent } from './GestionFormateur/single-formateur-formations/single-formateur-formations.component';
 import { SingleParticipantFormationsComponent } from './single-participant-formations/single-participant-formations.component';
 import { RelancePaiementComponent } from './GestionPaiement/relance-paiement/relance-paiement.component';
+import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-compte/crediter-compte.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { RelancePaiementComponent } from './GestionPaiement/relance-paiement/rel
     ModifierContactsComponent,
     SingleFormateurFormationsComponent,
     SingleParticipantFormationsComponent,
-    RelancePaiementComponent
+    RelancePaiementComponent,
+    CrediterCompteComponent
  
   ],
   imports: [

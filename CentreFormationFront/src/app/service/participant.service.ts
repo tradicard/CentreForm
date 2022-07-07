@@ -38,4 +38,9 @@ export class ParticipantService {
   {
     return this.http.put<Participant>('http://localhost:8016/api/participants', formData)
   }
+
+  crediterCompte (formData:FormData) {
+    return this.http.put<Participant>('http://localhost:8016/api/crediterCompte',formData)
+  }
+  
 }
