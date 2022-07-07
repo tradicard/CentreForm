@@ -21,7 +21,11 @@ public class HistoriqueParticipantService implements IHistoriqueParticipantServi
 	private IHistoriqueParticipantDao hpdao;
 	
 	
-	
+	public List <HistoriqueParticipant> findByParticipant_Id(int id)
+	{
+		List<HistoriqueParticipant> historique=hpdao.findByParticipant_Id(id);	
+		return historique;
+	}
 	
 
 	public HistoriqueParticipantService() {

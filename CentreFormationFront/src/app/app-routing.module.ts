@@ -25,6 +25,8 @@ import { AfficherPaiementComponent } from './GestionPaiement/Participant/affiche
 import { PaiementComponent } from './GestionPaiement/Participant/paiement/paiement.component';
 import { ModifierContactsComponent } from './GestionProspect/modifier-contacts/modifier-contacts.component';
 import { SingleFormateurFormationsComponent } from './GestionFormateur/single-formateur-formations/single-formateur-formations.component';
+import { SingleParticipantFormationsComponent } from './single-participant-formations/single-participant-formations.component';
+import { RelancePaiementComponent } from './GestionPaiement/relance-paiement/relance-paiement.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -36,6 +38,8 @@ const routes: Routes = [
   {path:'Acceuil',component:AcceuilParticipantComponent},
   {path:'AcceuilAdmin',component:AcceuilAdminComponent},
   {path:'inscriptionformation/:id',component:SingleformationComponent},
+
+  {path:'formationsDuParticipant/:id',component:SingleParticipantFormationsComponent},
   
   //Prospect
   {path:'afficherProspects',component:ListeProspectComponent},
@@ -57,6 +61,8 @@ const routes: Routes = [
   {path:'Paiement',component:PaiementComponent},
   
   {path:'GestionFormateur',component:ListeFormateurComponent},
+
+  {path:'RelancePaiement/:id',component:RelancePaiementComponent},
 
 ];
 

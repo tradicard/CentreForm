@@ -14,9 +14,9 @@ export class ParticipantService {
     return this.http.get<Participant[]>('http://localhost:8016/api/participants')
   }
  
-  getById(idParticipant:number)
+  getById(id:number)
   {
-    return this.http.get<Participant>('http://localhost:8016/api/participants/'+idParticipant)
+    return this.http.get<Participant>('http://localhost:8016/api/participants/'+id)
   }
 
   getByUsername(username:string)

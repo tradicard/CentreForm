@@ -20,7 +20,11 @@ export class HistoriqueparticipantService {
     return this.http.get<HistoriqueParticipant>('http://localhost:8016/api/historiqueparticipants/'+idFormateur)
   }
 
- 
+  getByIdParticipant(id:number)
+  {
+    return this.http.get<HistoriqueParticipant[]>('http://localhost:8016/api/historiqueparticipantIdParticipant/'+id)
+  }
+  
 
   ajouter(formateur:HistoriqueParticipant)
   {

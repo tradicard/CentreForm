@@ -23,7 +23,7 @@ export class HistoriqueformateurService {
 
  getByIdFormateur(id:number)
  {
-  return this.http.get<HistoriqueFormateur>('http://localhost:8016/api/historiqueformateursidFormateur/'+id)
+  return this.http.get<HistoriqueFormateur[]>('http://localhost:8016/api/historiqueformateursidFormateur/'+id)
  }
 
   ajouter(formateur:HistoriqueFormateur)

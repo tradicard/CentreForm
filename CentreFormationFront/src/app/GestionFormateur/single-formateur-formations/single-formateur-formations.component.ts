@@ -83,7 +83,7 @@ export class SingleFormateurFormationsComponent implements OnInit {
     (
       response=>
       {
-        this.listeFormations
+        this.historique
       }
     )
   }
