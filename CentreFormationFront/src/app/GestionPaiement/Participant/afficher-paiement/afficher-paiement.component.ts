@@ -46,6 +46,10 @@ export class AfficherPaiementComponent implements OnInit {
 
   }
 
+  verscredit(){
+    this.router.navigateByUrl('CrediterCompte')
+  }
+
   payer() {
     this.router.navigateByUrl('Paiement')
   }
