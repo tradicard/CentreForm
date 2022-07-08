@@ -50,7 +50,7 @@ export class AfficherPaiementComponent implements OnInit {
     this.router.navigateByUrl('CrediterCompte')
   }
 
-  payer() {
-    this.router.navigateByUrl('Paiement')
+  payer(idPaiement:number) {
+    this.router.navigateByUrl('Paiement/'+idPaiement)
   }
 }

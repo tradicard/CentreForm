@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -24,12 +25,14 @@ import com.intiFormation.Service.IContactService;
 import com.intiFormation.Service.IFormateurService;
 import com.intiFormation.Service.IFormationService;
 import com.intiFormation.Service.IPaiementService;
+import com.intiFormation.Service.IParticipantService;
 import com.intiFormation.entity.Assistant;
 import com.intiFormation.entity.Commercial;
 import com.intiFormation.entity.Contact;
 import com.intiFormation.entity.Formateur;
 import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Paiement;
+import com.intiFormation.entity.Participant;
 
 @RestController
 @RequestMapping("/api")
@@ -39,6 +42,8 @@ public class PaiementController {
 	
 	@Autowired
 	IPaiementService pts;
+	@Autowired
+	IParticipantService parts ;
 	
 	@GetMapping("/paiements")
 	public List<Paiement> GestionPaiement() {
@@ -64,11 +69,17 @@ public class PaiementController {
 	
 	@PostMapping("/paiements")
 	public void SavePaiement(@RequestBody Paiement c) {
+		//Date facturation
 		LocalDate localDate = LocalDate.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		String formattedString = localDate.format(formatter);
-		
 		c.setDateFacture(formattedString);
+		
+		//Date prochain paiement
+		LocalDate returnvalue= localDate.plusDays(3);
+		c.setDateProchainPaiement(returnvalue.format(formatter));
+		
+		
 		pts.ajouterService(c);
 	}
 	
@@ -83,8 +94,26 @@ public class PaiementController {
 	
 	
 	@PutMapping("/paiements")
-	public void EditFormation(@RequestBody Paiement c) {
-		pts.modifierService(c);
+	public void EditFormation(@RequestParam("idp") int id,@RequestParam("valeur") int valeur,@RequestParam ("idPaiement") int idPaiement) {
+		Paiement paie=pts.selectByIdService(idPaiement).get();
+		int compte=paie.getParticipant().getCompte();
+		int reste=paie.getReste();
+		reste=reste-valeur;
+		compte=compte-valeur;
+		paie.setReste(reste);
+		paie.getParticipant().setCompte(compte);
+		
+		//Date dernier paiement
+		LocalDate localDate = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		String formattedString = localDate.format(formatter);
+		paie.setDateDernierPaiement(formattedString);
+		
+		//Date prochain paiement
+		LocalDate returnvalue= localDate.plusMonths(1);
+		paie.setDateProchainPaiement(returnvalue.format(formatter));
+		
+		pts.modifierService(paie);
 	}
 
 }

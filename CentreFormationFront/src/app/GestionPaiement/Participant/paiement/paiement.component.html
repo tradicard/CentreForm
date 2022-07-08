@@ -1,7 +1,20 @@
 
-<form>
+<form (ngSubmit)="SavePaiement()">
     Type de paiement : <br>
-    <input type="radio" id="solde" name="choixPaiement" value="solde">
-    <label for="porteMonnaie">Porte Monnaie</label><br>
+    <div>
+        <input type="radio" id="solde" name="choixPaiement" value="solde" [(ngModel)]="choixPaiement" >
+        <label for="solde">Porte-Monnaie</label>
+      </div>
+  
+      <div>
+        <input type="radio" id="cb" name="choixPaiement" value="cb" [(ngModel)]="choixPaiement">
+        <label for="cb">Carte bancaire</label>
+      </div>
+
+    Montant total a payer : {{paiement.reste}}
+    <br>
+    Montant du paiement : <input type="text" name="valeur"  [(ngModel)]="valeur"/>
+    <br>
+    <button type="submit">Cr&eacute;diter</button>
 
 </form>
