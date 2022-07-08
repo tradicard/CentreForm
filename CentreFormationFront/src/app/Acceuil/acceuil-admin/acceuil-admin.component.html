@@ -45,11 +45,15 @@
         <td>Nom</td>
         <td>Prenom</td>
         <td>Role</td>
+        <td>Supprimer</td>
+        <td>Modifier</td>
     </tr>
     <tr *ngFor="let n of utilisateurs">
             <td>{{n.id}}</td>
             <td>{{n.nom}}</td>
             <td>{{n.prenom}}</td>
             <td>{{n.role.librole}}</td>
+            <td><button (click)="supprimer(n.id)">Supprimer</button></td>
+            <td><button (click)="versmodif(n.id)">Modifier</button></td>
     </tr>
 </table>

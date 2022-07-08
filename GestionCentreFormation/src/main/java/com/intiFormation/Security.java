@@ -58,16 +58,31 @@ public class Security extends WebSecurityConfigurerAdapter{
 		
 		http.csrf().disable().authorizeRequests()
 		.antMatchers("/imageproduit/**").permitAll()
+		
 		//.antMatchers("/addUtilisateur").permitAll()
 		.antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
+		//.antMatchers("/AcceuilAdmin")
 		.antMatchers("/authenticate").permitAll()
-		.antMatchers("/api/utilisateurs").permitAll()
-
+		.antMatchers("/api/utilisateurs/**").hasAuthority("admin")
+		.antMatchers("/api/utilisateursus/**").permitAll()
 		.antMatchers("/api/assistantsus/**").permitAll()
-
-		.antMatchers("/**").permitAll()
-		//.antMatchers("/**").hasAuthority("admin")
-		//.antMatchers("/**").hasAuthority("client")
+		//.antMatchers("/api/assistants/**").permitAll()
+		//.antMatchers("/api/participants/**").permitAll()
+		//.antMatchers("/api/formateurs/**").permitAll()
+		//.antMatchers("/api/formations/**").permitAll()
+		//.antMatchers("/api/commercials/**").permitAll()
+		//.antMatchers("/api/contacts/**").permitAll()
+		//.antMatchers("/api/historiqueparticipants/**").permitAll()
+		//.antMatchers("/api/historiquesformateurs/**").permitAll()
+		//.antMatchers("/api/paiements/**").permitAll()
+		//.antMatchers("/api/prospoects/**").permitAll()
+		//.antMatchers("/api/relances/**").permitAll()
+		//.antMatchers("/api/roles/**").permitAll()
+		//.antMatchers("/GiveScheduleEmailRequest/**").permitAll()
+		//.antMatchers("/sendSimpleEmail/**").permitAll()
+		//.antMatchers("/sendSimpleEmailRelancePaiement/**").permitAll()
+		//.antMatchers("/**").permitAll()
+		
 		
 		.anyRequest().authenticated()
 		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

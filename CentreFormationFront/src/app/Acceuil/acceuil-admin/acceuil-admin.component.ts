@@ -157,4 +157,16 @@ id!:number
   }
   
 }
+supprimer(idFormateur:number){
+  this.serviceUtil.supprimerUtilisateur(idFormateur).subscribe(
+    response=>this.ngOnInit()
+  )
+}
+
+
+
+versmodif(idFormateur:number){
+  this.router.navigateByUrl('modifierUtilisateur/'+idFormateur)
+}
+
 }

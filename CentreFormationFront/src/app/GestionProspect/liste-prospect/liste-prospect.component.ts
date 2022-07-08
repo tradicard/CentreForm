@@ -10,10 +10,13 @@ import { ProspectService } from 'src/app/service/prospect.service';
 })
 export class ListeProspectComponent implements OnInit {
 prospects!:Prospect[]
+prospect!:Prospect
   constructor(private router:Router,private service:ProspectService) { }
 
   ngOnInit(): void {
     this.recuperer()
+    this.prospect=new Prospect()
+    
   }
 
   recuperer(){
@@ -33,6 +36,10 @@ prospects!:Prospect[]
     this.service.supprimer(idProspect).subscribe(
       response=>this.recuperer()
     )
+  }
+
+  SaveProspect(){
+    this.service.ajouter(this.prospect).subscribe(response=>{this.recuperer()})
   }
 
 }

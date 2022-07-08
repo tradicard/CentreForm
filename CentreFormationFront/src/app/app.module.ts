@@ -34,6 +34,8 @@ import { SingleFormateurFormationsComponent } from './GestionFormateur/single-fo
 import { SingleParticipantFormationsComponent } from './single-participant-formations/single-participant-formations.component';
 import { RelancePaiementComponent } from './GestionPaiement/relance-paiement/relance-paiement.component';
 import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-compte/crediter-compte.component';
+import { MyDataComponent } from './EnsConnection/my-data/my-data.component';
+import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-utilisateur.component';
 
 
 @NgModule({
@@ -67,7 +69,9 @@ import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-
 
     SingleParticipantFormationsComponent,
     RelancePaiementComponent,
-    CrediterCompteComponent
+    CrediterCompteComponent,
+    MyDataComponent,
+    ModifUtilisateurComponent
  
   ],
   imports: [

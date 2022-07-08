@@ -28,6 +28,7 @@ import { SingleFormateurFormationsComponent } from './GestionFormateur/single-fo
 import { SingleParticipantFormationsComponent } from './single-participant-formations/single-participant-formations.component';
 import { RelancePaiementComponent } from './GestionPaiement/relance-paiement/relance-paiement.component';
 import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-compte/crediter-compte.component';
+import { InscriptionComponent } from './EnsConnection/inscription/inscription.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path:'Acceuil',component:AcceuilParticipantComponent},
   {path:'AcceuilAdmin',component:AcceuilAdminComponent},
   {path:'inscriptionformation/:id',component:SingleformationComponent},
+  {path:'inscriptionParticipant',component:InscriptionComponent},
 
   {path:'formationsDuParticipant/:id',component:SingleParticipantFormationsComponent},
   

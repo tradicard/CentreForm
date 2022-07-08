@@ -106,8 +106,9 @@ public class UtilisateurController {
 	
 	
 	@PutMapping("/utilisateurs")
-	public void EditUtilisateur(@RequestBody Utilisateur c) {
+	public Utilisateur EditUtilisateur(@RequestBody Utilisateur c) {
 		us.modifierService(c);
+		return c;
 	}
 
 }
