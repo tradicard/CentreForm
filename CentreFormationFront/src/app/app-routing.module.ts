@@ -61,7 +61,7 @@ const routes: Routes = [
   {path:'afficherPaiementAdmin',component:AfficherPaiementAdminComponent},
   {path:'PaiementParticipantAdmin/:id',component:VoirPaiementduParticipantAdminComponent},
   {path:'PaiementParticipant',component:AfficherPaiementComponent},
-  {path:'Paiement',component:PaiementComponent},
+  {path:'Paiement/:id',component:PaiementComponent},
   {path:'CrediterCompte',component:CrediterCompteComponent},
   {path:'GestionFormateur',component:ListeFormateurComponent},
 

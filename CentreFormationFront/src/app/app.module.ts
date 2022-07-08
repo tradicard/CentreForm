@@ -36,6 +36,7 @@ import { RelancePaiementComponent } from './GestionPaiement/relance-paiement/rel
 import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-compte/crediter-compte.component';
 import { MyDataComponent } from './EnsConnection/my-data/my-data.component';
 import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-utilisateur.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -66,12 +67,14 @@ import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-uti
     PaiementComponent,
     ModifierContactsComponent,
     SingleFormateurFormationsComponent,
-
+    CrediterCompteComponent,
+    FooterComponent,
     SingleParticipantFormationsComponent,
     RelancePaiementComponent,
     CrediterCompteComponent,
     MyDataComponent,
-    ModifUtilisateurComponent
+    ModifUtilisateurComponent,
+    RelancePaiementComponent
  
   ],
   imports: [
