@@ -84,7 +84,7 @@ export class RelancePaiementComponent implements OnInit {
       this.serviceMail.sendSimpleEmail(this.relance).subscribe()
      }
     )
-    
+    var res=confirm("Le mail a bien été envoyé au participant.")
   }
 
 }

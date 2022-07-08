@@ -34,4 +34,9 @@ export class AfficherPaiementAdminComponent implements OnInit {
   versPaiementParticipant(idParticipant:number) {
     this.router.navigateByUrl('PaiementParticipantAdmin/'+idParticipant)
   }
+
+  relance(idParticipant:number)
+  {
+    this.router.navigateByUrl('RelancePaiement/'+idParticipant)
+  }
 }
