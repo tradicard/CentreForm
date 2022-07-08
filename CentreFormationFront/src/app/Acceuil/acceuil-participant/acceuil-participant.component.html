@@ -4,8 +4,8 @@
 <p>acceuil-participant works!</p>
 
 <form (ngSubmit)="searchform()">
-    <input type="search" name="cherche" (ngModel)="cherche">
-    <button type="submit">Valider (probleme de cache)</button>
+    <input type="search" name="cherche" [(ngModel)]="cherche">
+    <button type="submit">search</button>
 </form>
 <h3>Vos formations</h3>
 <table>
@@ -33,6 +33,7 @@
     
 </table>
 <br>
+<h2>Toutes les formations</h2>
 <table>
     <tr>
         <td>id</td>

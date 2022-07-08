@@ -1,1 +1,24 @@
-<p>search works!</p>
+<table>
+    <tr>
+        <td>id</td>
+        <td>libFormation</td>
+        <td>description</td>
+        <td>dateDebut</td>
+        <td>dateFin</td>
+        <td>prix</td>
+
+    </tr>
+
+    
+    
+    <tr *ngFor="let f of formations">
+        <td>{{f.idFormation}}</td>
+        <td>{{f.libFormation}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.dateDebut}}</td>
+        <td>{{f.dateFin}}</td>
+        <td>{{f.prix}}</td>
+    </tr>
+    
+    
+</table>

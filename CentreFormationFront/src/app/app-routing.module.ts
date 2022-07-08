@@ -36,7 +36,7 @@ const routes: Routes = [
   {path:'ajouterFormateur',component:AjoutFormateurComponent},
   {path:'modifierFormateur/:id',component:ModifierFormateurComponent},
   {path:'formationsDuFormateur/:id',component:SingleFormateurFormationsComponent},
-  {path:'searchformation/:ch',component:SearchComponent},
+  {path:'searchformation',component:SearchComponent},
   {path:'Acceuil',component:AcceuilParticipantComponent},
   {path:'AcceuilAdmin',component:AcceuilAdminComponent},
   {path:'inscriptionformation/:id',component:SingleformationComponent},

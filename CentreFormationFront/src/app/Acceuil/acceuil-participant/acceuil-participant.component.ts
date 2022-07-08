@@ -22,7 +22,8 @@ u!:Participant
     if (uStr) {
       this.u = JSON.parse(uStr) as Participant;
     }
-    this.recupererPauParticipant()
+    console.log(this.u.id)
+    this.recupererParParticipant()
 
     this.recuperer()
   }
@@ -32,23 +33,19 @@ u!:Participant
       response=> this.formations=response
     )
   }
-  recupererPauParticipant(){
-    this.service.getAll().subscribe(
-      response=> {this.formations=response
-        for(let fo of this.formations){
-          for(let pa of fo.participants){
-            if(pa===this.u){
-              this.formationsparu.push(fo)
 
-            }
-          }
-        }
-      }
+  recupererParParticipant(){
+    this.service.getAllbyIdPart(this.u.id).subscribe(
+      response=>this.formationsparu=response
     )
+
   }
 
   searchform(){
-    this.router.navigateByUrl('searchformation/'+this.cherche)
+    sessionStorage.setItem("ch",this.cherche)
+    let libform=sessionStorage.getItem('ch')
+    console.log(libform)
+    this.router.navigateByUrl('searchformation')
   }
 
   inscription(idFormation:number){

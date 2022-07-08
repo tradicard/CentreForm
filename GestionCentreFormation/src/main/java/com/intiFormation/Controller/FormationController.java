@@ -42,6 +42,12 @@ public class FormationController {
 		return listec;
 	}
 	
+	@GetMapping("/formationsparid/{id}")
+	public List<Formation> GestionFormation2(@PathVariable("id") int id) {
+		List<Formation> listec=fns.findByParticipants_Id(id);
+		return listec;
+	}
+	
 	@GetMapping("/formations/{id}")
 	public Formation GestionFormation(@PathVariable("id") int id) {
 		Optional<Formation> op=fns.selectByIdService(id);

@@ -14,6 +14,11 @@ export class FormationService {
     return this.http.get<Formation[]>('http://localhost:8016/api/formations')
   }
 
+  getAllbyIdPart(idPart:number)
+  {
+    return this.http.get<Formation[]>('http://localhost:8016/api/formationsparid/'+idPart)
+  }
+
  
   getById(idFormation:number)
   {
@@ -22,7 +27,7 @@ export class FormationService {
 
   getBylib(ch:string)
   {
-    return this.http.get<Formation>('http://localhost:8016/api/formationsch/'+ch)
+    return this.http.get<Formation[]>('http://localhost:8016/api/formationsch/'+ch)
   }
 
   ajouter(formation:Formation)
