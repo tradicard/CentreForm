@@ -1,32 +1,21 @@
-<p>acceuil-admin works!</p>
+<p>Page accueil admin</p>
 
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-
-
-<!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
 </head>
 
-<body>
-    
 
 
-
-
-
-
-<button (click)="gestionformation()" type="button" class="btn btn-primary">formations</button>
+<!-- <button (click)="gestionformation()" type="button" class="btn btn-primary">formations</button>
 <button (click)="gestionformateur()" type="button" class="btn btn-secondary btn-rounded">formateurs</button>
 <button (click)="gestionprospect()" type="button" class="btn btn-success btn-rounded">prospect</button>
 
-<!---->
-
-
-<!-- <button (click)="afficherProduits()" type="button" class="btn btn-danger btn-rounded">Afficher liste des produits</button>
-<button (click)="afficherProduitsC()" type="button" class="btn btn-warning btn-rounded">Afficher liste des produits pour les clients</button>
-<button (click)="afficherPaniers()" type="button" class="btn btn-info btn-rounded">Faire son panier</button>
-<button (click)="afficherCommandes()" type="button" class="btn btn-light btn-rounded">Afficher les commandes</button> -->
 <br>
 <br>
 <form (ngSubmit)="ajouter()">
@@ -36,9 +25,6 @@
     Username:<input type="text" name="username" [(ngModel)]="username"/><br>
     Password:<input type="password" name="password" [(ngModel)]="password"/><br>
     Mail:<input type="text" name="mail" [(ngModel)]="mail"/><br>
-
-
-   
 
     Role:
     <select [(ngModel)]="selectedOption" name="selectedOption">
@@ -55,7 +41,7 @@
         <option *ngFor="let r of roles" value="{{r.idRole}}">{{r.librole}}</option>
     </select>
     <button type="submit">Valider</button>
-</form>
+</form> -->
 
 
 <button (click)="reset()">Reset</button>
@@ -78,3 +64,127 @@
             <td><button (click)="versmodif(n.id)">Modifier</button></td>
     </tr>
 </table>
+
+
+
+<h1>Modifications en dessous</h1>
+
+<!--Partie Image fond banniere principale-->
+
+<section class="section main-banner" id="top" data-section="section1">
+   
+        <img id="bg-image" src="https://static.vecteezy.com/ti/photos-gratuite/p2/1269740-gros-plan-d-une-personne-qui-etudie-gratuit-photo.jpg" />
+
+
+    <div class="video-overlay header-text">
+        <div class="caption">
+            <h6>Formez-vous ici !</h6>
+            <h2><em>Vos</em> Formations</h2>
+            <div class="main-button">
+                <div class="scroll-to-section"><a href="#section2">Discover more</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--Banniere principale avec 3 boutons gestions-->
+
+<section class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-12">
+          <div class="features-post">
+            <div class="features-content">
+              <div class="content-show">
+                <h4><i class="fa fa-pencil"></i>Formations</h4>
+            
+                <div><button (click)="gestionformation()" type="button" class="btn btn-secondary">Gestion formations</button></div>
+            
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-12">
+          <div class="features-post second-features">
+            <div class="features-content">
+              <div class="content-show">
+                <h4><i class="fa fa-graduation-cap"></i>Formateurs</h4>
+              <div><button (click)="gestionformateur()" type="button" class="btn btn-secondary">Gestion formateurs</button></div>
+            
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-12">
+          <div class="features-post third-features">
+            <div class="features-content">
+              <div class="content-show">
+                <h4><i class="fa fa-book"></i>Prospects</h4>
+                <button (click)="gestionprospect()" type="button" class="btn btn-secondary">Gestion prospects</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div></div>
+    </section>  
+
+ 
+ <!--Partie ajout utilisteur-->
+
+ <div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Ajouter un utilisateur</h3>
+                    <p>Remplir les informations ci-dessous</p>
+                    <form (ngSubmit)="ajouter()" class="requires-validation" novalidate>
+                        <input type="hidden" name="id"  [(ngModel)]="id"/>
+
+                        <div class="col-md-12">
+                         Nom : <input type="text" name="nom"  class="form-control" [(ngModel)]="nom"/>
+                        </div>
+
+                        <div class="col-md-12">
+                         Prenom :   <input type="text" name="prenom" class="form-control" [(ngModel)]="prenom"/>
+                         </div>
+
+                         <div class="col-md-12">
+                          Username :  <input type="username" name="username" class="form-control" [(ngModel)]="username"/>
+                         </div>
+
+                         <div class="col-md-12">
+                         Password :   <input type="password" name="password" class="form-control" [(ngModel)]="password"/>
+                         </div>
+
+                         <div class="col-md-12">
+                          Mail :  <input type="text" name="mail" class="form-control" [(ngModel)]="mail"/>
+                         </div>
+
+
+                       <div class="col-md-12">
+                        <option selected disabled value="">Role :</option>
+                                <select [(ngModel)]="selectedOption" name="selectedOption" class="form-select mt-3" required>
+                                    <option *ngFor="let r of roles" value="{{r.librole}}">{{r.librole}}</option>
+                           </select>
+                       </div>
+
+
+              
+
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">Ajouter</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Liste des utilisateurs et leur roles -->
+
