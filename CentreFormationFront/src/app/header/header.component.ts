@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Utilisateur } from '../models/utilisateur';
@@ -12,6 +12,10 @@ import { UtilisateurService } from '../service/utilisateur.service';
 export class HeaderComponent implements OnInit {
 
   token:string|null=sessionStorage.getItem('token')
+
+
+
+
 
   constructor(private router:Router,private service:UtilisateurService) { }
 
@@ -33,4 +37,7 @@ export class HeaderComponent implements OnInit {
   retourPP () {
     this.router.navigateByUrl('Acceuil')
   }
+
+ 
+
 }
