@@ -30,7 +30,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.intiFormation.entity.Commercial;
 import com.intiFormation.entity.Contact;
+import com.intiFormation.entity.Paiement;
+import com.intiFormation.entity.Participant;
 import com.intiFormation.entity.Prospect;
+import com.intiFormation.entity.Relance;
 import com.intiFormation.entity.Utilisateur;
 
 
@@ -71,10 +74,29 @@ public class EmailController{
 
 	    }
 	    
+	    //Envoi Mail relance paiement à un participant
+	    @PostMapping("/sendSimpleEmailRelancePaiement")
+	    public void sendSimpleEmail(@RequestBody Relance r ) {
+	    	System.out.println(r);
+	        // Create a Simple MailMessage.
+	    	SimpleMailMessage message = new SimpleMailMessage();
+	        //receveur
+	        message.setTo(r.getParticipant().getMail());
+	        //sujet
+	        message.setSubject("Participant");
+	       
+	        //contenu
+	        message.setText(r.toString());
+
+	        // Send Message!
+	        this.emailSender.send(message);
+
+	    }
+	    
 	    @PostMapping("/sendSimpleEmail2")
 	    public void execute(JobExecutionContext arg0) throws JobExecutionException {
 	    	
-	    	sendSimpleEmail(null);
+	   // 	sendSimpleEmail(null);
 	    }
 	    
 	    

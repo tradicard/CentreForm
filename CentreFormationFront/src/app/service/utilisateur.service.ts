@@ -47,8 +47,12 @@ export class UtilisateurService {
   {
     return this.http.get<Utilisateur[]>('http://localhost:8016/api/utilisateurs')
   }
+  getAllUtilisateursByRole(id:number)
+  {
+    return this.http.get<Utilisateur[]>('http://localhost:8016/api/utilisateursByRole/'+id)
+  }
 
- 
+  
   getById(id:number)
   {
     return this.http.get<Utilisateur>('http://localhost:8016/api/utilisateurs/'+id)

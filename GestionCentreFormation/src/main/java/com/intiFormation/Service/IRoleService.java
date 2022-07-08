@@ -15,5 +15,6 @@ public interface IRoleService {
 	public List<Role> getAllService();
 	public Optional<Role> selectByIdService(int id);
 	public void ajouterService(Role r);
+	public Role findByLibrole(String librole);
 
 }

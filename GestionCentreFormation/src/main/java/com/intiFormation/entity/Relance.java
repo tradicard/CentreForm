@@ -1,5 +1,7 @@
 package com.intiFormation.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -23,6 +25,16 @@ public class Relance {
 	@JoinColumn(name="id")
 	private Assistant assistant;
 	
+	
+	//Message du mail de relance
+	@Override
+	public String toString() {
+		//Rajouter message avec liste d'attributs
+		return ("Monsieur Madame,\n"+this.getParticipant().getNom()+", il vous reste à payer un certain montant de la formation. \n"
+				+ "Veuillez-s'il vous plait renouveller votre paiement.\n"
+				+ "Bien cordialement, \n"
+				+ this.getAssistant().getNom()+this.getAssistant().getPrenom());
+	}
 	
 	
 	public Relance(Participant participant, Assistant assistant) {

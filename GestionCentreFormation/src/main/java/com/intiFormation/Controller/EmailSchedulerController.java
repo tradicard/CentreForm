@@ -2,7 +2,10 @@ package com.intiFormation.Controller;
 
 
 import java.sql.Date;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 import org.quartz.JobBuilder;
@@ -24,6 +27,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.intiFormation.entity.Contact;
 import com.intiFormation.entity.ScheduleEmailRequest;
 import com.intiFormation.entity.ScheduleEmailResponse;
 
@@ -35,9 +39,26 @@ public class EmailSchedulerController {
 
     @Autowired
     private Scheduler scheduler;
+    
+    @PostMapping("/GiveScheduleEmailRequest")
+    public ResponseEntity<ScheduleEmailResponse> GiveScheduleEmailRequest (@RequestBody Contact c) {
+    	
+    	
+    	ScheduleEmailRequest scheduleEmailRequest=new ScheduleEmailRequest();
+    scheduleEmailRequest.setBody(c.toString());
+    scheduleEmailRequest.setEmail(c.getProspect().getMail());
+    scheduleEmailRequest.setSubject("Réunion avec "+c.getCommercial().getNom()+ " "+c.getCommercial().getPrenom());
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yy, h:mm a");
+    LocalDateTime lcd2 = LocalDateTime.parse(c.getDateContact(), formatter);
+    LocalDateTime lcd=lcd2.minusMinutes(30);
+    scheduleEmailRequest.setDateTime(lcd);
+    ZoneId zi=ZoneId.of("Europe/Paris");
+    scheduleEmailRequest.setTimeZone(zi);
+    	return scheduleEmail(scheduleEmailRequest);
+    }
 
     @PostMapping("/scheduleEmail")
-    public ResponseEntity<ScheduleEmailResponse> scheduleEmail(@Validated @RequestBody ScheduleEmailRequest scheduleEmailRequest) {
+    public ResponseEntity<ScheduleEmailResponse> scheduleEmail(ScheduleEmailRequest scheduleEmailRequest) {
         try {
             ZonedDateTime dateTime = ZonedDateTime.of(scheduleEmailRequest.getDateTime(), scheduleEmailRequest.getTimeZone());
             if(dateTime.isBefore(ZonedDateTime.now())) {

@@ -25,9 +25,7 @@ public class HistoriqueFormateurService implements IHistoriqueFormateurService{
 	
 	public List <HistoriqueFormateur> findByFormateur_id(int id)
 	{
-
-		List<HistoriqueFormateur> historique=hfdao.findByFormateur_Id(id);
-		
+		List<HistoriqueFormateur> historique=hfdao.findByFormateur_Id(id);	
 		return historique;
 	}
 	

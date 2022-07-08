@@ -18,5 +18,6 @@ public interface IHistoriqueParticipantService {
 	public List<HistoriqueParticipant> getAllService();
 	public Optional<HistoriqueParticipant> selectByIdService(int id);
 	public void ajouterService(HistoriqueParticipant r);
+	public List <HistoriqueParticipant> findByParticipant_Id(int id);
 
 }

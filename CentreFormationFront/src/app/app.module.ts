@@ -31,8 +31,11 @@ import { ModifierContactsComponent } from './GestionProspect/modifier-contacts/m
 
 import { DatePipe } from '@angular/common';
 import { SingleFormateurFormationsComponent } from './GestionFormateur/single-formateur-formations/single-formateur-formations.component';
+import { SingleParticipantFormationsComponent } from './single-participant-formations/single-participant-formations.component';
+import { RelancePaiementComponent } from './GestionPaiement/relance-paiement/relance-paiement.component';
 import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-compte/crediter-compte.component';
 import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -63,7 +66,9 @@ import { FooterComponent } from './footer/footer.component';
     ModifierContactsComponent,
     SingleFormateurFormationsComponent,
     CrediterCompteComponent,
-    FooterComponent
+    FooterComponent,
+    SingleParticipantFormationsComponent,
+    RelancePaiementComponent
  
   ],
   imports: [

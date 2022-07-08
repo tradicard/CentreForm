@@ -60,7 +60,9 @@ export class AjouterContactComponent implements OnInit {
         response=> {this.router.navigateByUrl('contactduProspect/'+idProspect)
         console.log("avant envoi")
         this.serviceContact.sendemail(this.contact).subscribe(
-          response=>console.log("apres envoi")
+          response=>this.serviceContact.sendscheduledemail(this.contact).subscribe(
+            response=>console.log("c'est fait")
+          )
         )
         
       }
