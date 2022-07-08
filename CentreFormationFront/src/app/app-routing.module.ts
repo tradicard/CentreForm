@@ -29,6 +29,7 @@ import { SingleParticipantFormationsComponent } from './single-participant-forma
 import { RelancePaiementComponent } from './GestionPaiement/relance-paiement/relance-paiement.component';
 import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-compte/crediter-compte.component';
 import { HeaderComponent } from './header/header.component';
+import { InscriptionComponent } from './EnsConnection/inscription/inscription.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path:'Acceuil',component:AcceuilParticipantComponent},
   {path:'AcceuilAdmin',component:AcceuilAdminComponent},
   {path:'inscriptionformation/:id',component:SingleformationComponent},
+  {path:'inscriptionParticipant',component:InscriptionComponent},
 
   {path:'formationsDuParticipant/:id',component:SingleParticipantFormationsComponent},
   
@@ -60,7 +62,7 @@ const routes: Routes = [
   {path:'afficherPaiementAdmin',component:AfficherPaiementAdminComponent},
   {path:'PaiementParticipantAdmin/:id',component:VoirPaiementduParticipantAdminComponent},
   {path:'PaiementParticipant',component:AfficherPaiementComponent},
-  {path:'Paiement',component:PaiementComponent},
+  {path:'Paiement/:id',component:PaiementComponent},
   {path:'CrediterCompte',component:CrediterCompteComponent},
   {path:'GestionFormateur',component:ListeFormateurComponent},
 

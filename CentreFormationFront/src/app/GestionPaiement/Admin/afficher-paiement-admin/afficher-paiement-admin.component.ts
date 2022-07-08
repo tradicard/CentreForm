@@ -24,9 +24,6 @@ export class AfficherPaiementAdminComponent implements OnInit {
     )
   }
 
-  modif(idPaiement:number){
-    this.router.navigateByUrl('modifierPaiementAdmin/'+idPaiement)
-  }
 
   suppr (idPaiement:number){
     this.servicePaiement.supprimer(idPaiement).subscribe(

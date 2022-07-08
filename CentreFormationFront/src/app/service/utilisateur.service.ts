@@ -19,17 +19,9 @@ export class UtilisateurService {
   deconnection (){
     sessionStorage.removeItem('token')
     console.log("plus de token")
-    sessionStorage.removeItem('a')
-    console.log("plus de a")
-    
     sessionStorage.removeItem('u')
     console.log("plus de u")
-    sessionStorage.removeItem('f')
-    console.log("plus de f")
-    sessionStorage.removeItem('c')
-    console.log("plus de c")
-    sessionStorage.removeItem('p')
-    console.log("plus de p")
+
     sessionStorage.removeItem('idp')
     this.router.navigateByUrl('Connection')
   }
@@ -47,8 +39,12 @@ export class UtilisateurService {
   {
     return this.http.get<Utilisateur[]>('http://localhost:8016/api/utilisateurs')
   }
+  getAllUtilisateursByRole(id:number)
+  {
+    return this.http.get<Utilisateur[]>('http://localhost:8016/api/utilisateursByRole/'+id)
+  }
 
- 
+  
   getById(id:number)
   {
     return this.http.get<Utilisateur>('http://localhost:8016/api/utilisateurs/'+id)
@@ -69,9 +65,9 @@ export class UtilisateurService {
     return this.http.delete('http://localhost:8016/api/utilisateurs/'+id)
   }
 
-  modifierUtilisateur(formData:FormData)
+  modifierUtilisateur(u:Utilisateur)
   {
-    return this.http.put<Utilisateur>('http://localhost:8016/api/utilisateurs', formData)
+    return this.http.put<Utilisateur>('http://localhost:8016/api/utilisateurs', u)
   }
 
 }

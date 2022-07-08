@@ -24,7 +24,6 @@ export class ConnectionComponent implements OnInit {
   user!:Utilisateur
   validUser=false;
   a!:Assistant
-  selectedValue!:string
   roles!:Role[]
   f!:Formateur
   c!:Commercial
@@ -47,7 +46,8 @@ export class ConnectionComponent implements OnInit {
        sessionStorage.setItem("username", this.user.username)
        
        this.validUser=false
-      console.log(this.selectedValue)
+      
+      /*
       if(this.selectedValue==="assistant"){
         console.log("ok if")
         this.pourassist()
@@ -64,22 +64,37 @@ export class ConnectionComponent implements OnInit {
         console.log("ok if4")
         this.pourpart()
       }
-      if(this.selectedValue==="admin"){
+      */
+      
         console.log("ok if5")
         this.service.getByUsername(this.username).subscribe(
           response=>{ this.user=response
           console.log("fine")
     
           sessionStorage.setItem("u",JSON.stringify(this.user))
+          /*
           let uStr = sessionStorage.getItem("u");
           if (uStr) {
             this.user = JSON.parse(uStr) as Utilisateur;
           }
           console.log(this.user.id)
+          */
+
+          sessionStorage.setItem("idp",this.user.id.toString())
+
+          if(this.user.role.librole==="admin"){
+            this.router.navigateByUrl('AcceuilAdmin')}
+            if(this.user.role.librole==="commercial"){
+              this.router.navigateByUrl('afficherProspects')}
+              if(this.user.role.librole==="participant"){
+                this.router.navigateByUrl('Acceuil')}
+                if(this.user.role.librole==="formateur"){
+                  this.router.navigateByUrl('formationsDuFormateur/'+this.user.id)}
+                  if(this.user.role.librole==="assistant"){
+                    this.router.navigateByUrl('afficherPaiementAdmin')}
     
-    
-           this.router.navigateByUrl('AcceuilAdmin')})
-      }
+           
+      
      },
      error=>
       {
@@ -87,8 +102,9 @@ export class ConnectionComponent implements OnInit {
         console.log("ca marche pas")
         this.validUser=true
         this.router.navigateByUrl('Connection')
-      }
-   )}
+      })
+   })
+    }
 
    pourassist(){
     this.serviceasssit.getByUsername(this.username).subscribe(
@@ -167,7 +183,7 @@ export class ConnectionComponent implements OnInit {
   }
 
   versInscription(){
-    this.router.navigateByUrl('Inscription')
+    this.router.navigateByUrl('inscriptionParticipant')
   }
   recupererR(){
     this.servicerole.getAll().subscribe(
@@ -175,5 +191,7 @@ export class ConnectionComponent implements OnInit {
       console.log(this.roles[0].idRole)}
     )
   }
+
+  
 
 }

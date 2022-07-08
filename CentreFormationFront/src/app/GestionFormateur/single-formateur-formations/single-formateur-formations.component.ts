@@ -16,7 +16,6 @@ import { HistoriqueformateurService } from 'src/app/service/historiqueformateur.
 export class SingleFormateurFormationsComponent implements OnInit {
 
   formateur!:Formateur
-
   formation!:Formation
   formations!:Formation[]
   listeFormations!:Formation[]
@@ -36,7 +35,7 @@ export class SingleFormateurFormationsComponent implements OnInit {
    this.RecupererLeFormateur()
    //Recup historique formation en fonction de l'id formateur
    this.RecupererSesFormations()
-
+   this.Recupererformations()
    
    // this.formationsAssociees(this.idF)
   }
@@ -62,7 +61,17 @@ export class SingleFormateurFormationsComponent implements OnInit {
     )
     
   } */
-
+  Recupererformations()
+  {
+ 
+    this.serviceFormation.getAll().subscribe
+    (
+      response=> 
+      {
+        this.formations=response
+      }
+    )
+  }
 
   RecupererLeFormateur()
   {
@@ -83,7 +92,7 @@ export class SingleFormateurFormationsComponent implements OnInit {
     (
       response=>
       {
-        this.historique
+        this.historique=response
       }
     )
   }

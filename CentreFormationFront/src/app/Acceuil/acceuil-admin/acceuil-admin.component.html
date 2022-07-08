@@ -27,3 +27,54 @@
 <button (click)="afficherProduitsC()" type="button" class="btn btn-warning btn-rounded">Afficher liste des produits pour les clients</button>
 <button (click)="afficherPaniers()" type="button" class="btn btn-info btn-rounded">Faire son panier</button>
 <button (click)="afficherCommandes()" type="button" class="btn btn-light btn-rounded">Afficher les commandes</button> -->
+<br>
+<br>
+<form (ngSubmit)="ajouter()">
+    <input type="hidden" name="id"  [(ngModel)]="id"/><br>
+    Nom:<input type="text" name="nom"  [(ngModel)]="nom"/><br>
+    Prenom:<input type="text" name="prenom" [(ngModel)]="prenom"/><br>
+    Username:<input type="text" name="username" [(ngModel)]="username"/><br>
+    Password:<input type="password" name="password" [(ngModel)]="password"/><br>
+    Mail:<input type="text" name="mail" [(ngModel)]="mail"/><br>
+
+
+   
+
+    Role:
+    <select [(ngModel)]="selectedOption" name="selectedOption">
+        <option *ngFor="let r of roles" value="{{r.librole}}">{{r.librole}}</option>
+    </select>
+    <button type="submit">Valider</button>
+
+</form>
+<br>
+<br>
+
+<form (ngSubmit)="rol()">
+    Afficher seulement les <select [(ngModel)]="selectedValue" name="selectedValue">
+        <option *ngFor="let r of roles" value="{{r.idRole}}">{{r.librole}}</option>
+    </select>
+    <button type="submit">Valider</button>
+</form>
+
+
+<button (click)="reset()">Reset</button>
+<br>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Nom</td>
+        <td>Prenom</td>
+        <td>Role</td>
+        <td>Supprimer</td>
+        <td>Modifier</td>
+    </tr>
+    <tr *ngFor="let n of utilisateurs">
+            <td>{{n.id}}</td>
+            <td>{{n.nom}}</td>
+            <td>{{n.prenom}}</td>
+            <td>{{n.role.librole}}</td>
+            <td><button (click)="supprimer(n.id)">Supprimer</button></td>
+            <td><button (click)="versmodif(n.id)">Modifier</button></td>
+    </tr>
+</table>

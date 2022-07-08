@@ -34,6 +34,10 @@ public class UtilisateurService implements IUtilisateurService{
 		Optional<Utilisateur>op=udao.findById(id);
 		return op;
 	}
+	public List<Utilisateur> findByRole_IdRole(int idRole){
+		List<Utilisateur> liste=udao.findByRole_IdRole(idRole);
+		return liste;
+	}
 	
 	public List<Utilisateur> getAllService(){
 		List<Utilisateur> liste=udao.findAll();

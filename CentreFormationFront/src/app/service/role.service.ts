@@ -18,6 +18,12 @@ export class RoleService {
   {
     return this.http.get<Role>('http://localhost:8016/api/roles/'+idRole)
   }
+  getByLibRole(librole:string)
+  {
+    return this.http.get<Role>('http://localhost:8016/api/rolesBylib/'+librole)
+  }
+
+
 
 
   ajouter(role:Role)

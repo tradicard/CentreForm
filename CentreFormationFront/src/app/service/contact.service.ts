@@ -33,6 +33,12 @@ export class ContactService {
   {
     return this.http.post<any>('http://localhost:8016/sendSimpleEmail',c)
   }
+  sendscheduledemail(c:Contact)
+  {
+    return this.http.post<any>('http://localhost:8016/GiveScheduleEmailRequest',c)
+  }
+
+  
 
   supprimer(idContact:number)
   {

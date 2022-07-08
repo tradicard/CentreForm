@@ -24,7 +24,7 @@
         <td>{{p.dateProchainPaiement}}</td>
         <td><button (click)="versPaiementParticipant(p.participant.id)" type="button" class="btn btn-primary">{{p.participant.nom}} {{p.participant.prenom}}</button></td>
         <td><button (click)="suppr(p.idPaiement)" type="button" class="btn btn-primary">Supprimer</button></td>
-        <td><button (click)="modif(p.idPaiement)" type="button" class="btn btn-primary">Modifier</button></td>
+        <!-- <td><button (click)="modif(p.idPaiement)" type="button" class="btn btn-primary">Modifier</button></td> -->
         <td><button (click)="relance(p.participant.id)" type="button" class="btn btn-primary">Relancer les participants</button></td>
     </tr>
 

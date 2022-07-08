@@ -5,13 +5,11 @@
 
 <!-- <body>
     
+<body>
+    <h1>Login Form</h1>
 <form (ngSubmit)="login()">
     Username:<input type="text" name="username" [(ngModel)]="username"/><br>
     Password:<input type="password" name="password" [(ngModel)]="password"/><br>
-
-    Votre etes:<select [(ngModel)]="selectedValue" name="selectedValue">
-        <option *ngFor="let r of roles" value="{{r.librole}}">{{r.librole}}</option>
-    </select>
     <button type="submit">Valider</button>
 </form>
 

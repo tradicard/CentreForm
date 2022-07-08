@@ -15,5 +15,6 @@ public interface IUtilisateurService {
 	public List<Utilisateur> getAllService();
 	public Optional<Utilisateur> selectByIdService(int id);
 	public void ajouterService(Utilisateur u);
+	public List<Utilisateur> findByRole_IdRole(int idRole);
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Participant } from 'src/app/models/participant';
 import { Utilisateur } from 'src/app/models/utilisateur';
+import { ParticipantService } from 'src/app/service/participant.service';
 import { UtilisateurService } from 'src/app/service/utilisateur.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class InscriptionComponent implements OnInit {
 
   user!:Participant
   
-  constructor(private service:UtilisateurService,private router:Router) { }
+  constructor(private service:ParticipantService,private router:Router) { }
 
   ngOnInit(): void {
     this.user=new Participant()
@@ -28,7 +29,7 @@ export class InscriptionComponent implements OnInit {
     console.log(this.user.password)
     console.log(this.user.username)
     console.log(this.user.mail)
-    this.service.inscrire(this.user).subscribe(
+    this.service.ajouter(this.user).subscribe(
       response=>{this.router.navigateByUrl('Connection')})
   }
 

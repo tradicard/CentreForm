@@ -22,7 +22,7 @@ Solde du compte :
         <td>{{p.reste}}</td>
         <td>{{p.dateDernierPaiement}}</td>
         <td>{{p.dateProchainPaiement}}</td>
-        <td><button (click)="payer()" type="button" class="btn btn-primary">Payer</button></td>
+        <td><button (click)="payer(p.idPaiement)" type="button" class="btn btn-primary">Payer</button></td>
     </tr>
 
     
