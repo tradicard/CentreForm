@@ -11,7 +11,7 @@ export class FormationService {
 
   getAll()
   {
-    return this.http.get<Formation[]>('http://localhost:8016/api/formations')
+    return this.http.get<Formation[]>('http://localhost:8016/api/formationss')
   }
 
   getAllbyIdPart(idPart:number)

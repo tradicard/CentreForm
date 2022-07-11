@@ -36,7 +36,7 @@ public class FormationController {
 	@Autowired
 	IFormationService fns;
 	
-	@GetMapping("/formations")
+	@GetMapping("/formationss")
 	public List<Formation> GestionFormation() {
 		List<Formation> listec=fns.getAllService();
 		return listec;

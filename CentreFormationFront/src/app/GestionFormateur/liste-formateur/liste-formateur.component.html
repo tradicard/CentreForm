@@ -9,7 +9,7 @@
 
 
 </style>
-
+<body>
 <button (click)="versadd()">Ajouter produit</button>
 
 <table>
@@ -26,9 +26,10 @@
             <td>{{n.nom}}</td>
             <td>{{n.prenom}}</td>
          <!--   <td>{{n.historiqueFormation}}</td>-->
-         <td><button (click)="formationsAssociees(n.id)">Fromations Associees</button></td>
+         <td><button (click)="formationsAssociees(n.id)">Formations Associees</button></td>
             <td><button (click)="supprimer(n.id)">Supprimer</button></td>
             <td><button (click)="versmodif(n.id)">Modifier</button></td>
         
     </tr>
 </table>
+</body>

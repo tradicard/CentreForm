@@ -1,14 +1,14 @@
-
+<body>
 <form (ngSubmit)="modif()">
     Username:<input type="text" name="username" [(ngModel)]="user.username"/><br>
     Password:<input type="password" name="password" [(ngModel)]="user.password"/><br>
     Nom:<input type="text" name="nom" [(ngModel)]="user.nom"/><br>
     Prenom:<input type="text" name="prenom" [(ngModel)]="user.prenom"/><br>
     Mail:<input type="text" name="mail" [(ngModel)]="user.mail"/><br>
-    <button type="submit">Valider inscription</button>
+    <button type="submit">Valider vos information</button>
 
 </form>
-<h4>Historique de vos formations</h4>
+<h4 *ngIf="b!==undefined">Historique de vos formations</h4>
 <table *ngIf="b">
     <tr>
         <td>id</td>
@@ -57,4 +57,7 @@
     
     
 </table>
+<button *ngIf="user.role.librole===part" (click)="paye()" type="button" class="btn btn-secondary">Vos paiements</button>
 
+<button *ngIf="user.role.librole===part" (click)="retour1()" type="button" class="btn btn-secondary">Gestion paiements</button>
+</body>

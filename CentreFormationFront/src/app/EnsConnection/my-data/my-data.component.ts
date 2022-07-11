@@ -17,11 +17,13 @@ user!:Utilisateur
 hist!:HistoriqueParticipant[]
 histf!:HistoriqueFormateur[]
 b!:boolean
+part="participant"
   constructor(private service:UtilisateurService,private router:Router,private servicehist:HistoriqueparticipantService,
     private servicehistf:HistoriqueformateurService) { }
 
   ngOnInit(): void {
     this.recupererU()
+    this.recup()
   }
 
   recupererU(){
@@ -58,6 +60,13 @@ b!:boolean
       this.b=false}
     )
   }
+  }
+
+  retour1(){
+    this.router.navigateByUrl('Acceuil')
+  }
+  paye(){
+    this.router.navigateByUrl('PaiementParticipant')
   }
 
 }

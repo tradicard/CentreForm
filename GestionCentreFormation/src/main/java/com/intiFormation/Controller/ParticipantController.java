@@ -87,6 +87,8 @@ public class ParticipantController {
 				break;
 			}
 		}
+		Role r=rs.findByLibrole("participant");
+		u.setRole(r);
 		
 		String pass=bc.encode(u.getPassword());
 		u.setPassword(pass);

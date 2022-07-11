@@ -37,6 +37,7 @@ import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-
 import { MyDataComponent } from './EnsConnection/my-data/my-data.component';
 import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-utilisateur.component';
 import { FooterComponent } from './footer/footer.component';
+import { AcceuilAllComponent } from './Acceuil/acceuil-all/acceuil-all.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { FooterComponent } from './footer/footer.component';
     CrediterCompteComponent,
     MyDataComponent,
     ModifUtilisateurComponent,
-    RelancePaiementComponent
+    RelancePaiementComponent,
+    AcceuilAllComponent
  
   ],
   imports: [

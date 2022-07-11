@@ -31,9 +31,11 @@ import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-
 import { HeaderComponent } from './header/header.component';
 import { InscriptionComponent } from './EnsConnection/inscription/inscription.component';
 import { MyDataComponent } from './EnsConnection/my-data/my-data.component';
+import { AcceuilAllComponent } from './Acceuil/acceuil-all/acceuil-all.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
+  {path:'',component:AcceuilAllComponent},
   {path:'afficherFormateur',component:ListeFormateurComponent},
   {path:'ajouterFormateur',component:AjoutFormateurComponent},
   {path:'modifierFormateur/:id',component:ModifierFormateurComponent},
