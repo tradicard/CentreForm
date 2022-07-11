@@ -7,10 +7,12 @@
     
 
 
-<form (ngSubmit)="searchform()">
+<!-- <form (ngSubmit)="searchform()">
     <input type="search" name="cherche" [(ngModel)]="cherche">
     <button type="submit">search</button>
 </form>
+
+
 <h3>Vos formations</h3>
 <table>
     <tr>
@@ -63,17 +65,115 @@
 
     
     
-</table>
+</table> -->
 
 
 
-<br>
+<!--
+    Banniere principale
+-->
+
+<section class="section main-banner" id="top" data-section="section1">
+   
+    <img id="bg-image" src="https://static.vecteezy.com/ti/photos-gratuite/p2/1269740-gros-plan-d-une-personne-qui-etudie-gratuit-photo.jpg" />
+
+
+<div class="video-overlay header-text">
+    <div class="caption">
+        <h6>Formez-vous ici !</h6>
+        <h2><em>Vos</em> Formations</h2>
+        <div class="main-button">
+            
+        </div>
+    </div>
+</div>
+</section>
+
+<!--Recherche-->
+
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h2 id="idListe">Rechercher une formation</h2>
+                    <form (ngSubmit)="searchform()" class="requires-validation" novalidate>
+                        <div class="col-md-12">
+                        <input type="search" name="cherche"  class="form-control" [(ngModel)]="cherche" placeholder="Rechercher une formation"/>
+                        </div>
+
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-secondary" >Rechercher</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <br> <br> 
+
+
+<h2 id="idListe" style="text-align: center;">Vos formations</h2> <br>
+
+<table class="table">
+     <br>
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nom formation</th>
+        <th scope="col">Description</th>
+        <th scope="col">Date de début</th>
+        <th scope="col">Date de fin</th>
+        <th scope="col">Prix</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr *ngFor="let f of formationsparu">
+        <th scope="row" >{{f.idFormation}}</th>
+        <td>{{f.libFormation}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.dateDebut}}</td>
+        <td>{{f.dateFin}}</td>
+        <td>{{f.prix}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <br><br>
+
+  <h2 id="idListe" style="text-align: center;">Toutes nos formations</h2> <br>
+  <table class="table">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nom formation</th>
+        <th scope="col">Description</th>
+        <th scope="col">Date de début</th>
+        <th scope="col">Date de fin</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Inscription</th>
+      </tr>
+  
+      
+      
+      <tr *ngFor="let f of formations">
+          <td>{{f.idFormation}}</td>
+          <td>{{f.libFormation}}</td>
+          <td>{{f.description}}</td>
+          <td>{{f.dateDebut}}</td>
+          <td>{{f.dateFin}}</td>
+          <td>{{f.prix}}</td>
+          <button (click)="inscription(f.idFormation)" type="button" class="btn btn-secondary">Inscription</button>
+      </tr>
+  
+      
+      
+  </table>
+
+
+
+
+
+
 
 </body>
-<!-- <button (click)="inscription()" type="button" class="btn btn-primary">Inscription</button>
-<button (click)="connectionutil()" type="button" class="btn btn-secondary btn-rounded">Connection</button>
-<button (click)="logout()" type="button" class="btn btn-success btn-rounded">deconnection</button>
-<button (click)="afficherProduits()" type="button" class="btn btn-danger btn-rounded">Afficher liste des produits</button>
-<button (click)="afficherProduitsC()" type="button" class="btn btn-warning btn-rounded">Afficher liste des produits pour les clients</button>
-<button (click)="afficherPaniers()" type="button" class="btn btn-info btn-rounded">Faire son panier</button>
-<button (click)="afficherCommandes()" type="button" class="btn btn-light btn-rounded">Afficher les commandes</button> -->

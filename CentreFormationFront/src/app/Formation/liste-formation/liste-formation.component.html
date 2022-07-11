@@ -1,8 +1,11 @@
+
+
+<!-- 
 <h1 style="text-align: center;">Formations Actuelles</h1>
 
 <td><button (click)="ajouterFormation(f)">Ajouter une formation</button></td> <br> <br>
-
-<table>
+ -->
+<!-- <table>
     <tr>
         <td>IdFormation</td>
         <td>Nom Formation</td>
@@ -33,15 +36,69 @@
     <td><button (click)="supprimer(f.idFormation)">Supprimer</button></td> <br> <br>
     </tr>
  
-    </table>
- 
- 
-   
+    </table> -->
 
-    
-
+<!-- 
 <button (click)="retour()"> Retour Accueil </button> <br> <br>
 
 
 
 <button (click)=logout() style="text-align: right">Log Out</button>
+
+ -->
+<body>
+
+<h1>Modifications en dessous</h1>
+
+
+<table class="table">
+    <h3 id="idListe">Formations actuelles</h3> <br> <br>
+    <thead>
+      <tr>
+        <th scope="col">IdFormation</th>
+        <th scope="col">Nom Formation</th>
+        <th scope="col">Description</th>
+        <th scope="col">Date de début</th>
+        <th scope="col">Date de fin</th>
+        <th scope="col">Prix</th>
+
+        <th scope="col">Nom Formateur</th>
+        <th scope="col">Participants</th>
+        
+        <th scope="col">Modifier</th>
+        <th scope="col">Supprimer</th>
+
+      </tr>
+    </thead>
+  
+    <tbody>
+
+      <tr *ngFor="let f of formations">
+        <td>{{f.idFormation}}</td>
+        <td>{{f.libFormation}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.dateDebut}}</td>
+        <td>{{f.dateFin}}</td>
+        <td>{{f.prix}}</td>
+        
+        <td>{{f.formateur.nom}}</td> 
+        <td><button (click)="participantsAssocies(f.idFormation)" class="btn btn-secondary">Liste des participants</button></td> 
+       
+        <td><button (click)="modifier(f.idFormation)" class="btn btn-secondary">Modifier</button></td>
+        <td><button (click)="supprimer(f.idFormation)" class="btn btn-secondary">Supprimer</button></td> <br> <br>
+        </tr>
+
+    </tbody>
+  </table>
+
+
+  <td><button (click)="ajouterFormation(f)" class="btn btn-secondary">Ajouter une formation</button></td> <br> <br>
+
+  <button (click)="retour()" class="btn btn-secondary" id="idRetour"> Retour Accueil </button> <br> <br>
+
+
+
+  <button (click)=logout() style="text-align: right" class="btn btn-secondary">Log Out</button>
+
+    
+  </body>

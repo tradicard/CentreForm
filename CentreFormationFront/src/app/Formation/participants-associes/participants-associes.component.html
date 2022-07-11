@@ -1,4 +1,4 @@
-<p>Les participants de la formation</p>
+<!-- <p>Les participants de la formation</p>
 
 <form (ngSubmit)="ParticipantsAssocies(f.idFormation)">
  
@@ -16,9 +16,41 @@
         <td>{{p.prenom}}</td>
         <td>{{p.mail}}</td>
     
-     <a routerLink="/AjouterP">Ajouter Passport</a> 
+    
         </table>
     
     </form>
     
     <button (click)="retour()"> Retour Accueil </button> <br> <br> 
+ -->
+
+    <body>
+        
+
+
+    <table class="table">
+        <h3 id="idListe">Liste des Participants de la formation</h3> <br>
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Mail</th>
+         
+          </tr>
+        </thead>
+      
+        <tbody>
+         <tr *ngFor="let p of f.participants">
+                <th scope="row" >{{p.id}}</th>
+                <td>{{p.nom}}</td>
+                <td>{{p.prenom}}</td>
+                <td>{{p.mail}}</td>
+
+          </tr>
+          
+        </tbody>
+      </table> <br>
+      <td><button (click)="retour()" class="btn btn-secondary" id="idRetour"> Retour Accueil</button></td>
+
+    </body>

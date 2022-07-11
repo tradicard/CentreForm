@@ -39,4 +39,9 @@ export class AfficherPaiementAdminComponent implements OnInit {
   {
     this.router.navigateByUrl('RelancePaiement/'+idParticipant)
   }
+
+  modif(idPaiement:number)
+  {
+
+  }
 }

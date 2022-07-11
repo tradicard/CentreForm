@@ -1,4 +1,4 @@
-<p>Ajouter Une Formation</p>
+<!-- <p>Ajouter Une Formation</p>
 
 <form (ngSubmit)="ajouter()" >
     Nom de la Formation: <input type="text" name="libFormation" [(ngModel)]="f.libFormation" /><br>
@@ -20,5 +20,59 @@
  
 <button (click)="retour()"> Retour Gestion Formation </button> <br> <br>
 
+ -->
+
+ <body>
+    
 
 
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Ajouter une formation</h3>
+                    <p>Remplir les informations ci-dessous</p>
+                    <form (ngSubmit)="ajouter()" class="requires-validation" novalidate>
+                       
+
+                        <div class="col-md-12">
+                        Nom de la Formation: <input type="text" name="libFormation"  class="form-control" [(ngModel)]="f.libFormation"/>
+                        </div>
+
+                        <div class="col-md-12">
+                            Description :   <input type="text" name="description" class="form-control" [(ngModel)]="f.description"/>
+                         </div>
+
+                         <div class="col-md-12">
+                            Date de Debut :  <input type="date" name="datedebu" class="form-control" [(ngModel)]="datedebu"/>
+                         </div>
+                         <br>
+
+                         <div class="col-md-12">
+                            Date de Fin:   <input type="date" name="datefin" class="form-control" [(ngModel)]="datefin"/>
+                         </div> <br>
+
+                         <div class="col-md-12">
+                            Prix:  <input type="number" name="prix" class="form-control" [(ngModel)]="f.prix"/>
+                         </div>
+
+
+                       <div class="col-md-12">
+                        <option selected disabled value="">Attribuer formateur :</option>
+                                <select [(ngModel)]="forma" name="forma" class="form-select mt-3" required>
+                                    <option *ngFor="let fo of formateurs" value="{{fo.id}}">{{fo.nom}}</option>
+                           </select>
+                       </div>
+
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">Ajouter</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <br> <br> 
+
+</body>

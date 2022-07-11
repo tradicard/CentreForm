@@ -30,6 +30,7 @@ import { RelancePaiementComponent } from './GestionPaiement/relance-paiement/rel
 import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-compte/crediter-compte.component';
 import { HeaderComponent } from './header/header.component';
 import { InscriptionComponent } from './EnsConnection/inscription/inscription.component';
+import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-utilisateur.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -44,6 +45,9 @@ const routes: Routes = [
   {path:'inscriptionParticipant',component:InscriptionComponent},
 
   {path:'formationsDuParticipant/:id',component:SingleParticipantFormationsComponent},
+
+  {path:'modifierUtilisateur/:id',component:ModifUtilisateurComponent},
+  
   
   //Prospect
   {path:'afficherProspects',component:ListeProspectComponent},
@@ -70,6 +74,10 @@ const routes: Routes = [
 
 
   {path:'testHeader',component:HeaderComponent},
+  {path:'testAjoutPaiement',component:PaiementComponent},
+  {path:'testsinglePartForm/:id',component:SingleParticipantFormationsComponent},
+  
+  
 
 ];
 

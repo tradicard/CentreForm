@@ -1,4 +1,4 @@
-<p>singleformation works!</p>
+<!-- <p>singleformation works!</p>
 
 <table>
     <tr>
@@ -29,4 +29,46 @@
     </tr>
     
     
-</table>
+</table> -->
+
+<body>
+    
+
+<h3 id="idListe">Details formation</h3> <br>
+<table class="table">
+    
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">LibFormation</th>
+        <th scope="col">Description</th>
+       
+        <th scope="col">dDateDebut</th>
+        <th scope="col">DateFin</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Inscription</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr *ngFor="let f of formations">
+        <th scope="row" >{{f.idFormation}}</th>
+        <td>{{f.libFormation}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.dateDebut}}</td>
+        <td>{{f.dateFin}}</td>
+        <td>{{f.prix}}</td>
+        <div *ngIf="inscrit===false">
+            <td><button (click)="inscription()" type="button" class="btn btn-secondary">Inscription</button></td>
+            </div>
+            <div *ngIf="inscrit">
+                <td>Vous etes deja inscrit</td>
+            </div>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+</body>
+  

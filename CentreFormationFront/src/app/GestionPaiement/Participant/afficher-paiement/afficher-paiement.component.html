@@ -1,4 +1,4 @@
-Solde du compte : 
+<!-- Solde du compte : 
 {{participant.compte}} &euro;
 <button (click)="verscredit()">Ajout fond</button>
 
@@ -22,9 +22,53 @@ Solde du compte :
         <td>{{p.reste}}</td>
         <td>{{p.dateDernierPaiement}}</td>
         <td>{{p.dateProchainPaiement}}</td>
-        <td><button (click)="payer(p.idPaiement)" type="button" class="btn btn-primary">Payer</button></td>
+        <td><button (click)="payer(p.idPaiement)" type="button" class="btn btn-secondary">Payer</button></td>
     </tr>
 
+</table> -->
+
+
+<body>
     
-    
-</table>
+    Solde du compte : 
+    {{participant.compte}}
+    <button (click)="verscredit()" class="btn btn-secondary">Ajouter fond</button> <br> <br>
+
+<!--Modifs-->
+
+<table class="table">
+    <h3 id="idListe">Liste des paiements</h3> <br> <br>
+    <h6>Solde du compte : 
+        {{participant.compte}}
+        <button (click)="verscredit()" class="btn btn-secondary" id="idFond">Ajouter fond</button></h6>
+    <thead>
+      <tr>
+        <th scope="col">Id Paiement</th>
+        <th scope="col">Date Facturation </th>
+        <th scope="col">Montant</th>
+        <th scope="col">Reste</th>
+
+        <th scope="col">Date Dernier Paiement</th>
+        <th scope="col">Date Prochain Paiement</th>
+        <th scope="col">Payer</th>
+       
+
+      </tr>
+    </thead>
+  
+    <tbody>
+
+      <tr  *ngFor="let p of paiements">
+        <th scope="row" >{{p.idPaiement}}</th>
+        <td>{{p.dateFacture}}</td>
+        <td>{{p.montant}}</td>
+        <td>{{p.reste}}</td>
+        <td>{{p.dateDernierPaiement}}</td>
+        <td>{{p.dateProchainPaiement}}</td>
+        <td><button (click)="payer(p.idPaiement)" type="button" class="btn btn-secondary">Payer</button></td>
+        </tr>
+
+    </tbody>
+  </table>
+
+</body>

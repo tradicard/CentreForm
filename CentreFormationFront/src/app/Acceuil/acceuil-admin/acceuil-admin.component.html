@@ -41,7 +41,9 @@
         <option *ngFor="let r of roles" value="{{r.idRole}}">{{r.librole}}</option>
     </select>
     <button type="submit">Valider</button>
-</form> -->
+ </form> 
+
+
 
 
 <button (click)="reset()">Reset</button>
@@ -64,10 +66,10 @@
             <td><button (click)="versmodif(n.id)">Modifier</button></td>
     </tr>
 </table>
+ -->
 
 
 
-<h1>Modifications en dessous</h1>
 
 <!--Partie Image fond banniere principale-->
 
@@ -177,14 +179,46 @@
               
 
                         <div class="form-button mt-3">
-                            <button id="submit" type="submit" class="btn btn-primary">Ajouter</button>
+                            <button id="submit" type="submit" class="btn btn-secondary">Ajouter</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div> <br> <br>
+
+<button (click)="reset()" class="btn btn-secondary" style="text-align:right;">Reset</button> <br> <br>
+
 
 <!-- Liste des utilisateurs et leur roles -->
+
+<table class="table">
+  <h3 id="idListe">Liste des utilisateurs</h3> <br>
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Role</th>
+      <th scope="col">Supprimer</th>
+      <th scope="col">Modifier</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let n of utilisateurs">
+      <th scope="row" >{{n.id}}</th>
+      <td>{{n.nom}}</td>
+      <td>{{n.prenom}}</td>
+      <td>{{n.role.librole}}</td>
+      <td><button (click)="supprimer(n.id)" class="btn btn-secondary">Supprimer</button></td>
+      <td><button (click)="versmodif(n.id)" class="btn btn-secondary">Modifier</button></td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
 

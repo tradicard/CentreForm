@@ -1,4 +1,4 @@
-<form (ngSubmit)="SaveFormateur()">
+<!-- <form (ngSubmit)="SaveFormateur()">
     <input type="hidden" name="id"  [(ngModel)]="formateur.id"/><br>
     Nom:<input type="text" name="nom"  [(ngModel)]="formateur.nom"/><br>
     Prenom:<input type="text" name="prenom" [(ngModel)]="formateur.prenom"/><br>
@@ -15,3 +15,61 @@
     <button type="submit">Valider</button>
 
 </form>
+ -->
+
+<body>
+    
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Modifier un formateur</h3>
+                        <p>Remplir les informations ci-dessous</p>
+                        <form (ngSubmit)="SaveFormateur()" class="requires-validation" novalidate>
+                            <input type="hidden" name="id"  [(ngModel)]="formateur.id"/>
+    
+                            <div class="col-md-12">
+                             Nom : <input type="text" name="nom"  class="form-control" [(ngModel)]="formateur.nom"/>
+                            </div>
+    
+                            <div class="col-md-12">
+                             Prenom :   <input type="text" name="prenom" class="form-control" [(ngModel)]="formateur.prenom"/>
+                             </div>
+    
+                             <div class="col-md-12">
+                              Username :  <input type="username" name="username" class="form-control" [(ngModel)]="formateur.username"/>
+                             </div>
+    
+                             <div class="col-md-12">
+                             Password :   <input type="password" name="password" class="form-control" [(ngModel)]="formateur.password"/>
+                             </div>
+    
+                             <div class="col-md-12">
+                              Mail :  <input type="text" name="mail" class="form-control" [(ngModel)]="formateur.mail"/>
+                             </div>
+    
+    
+                           <div class="col-md-12">
+                            <option selected disabled value="">Role :</option>
+                                    <select [(ngModel)]="selectedValue" name="selectedValue" class="form-select mt-3" required>
+                                        <option *ngFor="let r of roles" value="{{r.librole}}">{{r.librole}}</option>
+                               </select>
+                           </div>
+    
+    
+                  
+    
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Valider modifications</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <br> <br>
+    
+
+    
+    </body>

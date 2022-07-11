@@ -1,5 +1,5 @@
 
-<form (ngSubmit)="modif()">
+<!-- <form (ngSubmit)="modif()">
     Username:<input type="text" name="username" [(ngModel)]="user.username"/><br>
     Password:<input type="password" name="password" [(ngModel)]="user.password"/><br>
     Nom:<input type="text" name="nom" [(ngModel)]="user.nom"/><br>
@@ -8,3 +8,50 @@
     <button type="submit">Valider inscription</button>
 
 </form>
+
+ -->
+
+<body>
+
+
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Modifier Votre profil</h3>
+                        <p>Remplir les informations ci-dessous</p>
+                        <form (ngSubmit)="modif()" class="requires-validation" novalidate>
+                            <input type="hidden" name="id"  [(ngModel)]="user.id"/><br>
+    
+                            <div class="col-md-12">
+                             Nom : <input type="text" name="nom"  class="form-control" [(ngModel)]="user.nom"/>
+                            </div>
+    
+                            <div class="col-md-12">
+                             Prenom :   <input type="text" name="prenom" class="form-control" [(ngModel)]="user.prenom"/>
+                             </div>
+    
+                             <div class="col-md-12">
+                              Username :  <input type="username" name="username" class="form-control" [(ngModel)]="user.username"/>
+                             </div>
+    
+                             <div class="col-md-12">
+                             Password :   <input type="password" name="password" class="form-control" [(ngModel)]="user.password"/>
+                             </div>
+    
+                             <div class="col-md-12">
+                              Mail :  <input type="text" name="mail" class="form-control" [(ngModel)]="user.mail"/>
+                             </div> <br>
+    
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Confirmer modificiations</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <br> <br>
+    
+    </body>

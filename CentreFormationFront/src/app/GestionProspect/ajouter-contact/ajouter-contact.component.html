@@ -1,4 +1,4 @@
-<p>ajouter-contact works!</p>
+<!-- <p>ajouter-contact works!</p>
 
 
 <form (ngSubmit)="SaveContact()">
@@ -8,3 +8,46 @@
     </select> <br>
     <button type="submit">Valider</button>
 </form>
+
+ -->
+
+<body>
+    
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Ajouter contact</h3>
+                        <p>Remplir les informations ci-dessous</p>
+                        <form (ngSubmit)="SaveContact()" class="requires-validation" novalidate>
+    
+                            <div class="col-md-12">
+                            Date du Contact:<input type="datetime-local" name="datecontact" class="form-control" [(ngModel)]="datecontact"/>
+                            </div> <br>
+    
+    
+                           <div class="col-md-12">
+                            <option selected disabled value="">Commercial:</option>
+                                    <select [(ngModel)]="selectedOption" name="selectedOption" class="form-select mt-3" required>
+                                        <option *ngFor="let c of commercials" value="{{c.id}}">{{c.nom}}</option>  
+                               </select>
+                           </div>
+    
+    
+                  
+    
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Ajouter contact</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <br> <br>
+    
+
+    
+    </body>
+    
