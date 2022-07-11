@@ -37,6 +37,7 @@ import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-
 import { MyDataComponent } from './EnsConnection/my-data/my-data.component';
 import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-utilisateur.component';
 import { FooterComponent } from './footer/footer.component';
+import { CsvService } from './service/csv.service';
 
 
 @NgModule({
@@ -85,6 +86,7 @@ import { FooterComponent } from './footer/footer.component';
     
   ],
   providers: [
+    CsvService,
     {provide:HTTP_INTERCEPTORS, useClass:HttpInterceptorService, multi:true},
     DatePipe,
   ],

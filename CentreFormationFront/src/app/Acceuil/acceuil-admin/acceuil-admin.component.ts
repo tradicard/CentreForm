@@ -169,4 +169,7 @@ versmodif(idFormateur:number){
   this.router.navigateByUrl('modifierUtilisateur/'+idFormateur)
 }
 
+afficherPaiement() {
+  this.router.navigateByUrl("afficherPaiementAdmin")
+}
 }
