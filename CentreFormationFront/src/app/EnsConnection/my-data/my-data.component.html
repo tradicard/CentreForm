@@ -8,3 +8,53 @@
     <button type="submit">Valider inscription</button>
 
 </form>
+<h4>Historique de vos formations</h4>
+<table *ngIf="b">
+    <tr>
+        <td>id</td>
+        <td>libFormation</td>
+        <td>description</td>
+        <td>dateDebut</td>
+        <td>dateFin</td>
+        <td>prix</td>
+    </tr>
+
+    
+    
+    <tr *ngFor="let h of hist">
+        <td>{{h.formation.idFormation}}</td>
+        <td>{{h.formation.libFormation}}</td>
+        <td>{{h.formation.description}}</td>
+        <td>{{h.formation.dateDebut}}</td>
+        <td>{{h.formation.dateFin}}</td>
+        <td>{{h.formation.prix}}</td>
+    </tr>
+
+    
+    
+</table>
+<table *ngIf="b===false">
+    <tr>
+        <td>id</td>
+        <td>libFormation</td>
+        <td>description</td>
+        <td>dateDebut</td>
+        <td>dateFin</td>
+        <td>prix</td>
+    </tr>
+
+    
+    
+    <tr *ngFor="let h of histf">
+        <td>{{h.formation.idFormation}}</td>
+        <td>{{h.formation.libFormation}}</td>
+        <td>{{h.formation.description}}</td>
+        <td>{{h.formation.dateDebut}}</td>
+        <td>{{h.formation.dateFin}}</td>
+        <td>{{h.formation.prix}}</td>
+    </tr>
+
+    
+    
+</table>
+

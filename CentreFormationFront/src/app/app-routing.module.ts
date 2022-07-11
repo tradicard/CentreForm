@@ -30,6 +30,7 @@ import { RelancePaiementComponent } from './GestionPaiement/relance-paiement/rel
 import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-compte/crediter-compte.component';
 import { HeaderComponent } from './header/header.component';
 import { InscriptionComponent } from './EnsConnection/inscription/inscription.component';
+import { MyDataComponent } from './EnsConnection/my-data/my-data.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -42,7 +43,7 @@ const routes: Routes = [
   {path:'AcceuilAdmin',component:AcceuilAdminComponent},
   {path:'inscriptionformation/:id',component:SingleformationComponent},
   {path:'inscriptionParticipant',component:InscriptionComponent},
-
+  {path:'MyData',component:MyDataComponent},
   {path:'formationsDuParticipant/:id',component:SingleParticipantFormationsComponent},
   
   //Prospect

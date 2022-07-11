@@ -25,7 +25,8 @@
             <li class="has-submenu"><a href="#section2">Compte</a>
               <ul class="sub-menu">
                 <ul> <button (click)="versconnection()" *ngIf="token==undefined" class="btn btn-secondary">Se connecter</button></ul>
-                <ul> <button (click)="deconnection()" *ngIf="token!=undefined" class="btn btn-secondary">Se deconnecter</button></ul>
+                <ul> <button (click)="deconnection()" *ngIf="token!=undefined" class="btn btn-secondary" >Se deconnecter</button></ul>
+                <ul> <button (click)="mydata()"  class="btn btn-secondary">My Data</button></ul>
                 </ul>
             </li>
           </ul>
