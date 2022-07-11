@@ -58,11 +58,14 @@
         <td>{{c.commercial.nom}} {{c.commercial.prenom}}</td>
         <td><button (click)="supp(c.idContact)" type="button" class="btn btn-secondary">Supprimer</button></td>
         <td><button (click)="modif(c.idContact)" type="button" class="btn btn-secondary">Modifier</button></td>
+        
         </tr>
 
         <tr>
+          <td>
             <button (click)="ajoutRDV()" type="button" class="btn btn-secondary">Ajouter un contact</button>
-        </tr>
+          </td>
+          </tr>
 
     </tbody>
   </table>

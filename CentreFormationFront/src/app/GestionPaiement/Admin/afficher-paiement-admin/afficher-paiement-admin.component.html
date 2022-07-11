@@ -52,7 +52,7 @@
         <th scope="col">Date Dernier Paiement</th>
         <th scope="col">Date Prochain Paiement</th>
         <th scope="col">Participant</th>
-        <th scope="col">Modifier</th>
+        
         <th scope="col">Supprimer</th>
         <th scope="col">Voir relances paiement</th>
 
@@ -74,7 +74,7 @@
            
             {{p.participant.nom}} {{p.participant.prenom}}</button></td>
        
-         <td><button (click)="modif(p.idPaiement)" type="button" class="btn btn-secondary">Modifier</button></td> 
+         
          <td><button (click)="suppr(p.idPaiement)" type="button" class="btn btn-secondary">Supprimer</button></td>
         <td><button (click)="relance(p.participant.id)" type="button" class="btn btn-secondary">Relancer les participants</button></td>
         </tr>
