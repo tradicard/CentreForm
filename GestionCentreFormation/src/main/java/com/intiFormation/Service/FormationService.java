@@ -45,6 +45,12 @@ public class FormationService implements IFormationService{
 		return liste;
 		
 	}
+	
+	public List<Formation> findByParticipants_Id(int id){
+		List<Formation> liste=fndao.findByParticipants_Id(id);
+		return liste;
+	}
+	
 	public void supprimerService(int id) {
 		fndao.deleteById(id);
 	}

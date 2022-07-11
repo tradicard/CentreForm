@@ -36,9 +36,15 @@ public class FormationController {
 	@Autowired
 	IFormationService fns;
 	
-	@GetMapping("/formations")
+	@GetMapping("/formationss")
 	public List<Formation> GestionFormation() {
 		List<Formation> listec=fns.getAllService();
+		return listec;
+	}
+	
+	@GetMapping("/formationsparid/{id}")
+	public List<Formation> GestionFormation2(@PathVariable("id") int id) {
+		List<Formation> listec=fns.findByParticipants_Id(id);
 		return listec;
 	}
 	

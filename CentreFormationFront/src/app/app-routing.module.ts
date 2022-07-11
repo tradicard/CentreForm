@@ -28,20 +28,24 @@ import { SingleFormateurFormationsComponent } from './GestionFormateur/single-fo
 import { SingleParticipantFormationsComponent } from './single-participant-formations/single-participant-formations.component';
 import { RelancePaiementComponent } from './GestionPaiement/relance-paiement/relance-paiement.component';
 import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-compte/crediter-compte.component';
+import { HeaderComponent } from './header/header.component';
 import { InscriptionComponent } from './EnsConnection/inscription/inscription.component';
+import { MyDataComponent } from './EnsConnection/my-data/my-data.component';
+import { AcceuilAllComponent } from './Acceuil/acceuil-all/acceuil-all.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
+  {path:'',component:AcceuilAllComponent},
   {path:'afficherFormateur',component:ListeFormateurComponent},
   {path:'ajouterFormateur',component:AjoutFormateurComponent},
   {path:'modifierFormateur/:id',component:ModifierFormateurComponent},
   {path:'formationsDuFormateur/:id',component:SingleFormateurFormationsComponent},
-  {path:'searchformation/:ch',component:SearchComponent},
+  {path:'searchformation',component:SearchComponent},
   {path:'Acceuil',component:AcceuilParticipantComponent},
   {path:'AcceuilAdmin',component:AcceuilAdminComponent},
   {path:'inscriptionformation/:id',component:SingleformationComponent},
   {path:'inscriptionParticipant',component:InscriptionComponent},
-
+  {path:'MyData',component:MyDataComponent},
   {path:'formationsDuParticipant/:id',component:SingleParticipantFormationsComponent},
   
   //Prospect
@@ -66,6 +70,9 @@ const routes: Routes = [
   {path:'GestionFormateur',component:ListeFormateurComponent},
 
   {path:'RelancePaiement/:id',component:RelancePaiementComponent},
+
+
+  {path:'testHeader',component:HeaderComponent},
 
 ];
 

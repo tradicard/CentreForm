@@ -43,6 +43,9 @@ id!:number
     this.recupereR()
     
   }
+  gestionpaiement(){
+    this.router.navigateByUrl('afficherPaiementAdmin')
+  }
 
   gestionformation(){
     this.router.navigateByUrl('GestionFormation')
