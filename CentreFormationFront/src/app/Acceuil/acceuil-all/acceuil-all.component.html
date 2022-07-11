@@ -1,5 +1,18 @@
 <body>
+
+    <form (ngSubmit)="rol()">
+        Afficher seulement les <select [(ngModel)]="selectedValue" name="selectedValue">
+            <option  value="free">formations gratuites</option>
+            <option  value="cent">moins de 100 &euro;</option>
+            <option  value="cents">plus de 100 &euro;</option>
+        </select>
+        <button type="submit">Valider</button>
+    </form>
+    <button (click)="reset()">Reset</button>
+    <br>
 <h2>Toutes les formations</h2>
+
+
 <table>
     <tr>
         <td>id</td>
