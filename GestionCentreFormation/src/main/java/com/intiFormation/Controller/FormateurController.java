@@ -61,7 +61,7 @@ public class FormateurController {
 	IUtilisateurService us;
 
 	
-	@GetMapping("/formateurs")
+	@GetMapping("/formateurss")
 	public List<Formateur> GestionFormateur() {
 		List<Formateur> listec=frs.getAllService();
 		return listec;

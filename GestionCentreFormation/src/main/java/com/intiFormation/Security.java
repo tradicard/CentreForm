@@ -70,6 +70,7 @@ public class Security extends WebSecurityConfigurerAdapter{
 		.antMatchers("/api/formationsparid/**").hasAnyAuthority("admin","participant")
 		.antMatchers("/api/participants/**").permitAll()
 		.antMatchers("/api/formateurs/**").hasAnyAuthority("admin","formateur")
+		.antMatchers("/api/formateurss/**").permitAll()
 		.antMatchers("/api/formations/**").hasAnyAuthority("admin","participant","formateur")
 		.antMatchers("/api/formationss/**").permitAll()
 		.antMatchers("/api/commercials/**").hasAnyAuthority("admin","commercial")
