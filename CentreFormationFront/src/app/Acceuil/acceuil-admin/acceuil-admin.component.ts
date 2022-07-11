@@ -43,6 +43,9 @@ id!:number
     this.recupereR()
     
   }
+  gestionpaiement(){
+    this.router.navigateByUrl('afficherPaiementAdmin')
+  }
 
   gestionformation(){
     this.router.navigateByUrl('GestionFormation')
@@ -169,4 +172,7 @@ versmodif(idFormateur:number){
   this.router.navigateByUrl('modifierUtilisateur/'+idFormateur)
 }
 
+afficherPaiement() {
+  this.router.navigateByUrl("afficherPaiementAdmin")
+}
 }

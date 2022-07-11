@@ -38,6 +38,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('Acceuil')
   }
 
- 
+  mydata(){
+    this.router.navigateByUrl('MyData')
+  }
 
 }

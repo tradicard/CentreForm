@@ -11,7 +11,7 @@ export class FormateurService {
 
   getAll()
   {
-    return this.http.get<Formateur[]>('http://localhost:8016/api/formateurs')
+    return this.http.get<Formateur[]>('http://localhost:8016/api/formateurss')
   }
 
   getAllLibre()

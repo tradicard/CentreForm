@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Formation } from '../models/formation';
 import { FormationService } from '../service/formation.service';
 
@@ -10,7 +10,7 @@ import { FormationService } from '../service/formation.service';
 })
 export class SearchComponent implements OnInit {
 formations!:Formation[]
-  constructor(private serviceForm:FormationService,private route:ActivatedRoute) { }
+  constructor(private serviceForm:FormationService,private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
     this.recupForm()
@@ -23,6 +23,9 @@ formations!:Formation[]
       response=>{this.formations=response
       }
     )
+  }
+  retour(){
+    this.router.navigateByUrl('Acceuil')
   }
 
 }

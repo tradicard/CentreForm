@@ -10,11 +10,16 @@
 
 </head>
 
+<!--
 
-
-<!-- <button (click)="gestionformation()" type="button" class="btn btn-primary">formations</button>
+ <button (click)="gestionformation()" type="button" class="btn btn-primary">formations</button>
 <button (click)="gestionformateur()" type="button" class="btn btn-secondary btn-rounded">formateurs</button>
 <button (click)="gestionprospect()" type="button" class="btn btn-success btn-rounded">prospect</button>
+<button (click)="afficherPaiement()" type="button" class="btn btn-success btn-rounded">paiements</button>
+<button (click)="afficherProduits()" type="button" class="btn btn-danger btn-rounded">Afficher liste des produits</button>
+<button (click)="afficherProduitsC()" type="button" class="btn btn-warning btn-rounded">Afficher liste des produits pour les clients</button>
+<button (click)="afficherPaniers()" type="button" class="btn btn-info btn-rounded">Faire son panier</button>
+<button (click)="afficherCommandes()" type="button" class="btn btn-light btn-rounded">Afficher les commandes</button>
 
 <br>
 <br>
@@ -66,8 +71,8 @@
             <td><button (click)="versmodif(n.id)">Modifier</button></td>
     </tr>
 </table>
- -->
 
+-->
 
 
 
@@ -95,7 +100,7 @@
 <section class="features">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-12">
+        <div class="col-lg-3 col-12">
           <div class="features-post">
             <div class="features-content">
               <div class="content-show">
@@ -108,7 +113,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-12">
+        <div class="col-lg-3 col-12">
           <div class="features-post second-features">
             <div class="features-content">
               <div class="content-show">
@@ -120,7 +125,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-12">
+        <div class="col-lg-3 col-12">
           <div class="features-post third-features">
             <div class="features-content">
               <div class="content-show">
@@ -130,6 +135,17 @@
           </div>
         </div>
       </div>
+
+      <div class="col-lg-3 col-12">
+        <div class="features-post third-features">
+          <div class="features-content">
+            <div class="content-show">
+              <h4><i class="fa fa-book"></i>Paiement</h4>
+              <button (click)="gestionpaiement()" type="button" class="btn btn-secondary">Gestion paiements</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
       </div></div>
     </section>  

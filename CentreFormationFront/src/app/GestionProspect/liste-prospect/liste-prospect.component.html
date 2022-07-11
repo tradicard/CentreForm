@@ -1,4 +1,6 @@
 <!-- <form (ngSubmit)="SaveProspect()">
+<body>
+<form (ngSubmit)="SaveProspect()">
     <input type="hidden" name="idProspect"  [(ngModel)]="prospect.idProspect"/><br>
     Nom:<input type="text" name="nom"  [(ngModel)]="prospect.nom"/><br>
     Prenom:<input type="text" name="prenom" [(ngModel)]="prospect.prenom"/><br>
@@ -6,6 +8,21 @@
     Tel:<input type="text" name="tel" [(ngModel)]="prospect.tel"/><br>
     <button type="submit">Valider</button>
 </form>
+
+<br><br>
+
+
+<div>Export simple data</div>
+<input #fileUploadSimple [accept]="'.csv'" type="file" class="file-input" 
+  (change)="importDataFromCSV($event)" hidden="true">
+<button (click)="fileUploadSimple.click()"> Import from csv</button> 
+<br><br>
+
+<div>data from csv</div>
+<div *ngFor="let item of importedData"> {{item | json}}</div>
+<br>
+<button (click)="saveProspectInCSV()">Save simple data array</button>
+<br><br>
 
 
 <table>

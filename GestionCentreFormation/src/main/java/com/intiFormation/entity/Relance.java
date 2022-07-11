@@ -30,10 +30,10 @@ public class Relance {
 	@Override
 	public String toString() {
 		//Rajouter message avec liste d'attributs
-		return ("Monsieur Madame,\n"+this.getParticipant().getNom()+", il vous reste à payer un certain montant de la formation. \n"
+		return ("Monsieur Madame,"+this.getParticipant().getNom()+"\n. Il vous reste à beaucoup à payer. \n"
 				+ "Veuillez-s'il vous plait renouveller votre paiement.\n"
-				+ "Bien cordialement, \n"
-				+ this.getAssistant().getNom()+this.getAssistant().getPrenom());
+				+ "Bien cordialement.\n"
+				+ "Veuillez ne pas répondre à ce mail");
 	}
 	
 	

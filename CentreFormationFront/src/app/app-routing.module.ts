@@ -31,9 +31,12 @@ import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-
 import { HeaderComponent } from './header/header.component';
 import { InscriptionComponent } from './EnsConnection/inscription/inscription.component';
 import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-utilisateur.component';
+import { MyDataComponent } from './EnsConnection/my-data/my-data.component';
+import { AcceuilAllComponent } from './Acceuil/acceuil-all/acceuil-all.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
+  {path:'',component:AcceuilAllComponent},
   {path:'afficherFormateur',component:ListeFormateurComponent},
   {path:'ajouterFormateur',component:AjoutFormateurComponent},
   {path:'modifierFormateur/:id',component:ModifierFormateurComponent},
@@ -43,7 +46,7 @@ const routes: Routes = [
   {path:'AcceuilAdmin',component:AcceuilAdminComponent},
   {path:'inscriptionformation/:id',component:SingleformationComponent},
   {path:'inscriptionParticipant',component:InscriptionComponent},
-
+  {path:'MyData',component:MyDataComponent},
   {path:'formationsDuParticipant/:id',component:SingleParticipantFormationsComponent},
 
   {path:'modifierUtilisateur/:id',component:ModifUtilisateurComponent},
@@ -73,9 +76,7 @@ const routes: Routes = [
   {path:'RelancePaiement/:id',component:RelancePaiementComponent},
 
 
-  {path:'testHeader',component:HeaderComponent},
-  {path:'testAjoutPaiement',component:PaiementComponent},
-  {path:'testsinglePartForm/:id',component:SingleParticipantFormationsComponent},
+
   
   
 

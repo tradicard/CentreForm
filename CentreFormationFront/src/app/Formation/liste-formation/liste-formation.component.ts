@@ -71,16 +71,10 @@ export class ListeFormationComponent implements OnInit {
 
 
   retour():void{
-    this.router.navigateByUrl('Acceuil')
+    this.router.navigateByUrl('AcceuilAdmin')
   }
 
-  logout()
-  {
-      sessionStorage.removeItem('token')
-      this.router.navigateByUrl('')
-      this.validLogout=true
-  
-  }
+
 
 }
 

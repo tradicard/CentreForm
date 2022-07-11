@@ -27,12 +27,12 @@ paiement!:Paiement
   ngOnInit(): void {
     this.recupererP()
     this.paiement=new Paiement()
-
+    this.historique=new HistoriqueParticipant()
   }
 
 
   recupererP() {
-    let uStr = sessionStorage.getItem("p");
+    let uStr = sessionStorage.getItem("u");
     if (uStr) {
       this.p = JSON.parse(uStr) as Participant;
     }
@@ -53,14 +53,16 @@ paiement!:Paiement
   inscription(){
 
     this.f.participants.push(this.p)
-    for(let p of this.f.participants){
-      console.log(p.id)
+    for(let pa of this.f.participants){
+      console.log(pa.id)
     }
     this.service.modifier(this.f).subscribe(
       response=>{
+        console.log("apres modif")
         this.inscrit=true
         this.historique.participant=this.p
         this.historique.formation=this.f
+        console.log("avant hist")
         this.servicehistp.ajouter(this.historique).subscribe()
 
 
