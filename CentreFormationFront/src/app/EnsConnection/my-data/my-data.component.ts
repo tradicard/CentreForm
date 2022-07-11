@@ -18,6 +18,10 @@ hist!:HistoriqueParticipant[]
 histf!:HistoriqueFormateur[]
 b!:boolean
 part="participant"
+ad="admin"
+com="commercial"
+ass="assistant"
+fo="formateur"
   constructor(private service:UtilisateurService,private router:Router,private servicehist:HistoriqueparticipantService,
     private servicehistf:HistoriqueformateurService) { }
 
@@ -64,6 +68,18 @@ part="participant"
 
   retour1(){
     this.router.navigateByUrl('Acceuil')
+  }
+  retour2(){
+    this.router.navigateByUrl('formationsDuFormateur/'+this.user.id)
+  }
+  retour3(){
+    this.router.navigateByUrl('AcceuilAdmin')
+  }
+  retour4(){
+    this.router.navigateByUrl('afficherPaiementAdmin')
+  }
+  retour5(){
+    this.router.navigateByUrl('afficherProspects')
   }
   paye(){
     this.router.navigateByUrl('PaiementParticipant')

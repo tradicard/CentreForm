@@ -59,5 +59,9 @@
 </table>
 <button *ngIf="user.role.librole===part" (click)="paye()" type="button" class="btn btn-secondary">Vos paiements</button>
 
-<button *ngIf="user.role.librole===part" (click)="retour1()" type="button" class="btn btn-secondary">Gestion paiements</button>
+<button *ngIf="user.role.librole===part" (click)="retour1()" type="button" class="btn btn-secondary">retour</button>
+<button *ngIf="user.role.librole===fo" (click)="retour2()" type="button" class="btn btn-secondary">retour</button>
+<button *ngIf="user.role.librole===ad" (click)="retour3()" type="button" class="btn btn-secondary">retour</button>
+<button *ngIf="user.role.librole===ass" (click)="retour4()" type="button" class="btn btn-secondary">retour</button>
+<button *ngIf="user.role.librole===com" (click)="retour5()" type="button" class="btn btn-secondary">retour</button>
 </body>

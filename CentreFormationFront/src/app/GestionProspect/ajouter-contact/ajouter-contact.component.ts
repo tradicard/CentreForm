@@ -71,5 +71,8 @@ export class AjouterContactComponent implements OnInit {
   )
 
   }
+  retour(){
+    this.router.navigateByUrl('afficherProspects')
+  }
 
 }

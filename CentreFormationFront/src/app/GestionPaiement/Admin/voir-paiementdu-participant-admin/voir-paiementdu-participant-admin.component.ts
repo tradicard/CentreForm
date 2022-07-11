@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Paiement } from 'src/app/models/paiement';
 import { Participant } from 'src/app/models/participant';
 import { PaiementService } from 'src/app/service/paiement.service';
@@ -15,7 +15,7 @@ export class VoirPaiementduParticipantAdminComponent implements OnInit {
   participant!:Participant
   paiements!:Paiement[]
 
-  constructor(private route:ActivatedRoute,private serviceParticipant:ParticipantService,private servicePaiement:PaiementService) { }
+  constructor(private route:ActivatedRoute,private serviceParticipant:ParticipantService,private servicePaiement:PaiementService,private router:Router) { }
 
   ngOnInit(): void {
     this.recupererParticipant()
@@ -47,5 +47,8 @@ export class VoirPaiementduParticipantAdminComponent implements OnInit {
     this.servicePaiement.supprimer(idPaiement).subscribe(
       response=>this.ngOnInit()
     )
+  }
+  retour(){
+    this.router.navigateByUrl('afficherPaiementAdmin')
   }
 }
