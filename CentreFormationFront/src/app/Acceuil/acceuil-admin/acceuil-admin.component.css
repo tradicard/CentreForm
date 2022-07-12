@@ -1,12 +1,12 @@
 /* couleur principale du site : background-color: rgba(22,34,57,0.95) */
 
 body{
-    position: relative;
-    top:100px; left:0;
-    margin:0;
-    padding:0;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  top:100px; 
+  margin-bottom:500px;
+  padding:0;
+  width: 100%;
+  height: 100%;
 }
 
 section.coming-soon .top-content h6 {
