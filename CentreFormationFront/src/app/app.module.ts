@@ -39,6 +39,7 @@ import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-uti
 import { FooterComponent } from './footer/footer.component';
 import { CsvService } from './service/csv.service';
 import { AcceuilAllComponent } from './Acceuil/acceuil-all/acceuil-all.component';
+import { CreationQuizzComponent } from './Quizz/Formateur/creation-quizz/creation-quizz.component';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { AcceuilAllComponent } from './Acceuil/acceuil-all/acceuil-all.component
     MyDataComponent,
     ModifUtilisateurComponent,
     RelancePaiementComponent,
-    AcceuilAllComponent
+    AcceuilAllComponent,
+    CreationQuizzComponent
  
   ],
   imports: [
