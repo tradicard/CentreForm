@@ -1,0 +1,73 @@
+<!-- <style>
+    table {
+        border:1px solid black;
+        text-align: center;
+    }
+    td {
+        border:1px solid black;
+    }
+
+
+</style>
+<body>
+<button (click)="versadd()">Ajouter formateur</button>
+
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Nom formateur</td>
+        <td>Prenom formateur</td>
+        <td>Formation</td>
+        <td>Modifier</td>
+        <td>Supprimer</td>
+    </tr>
+    <tr *ngFor="let n of formateurs">
+            <td>{{n.id}}</td>
+            <td>{{n.nom}}</td>
+            <td>{{n.prenom}}</td>
+           <td>{{n.historiqueFormation}}</td>
+         <td><button (click)="formationsAssociees(n.id)">Fromations Associees</button></td>
+         <!--   <td>{{n.historiqueFormation}}</td>
+         <td><button (click)="formationsAssociees(n.id)">Formations Associees</button></td>
+            <td><button (click)="supprimer(n.id)">Supprimer</button></td>
+            <td><button (click)="versmodif(n.id)">Modifier</button></td>
+        
+    </tr>
+</table>-->
+ 
+<!--MOdif-->
+<body>
+    
+
+
+<table class="table">
+    <h3 id="idListe">Liste des formateurs</h3> <br> <br>
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nom </th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Formations</th>
+
+        <th scope="col">Modifier</th>
+        <th scope="col">Supprimer</th>
+
+      </tr>
+    </thead>
+  
+    <tbody>
+
+      <tr *ngFor="let n of formateurs">
+        <th scope="row" >{{n.id}}</th>
+        <td>{{n.nom}}</td>
+        <td>{{n.prenom}}</td>
+
+        <td><button (click)="formationsAssociees(n.id)" class="btn btn-secondary">Fromations Associees</button></td>
+        <td><button (click)="versmodif(n.id)" class="btn btn-secondary">Modifier</button></td>
+        <td><button (click)="supprimer(n.id)" class="btn btn-secondary">Supprimer</button></td>
+        </tr>
+
+    </tbody>
+  </table>
+
+</body>

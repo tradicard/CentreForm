@@ -1,0 +1,76 @@
+<body>
+<!-- <form (ngSubmit)="SavePaiement()">
+<form (ngSubmit)="SavePaiement()">
+    Type de paiement : <br>
+    <div>
+        <input type="radio" id="solde" name="choixPaiement" value="solde" [(ngModel)]="choixPaiement" > 
+        <label for="solde">Porte-Monnaie</label>
+      </div>
+  
+      <div>
+        <input type="radio" id="cb" name="choixPaiement" value="cb" [(ngModel)]="choixPaiement">
+        <label for="cb">Carte bancaire</label>
+      </div>
+
+    Montant total a payer : {{paiement.reste}}
+    <br>
+    Montant du paiement : <input type="text" name="valeur"  [(ngModel)]="valeur"/>
+    <br>
+    <button type="submit">Cr&eacute;diter</button>
+
+</form> -->
+ 
+ 
+
+  
+<div class="form-body">
+  <div class="row">
+      <div class="form-holder">
+          <div class="form-content">
+              <div class="form-items">
+                  <h3>Ajouter un paiement</h3>
+                  <p>Remplir les informations ci-dessous</p>
+                  <form (ngSubmit)="SavePaiement()" class="requires-validation" novalidate>
+
+                    
+                      <div class="col-md-12">
+                        Type de paiement : <br> <br>
+                        <div class="col-md-12">
+                        <input type="radio" id="solde" class="button" name="choixPaiement" value="solde" [(ngModel)]="choixPaiement">
+                        <label for="solde" id="idRadio">  Porte-Monnaie</label>
+                      </div>
+
+                      <div class="col-md-12">
+                        <input type="radio" id="cb" name="choixPaiement" value="cb" class="button" [(ngModel)]="choixPaiement">
+                      <label for="cb" id="idRadio">  Carte bancaire</label>
+                    </div>
+                    <br>
+
+
+                      <div class="col-md-12">
+                      Montant total a payer :   {{paiement.reste}}
+                       </div>
+
+                       <div class="col-md-12">
+                      Montant du paiement : 
+                      <input type="text" class="form-control" name="valeur"  [(ngModel)]="valeur"/>   
+                    </div>
+
+            
+
+                      <div class="form-button mt-3">
+                          <button id="submit" type="submit" class="btn btn-primary">Payer</button>
+                      </div>
+                      </div>
+                    </form>
+             
+              </div>
+          </div>
+      </div>
+  </div>
+</div> <br> <br>
+
+
+
+
+</body>

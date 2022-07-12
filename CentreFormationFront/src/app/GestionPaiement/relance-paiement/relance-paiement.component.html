@@ -1,0 +1,80 @@
+<!-- <h1>Relancer les paiements</h1>
+<body>
+<h1>Relancer les paiements</h1>
+
+<p>Faire liste particpants avec ceux qui n'ont pas tout payé ngIf
+    affichage couleur différente en fonction
+</p>
+
+
+
+
+
+<table>
+<tr>
+    <td>IdPaiement</td>
+    <td>DateFacture</td>
+	<td>DateDernierPaiement</td>
+	<td>DateProchainPaiement</td>
+	<td>Montant</td>
+	<td>Reste</td>
+
+</tr>
+
+<tr *ngFor="let p of paiements">
+    <td >{{p.idPaiement}}</td>
+    <td>{{p.dateFacture}}</td>
+	<td>{{p.dateDernierPaiement}}</td>
+	<td>{{p.dateProchainPaiement}}</td>
+	<td>{{p.montant}}</td>
+	<div *ngIf="p.reste>0">Paiement Incomplet, il reste {{p.reste}} a payer
+        <button (click)="relancerLePaiement()"> Relancer </button>
+        </div>
+       
+</tr>
+
+
+
+</table> -->
+
+
+
+<body>
+    
+
+	<!--Modifs-->
+	
+	<table class="table">
+		<h3 id="idListe">Relancer les paiements</h3> <br> <br>
+			<thead>
+		  		<tr>
+			<th scope="col">Id Paiement</th>
+			<th scope="col">Date Facturation </th>
+			<th scope="col">Date Dernier Paiement</th>
+			<th scope="col">Date Prochain Paiement</th>
+
+			<th scope="col">Montant</th>
+			<th scope="col">Reste</th>
+				</tr>
+	
+		</thead>
+	  
+		<tbody>
+	
+		  <tr *ngFor="let p of paiements">
+			<th scope="row" >{{p.idPaiement}}</th>
+			<td>{{p.dateFacture}}</td>
+			<td>{{p.dateDernierPaiement}}</td>
+			<td>{{p.dateProchainPaiement}}</td>
+			<td>{{p.montant}}</td>
+			<div *ngIf="p.reste>0">Paiement Incomplet, il reste {{p.reste}} a payer
+				<button (click)="relancerLePaiement()" class="btn btn-secondary"> Relancer </button>
+				</div>
+			</tr>
+	
+		</tbody>
+	  </table>
+	
+	</body>
+
+

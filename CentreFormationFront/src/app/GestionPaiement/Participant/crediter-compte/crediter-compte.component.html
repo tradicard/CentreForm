@@ -1,0 +1,41 @@
+<!-- <form (ngSubmit)="SaveCredit()">
+<body>
+<form (ngSubmit)="SaveCredit()">
+<h3>Somme &agrave; crediter</h3>
+<input type="text" name="valeur"  [(ngModel)]="valeur"/>
+<button type="submit" onclick="poopup()">Cr&eacute;diter</button>
+</form>
+ -->
+
+ <body>
+
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Créditez votre compte</h3>
+                    
+                    <form (ngSubmit)="SaveCredit()" class="requires-validation" novalidate>
+                      
+
+                        <div class="col-md-12">
+                         Somme a crediter : <input type="text" name="valeur"  class="form-control" [(ngModel)]="valeur"/>
+                        </div>
+
+                        
+                        <div class="form-button mt-3">
+                            <button onclick="poopup()" id="submit" type="submit" class="btn btn-primary">Crediter</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <br> <br>
+
+
+
+
+
+</body>

@@ -1,0 +1,87 @@
+<!-- <p>Modifier une formation</p>
+<body>
+<p>Modifier une formation</p>
+
+
+<form (ngSubmit)="modif()" >
+    Nom de la Formation: <input type="text" name="libFormation" [(ngModel)]="f.libFormation" /><br>
+    Description: <input type="text" name="description" [(ngModel)]="f.description" /><br>
+    Date de Debut: {{f.dateDebut}} <br>
+    nouvelle Date de Debut: <input type="date" name="datedebu" [(ngModel)]="datedebu"/> <br>
+    Date de Fin: {{f.dateFin}} <br>
+    nouvelle Date de Fin: <input type="date" name="datefin" [(ngModel)]="datefin"/> <br>
+    Prix: <input type="number" name="prix" [(ngModel)]="f.prix"/> <br>
+
+  
+   
+    Attribuer un Formateur: 
+    <select [(ngModel)]="forma" name="forma">
+        <option *ngFor="let fo of formateurs" value="{{fo.id}}">{{fo.nom}}</option>
+    </select>
+
+   
+    <button type="submit">Valider</button>
+</form> <br>
+
+
+
+<button (click)="retour()"> Retour </button> <br> <br>
+</body> -->
+
+<body>
+    
+
+
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Modifier la formation</h3>
+                        <p>Remplir les informations ci-dessous</p>
+                        <form (ngSubmit)="modif()" class="requires-validation" novalidate>
+                           
+    
+                            <div class="col-md-12">
+                            Nom de la Formation: <input type="text" name="libFormation"  class="form-control" [(ngModel)]="f.libFormation"/>
+                            </div>
+    
+                            <div class="col-md-12">
+                                Description :   <input type="text" name="description" class="form-control" [(ngModel)]="f.description"/>
+                             </div>
+    
+                             <div class="col-md-12">
+                                Date de Debut :  <input type="date" name="datedebu" class="form-control" [(ngModel)]="datedebu"/>
+                             </div>
+                             <br>
+    
+                             <div class="col-md-12">
+                                Date de Fin:   <input type="date" name="datefin" class="form-control" [(ngModel)]="datefin"/>
+                             </div> <br>
+    
+                             <div class="col-md-12">
+                                Prix:  <input type="number" name="prix" class="form-control" [(ngModel)]="f.prix"/>
+                             </div>
+    
+    
+                           <div class="col-md-12">
+                            <option selected disabled value="">Attribuer formateur :</option>
+                                    <select [(ngModel)]="forma" name="forma" class="form-select mt-3" required>
+                                        <option *ngFor="let fo of formateurs" value="{{fo.id}}">{{fo.nom}}</option>
+                               </select>
+                           </div>
+    
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Modifier</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <br> <br> 
+    
+    <button (click)="retour()" class="btn btn-primary"> Retour </button> <br> <br>
+
+    </body>
+

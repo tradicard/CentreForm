@@ -1,0 +1,116 @@
+
+<!-- <form (ngSubmit)="modif()">
+<body>
+<form (ngSubmit)="modif()">
+    Username:<input type="text" name="username" [(ngModel)]="user.username"/><br>
+    Password:<input type="password" name="password" [(ngModel)]="user.password"/><br>
+    Nom:<input type="text" name="nom" [(ngModel)]="user.nom"/><br>
+    Prenom:<input type="text" name="prenom" [(ngModel)]="user.prenom"/><br>
+    Mail:<input type="text" name="mail" [(ngModel)]="user.mail"/><br>
+    <button type="submit">Valider vos information</button>
+
+</form>
+
+ -->
+
+<body>
+
+
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Modifier Votre profil</h3>
+                        <p>Remplir les informations ci-dessous</p>
+                        <form (ngSubmit)="modif()" class="requires-validation" novalidate>
+                            <input type="hidden" name="id"  [(ngModel)]="user.id"/><br>
+    
+                            <div class="col-md-12">
+                             Nom : <input type="text" name="nom"  class="form-control" [(ngModel)]="user.nom"/>
+                            </div>
+    
+                            <div class="col-md-12">
+                             Prenom :   <input type="text" name="prenom" class="form-control" [(ngModel)]="user.prenom"/>
+                             </div>
+    
+                             <div class="col-md-12">
+                              Username :  <input type="username" name="username" class="form-control" [(ngModel)]="user.username"/>
+                             </div>
+    
+                             <div class="col-md-12">
+                             Password :   <input type="password" name="password" class="form-control" [(ngModel)]="user.password"/>
+                             </div>
+    
+                             <div class="col-md-12">
+                              Mail :  <input type="text" name="mail" class="form-control" [(ngModel)]="user.mail"/>
+                             </div> <br>
+    
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Confirmer modificiations</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <br> <br>
+    
+
+<h4 *ngIf="b!==undefined">Historique de vos formations</h4>
+<table *ngIf="b">
+    <tr>
+        <td>id</td>
+        <td>libFormation</td>
+        <td>description</td>
+        <td>dateDebut</td>
+        <td>dateFin</td>
+        <td>prix</td>
+    </tr>
+
+    
+    
+    <tr *ngFor="let h of hist">
+        <td>{{h.formation.idFormation}}</td>
+        <td>{{h.formation.libFormation}}</td>
+        <td>{{h.formation.description}}</td>
+        <td>{{h.formation.dateDebut}}</td>
+        <td>{{h.formation.dateFin}}</td>
+        <td>{{h.formation.prix}}</td>
+    </tr>
+
+    
+    
+</table>
+<table *ngIf="b===false">
+    <tr>
+        <td>id</td>
+        <td>libFormation</td>
+        <td>description</td>
+        <td>dateDebut</td>
+        <td>dateFin</td>
+        <td>prix</td>
+    </tr>
+
+    
+    
+    <tr *ngFor="let h of histf">
+        <td>{{h.formation.idFormation}}</td>
+        <td>{{h.formation.libFormation}}</td>
+        <td>{{h.formation.description}}</td>
+        <td>{{h.formation.dateDebut}}</td>
+        <td>{{h.formation.dateFin}}</td>
+        <td>{{h.formation.prix}}</td>
+    </tr>
+
+    
+    
+</table>
+<button *ngIf="user.role.librole===part" (click)="paye()" type="button" class="btn btn-secondary">Vos paiements</button>
+
+<button *ngIf="user.role.librole===part" (click)="retour1()" type="button" class="btn btn-secondary">retour</button>
+<button *ngIf="user.role.librole===fo" (click)="retour2()" type="button" class="btn btn-secondary">retour</button>
+<button *ngIf="user.role.librole===ad" (click)="retour3()" type="button" class="btn btn-secondary">retour</button>
+<button *ngIf="user.role.librole===ass" (click)="retour4()" type="button" class="btn btn-secondary">retour</button>
+<button *ngIf="user.role.librole===com" (click)="retour5()" type="button" class="btn btn-secondary">retour</button>
+</body>

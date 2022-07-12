@@ -1,0 +1,49 @@
+<body>
+<p>Liste des Formations du participant</p>
+
+<body>
+
+
+    <h3 id="idListe">Liste des Formations du participant</h3> <br> 
+
+    <table class="table">
+        <tr>
+            <th scope="col">IdFormation</th>
+            <th scope="col">Nom Formation</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date de début</th>
+            <th scope="col">Date de fin</th>
+            <th scope="col">Prix</th>
+
+            
+            
+        </tr>
+    
+        
+        <tr *ngFor="let h of historique">
+            
+        <th scope="row" >{{h.formation.idFormation}}</th>
+        <td>{{h.formation.libFormation}}</td>
+        <td>{{h.formation.description}}</td>
+        <td>{{h.formation.dateDebut}}</td>
+        <td>{{h.formation.dateFin}}</td>
+        <td>{{h.formation.prix}}</td>
+        </tr>
+  
+     
+    </table> <br> <br>
+    
+
+<button (click)="retour()" class="btn btn-secondary"> Retour Gestion Formation </button> <br> <br>
+
+<br>
+
+<button (click)="retour()" class="btn btn-secondary"> Retour </button> <br> <br>
+
+
+
+
+
+
+<button (click)="retour()"> Retour </button> <br> <br>
+</body>

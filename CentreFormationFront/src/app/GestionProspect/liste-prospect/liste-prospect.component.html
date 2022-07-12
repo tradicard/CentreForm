@@ -1,0 +1,144 @@
+<!-- <form (ngSubmit)="SaveProspect()">
+<body>
+<form (ngSubmit)="SaveProspect()">
+    <input type="hidden" name="idProspect"  [(ngModel)]="prospect.idProspect"/><br>
+    Nom:<input type="text" name="nom"  [(ngModel)]="prospect.nom"/><br>
+    Prenom:<input type="text" name="prenom" [(ngModel)]="prospect.prenom"/><br>
+    Mail:<input type="text" name="mail" [(ngModel)]="prospect.mail"/><br>
+    Tel:<input type="text" name="tel" [(ngModel)]="prospect.tel"/><br>
+    <button type="submit">Valider</button>
+</form>
+
+<br><br>
+
+
+<div>Export simple data</div>
+<input #fileUploadSimple [accept]="'.csv'" type="file" class="file-input" 
+  (change)="importDataFromCSV($event)" hidden="true">
+<button (click)="fileUploadSimple.click()"> Import from csv</button> 
+<br><br>
+
+<div>data from csv</div>
+<div *ngFor="let item of importedData"> {{item | json}}</div>
+<br>
+<button (click)="saveProspectInCSV()">Save simple data array</button>
+<br><br>
+
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Nom</td>
+        <td>Prenom</td>
+        <td>mail</td>
+        <td>tel</td>   
+        <td>Modifier</td>
+        <td>Supprimer</td>
+        <td>Contacts</td>
+    </tr>
+
+    
+    
+    <tr *ngFor="let p of prospects">
+        <td>{{p.idProspect}}</td>
+        <td>{{p.nom}}</td>
+        <td>{{p.prenom}}</td>
+        <td>{{p.mail}}</td>
+        <td>{{p.tel}}</td>
+       
+        <td><button (click)="modif(p.idProspect)" type="button" class="btn btn-primary">Modifier {{p.nom}}</button></td>
+        <td><button (click)="suppr(p.idProspect)" type="button" class="btn btn-primary">Supprimer {{p.nom}}</button></td>
+        <td><button (click)="cont(p.idProspect)" type="button" class="btn btn-primary">Contacts de {{p.nom}}</button></td>
+    </tr>
+
+    
+    
+</table>
+
+
+
+
+ -->
+
+<body>
+    
+
+
+
+
+<!--Ajout-->
+<!--Partie ajout utilisteur-->
+
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Ajouter un Prospect</h3>
+                    <p>Remplir les informations ci-dessous</p>
+                    <form (ngSubmit)="SaveProspect()" class="requires-validation" novalidate>
+                        <input type="hidden" name="idProspect"  [(ngModel)]="prospect.idProspect"/>
+
+                        <div class="col-md-12">
+                         Nom : <input type="text" name="nom"  class="form-control" [(ngModel)]="prospect.nom"/>
+                        </div>
+
+                        <div class="col-md-12">
+                         Prenom :   <input type="text" name="prenom" class="form-control" [(ngModel)]="prospect.prenom"/>
+                         </div>
+
+                         <div class="col-md-12">
+                          Mail :  <input type="text" name="mail" class="form-control" [(ngModel)]="prospect.mail"/>
+                         </div>
+
+                         <div class="col-md-12">
+                            Tel :   <input type="text" name="tel" class="form-control" [(ngModel)]="prospect.tel"/>
+                            </div>
+
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-secondary">Ajouter</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <br> <br>
+
+
+
+<!--Liste-->
+<h3 id="idListe">Liste des prospects</h3> <br>
+<table class="table">
+    
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Mail</th>
+        <th scope="col">Tel</th>
+        <th scope="col">Modifier</th>
+        <th scope="col">Supprimer</th>
+        <th scope="col">Contacts</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr *ngFor="let p of prospects">
+        <th scope="row" >{{p.idProspect}}</th>
+        <td>{{p.nom}}</td>
+        <td>{{p.prenom}}</td>
+        <td>{{p.mail}}</td>
+        <td>{{p.tel}}</td>
+        
+        <td><button (click)="suppr(p.idProspect)" type="button" class="btn btn-primary">Supprimer {{p.nom}}</button></td>
+        <td><button (click)="modif(p.idProspect)" type="button" class="btn btn-primary">Modifier {{p.nom}}</button></td>
+        <td><button (click)="cont(p.idProspect)" type="button" class="btn btn-primary">Contacts de {{p.nom}}</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+</body>

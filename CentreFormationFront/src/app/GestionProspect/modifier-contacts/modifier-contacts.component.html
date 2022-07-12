@@ -1,0 +1,56 @@
+<!-- <p>Modifier Contact</p>
+<body>
+<p>Modifier Contact</p>
+
+<form (ngSubmit)="ModifContact()">
+
+    Date du Contact:<input type="datetime-local" name="datecontact"  [(ngModel)]="datecontact"/><br>
+    
+    Commercial:
+    <select [(ngModel)]="selectedValue" name="selectedValue">
+        <option *ngFor="let c of commercials" value="{{c.id}}">{{c.nom}}</option>   
+    </select> <br> <br>
+    
+    <button type="submit">Valider Modifications</button>
+</form>
+
+ -->
+
+<body>
+    
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Modifier contact</h3>
+                        <p>Remplir les informations ci-dessous</p>
+                        <form (ngSubmit)="ModifContact()" class="requires-validation" novalidate>
+    
+                            <div class="col-md-12">
+                            Date du Contact:<input type="datetime-local" name="datecontact" class="form-control" [(ngModel)]="datecontact"/>
+                            </div> <br>
+    
+    
+                           <div class="col-md-12">
+                            <option selected disabled value="">Commercial:</option>
+                                    <select [(ngModel)]="selectedValue" name="selectedValue" class="form-select mt-3" required>
+                                        <option *ngFor="let c of commercials" value="{{c.id}}">{{c.nom}}</option>  
+                               </select>
+                           </div>
+    
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Valider Modifications</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <br> <br>
+    
+
+    
+ 
+    
+</body>

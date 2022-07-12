@@ -1,0 +1,78 @@
+<!-- <h1>Liste des contacts de :</h1>
+<body>
+<h1>Liste des contacts de :</h1>
+<h2>{{prospect.nom}} {{prospect.prenom}}</h2>
+<br>
+
+
+<table>
+    <tr>
+        <td>Id Contact</td>
+        <td>Date Contact</td>
+        <td>Pass&eacute; avec:</td>
+        <td>Supprimmer</td>
+        <td>Modifier</td>
+    </tr>
+
+    
+    
+    <tr *ngFor="let c of contacts">
+        <td>{{c.idContact}}</td>
+        <td>{{c.dateContact}}</td>
+        <td>{{c.commercial.nom}} {{c.commercial.prenom}}</td>
+        <td><button (click)="supp(c.idContact)" type="button" class="btn btn-primary">Supprimer</button></td>
+        <td><button (click)="modif(c.idContact)" type="button" class="btn btn-primary">Modifier</button></td>
+        
+    </tr>
+
+    <tr>
+        <button (click)="ajoutRDV()">Ajouter un contact</button>
+    </tr>
+    
+</table> -->
+
+<body>
+    
+
+<h3 id="idListe">Liste des contacts de : {{prospect.nom}} {{prospect.prenom}} </h3> <br> <br>
+
+<table class="table">
+   
+    <thead>
+      <tr>
+        <th scope="col">Id Contact</th>
+        <th scope="col">Date Contact</th>
+        <th scope="col">Contact avec</th>
+       
+        <th scope="col">Modifier</th>
+        <th scope="col">Supprimer</th>
+
+      </tr>
+    </thead>
+  
+    <tbody>
+
+      <tr *ngFor="let c of contacts">
+        <td>{{c.idContact}}</td>
+        <td>{{c.dateContact}}</td>
+        <td>{{c.commercial.nom}} {{c.commercial.prenom}}</td>
+        <td><button (click)="supp(c.idContact)" type="button" class="btn btn-secondary">Supprimer</button></td>
+        <td><button (click)="modif(c.idContact)" type="button" class="btn btn-secondary">Modifier</button></td>
+        
+        </tr>
+
+        <tr>
+          <td>
+            <button (click)="ajoutRDV()" type="button" class="btn btn-secondary">Ajouter un contact</button>
+          </td>
+          </tr>
+
+    </tbody>
+  </table>
+
+
+
+    
+ 
+
+</body>

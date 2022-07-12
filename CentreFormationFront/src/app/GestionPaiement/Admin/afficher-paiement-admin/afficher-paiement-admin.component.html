@@ -1,0 +1,86 @@
+<body>
+    
+
+<!-- <table>
+    <tr>
+        <td>ID Paiement</td>
+        <td>Date Facturation</td>
+        <td>Montant</td>
+        <td>Reste</td>
+        <td>Date Dernier Paiement</td>
+        <td>Date Prochain Paiement</td>
+        <td>Participant</td>
+        <td>Modifier</td>
+        <td>Supprimmer</td>
+        <td>Supprimmer</td>
+       <td>Modifier</td> 
+        <td>Voir relances paiement</td>
+    </tr>
+
+    
+    
+    <tr *ngFor="let p of paiements">
+        <td>{{p.idPaiement}}</td>
+        <td>{{p.dateFacture}}</td>
+        <td>{{p.montant}}</td>
+        <td>{{p.reste}}</td>
+        <td>{{p.dateDernierPaiement}}</td>
+        <td>{{p.dateProchainPaiement}}</td>
+        <td><button (click)="versPaiementParticipant(p.participant.id)" type="button" class="btn btn-primary">{{p.participant.nom}} {{p.participant.prenom}}</button></td>
+        <td><button (click)="suppr(p.idPaiement)" type="button" class="btn btn-primary">Supprimer</button></td>
+         <td><button (click)="modif(p.idPaiement)" type="button" class="btn btn-primary">Modifier</button></td> 
+        <td><button (click)="relance(p.participant.id)" type="button" class="btn btn-primary">Relancer les participants</button></td>
+    </tr>
+
+   
+    
+</table> -->
+
+<body>
+    
+<!--Modifs-->
+
+<table class="table">
+    <h3 id="idListe">Liste des paiements</h3> <br> <br>
+    <thead>
+      <tr>
+        <th scope="col">Id Paiement</th>
+        <th scope="col">Date Facturation </th>
+        <th scope="col">Montant</th>
+        <th scope="col">Reste</th>
+
+        <th scope="col">Date Dernier Paiement</th>
+        <th scope="col">Date Prochain Paiement</th>
+        <th scope="col">Participant</th>
+        
+        <th scope="col">Supprimer</th>
+        <th scope="col">Voir relances paiement</th>
+
+      </tr>
+    </thead>
+  
+    <tbody>
+
+      <tr  *ngFor="let p of paiements">
+        <th scope="row" >{{p.idPaiement}}</th>
+        <td>{{p.dateFacture}}</td>
+        <td>{{p.montant}}</td>
+        <td>{{p.reste}}</td>
+        <td>{{p.dateDernierPaiement}}</td>
+        <td>{{p.dateProchainPaiement}}</td>
+
+        <td><button (click)="versPaiementParticipant(p.participant.id)" type="button" class="btn btn-secondary">
+            <span style="font-weight: bold;"> Voir paiement :</span>
+           
+            {{p.participant.nom}} {{p.participant.prenom}}</button></td>
+       
+         
+         <td><button (click)="suppr(p.idPaiement)" type="button" class="btn btn-secondary">Supprimer</button></td>
+        <td><button (click)="relance(p.participant.id)" type="button" class="btn btn-secondary">Relancer les participants</button></td>
+        </tr>
+
+    </tbody>
+  </table>
+
+</body>
+
