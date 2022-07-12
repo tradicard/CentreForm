@@ -106,6 +106,38 @@
 </div> <br> <br>
 
 
+                <div ></div>
+                <div class="form-items">
+                    <h3>Importer les Prospects d'un fichier CSV</h3>
+                    <p>Importer un fichier CSV</p>
+                    <input #fileUploadSimple [accept]="'.csv'" type="file" class="file-input" 
+                    (change)="importDataFromCSV($event)" hidden="true">
+                    <button (click)="fileUploadSimple.click()" class="btn btn-secondary"> Import</button> 
+                    <br><br>
+
+                    <div>Data du CSV</div>
+                    <div *ngFor="let item of importedData"> {{item | json}}</div>
+                    <br>
+                    <button (click)="saveProspectInCSV()" class="btn btn-secondary">Ajouter les prospects</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<br> <br>
+
+<div>Importer un fichier CSV</div>
+<input #fileUploadSimple [accept]="'.csv'" type="file" class="file-input" 
+  (change)="importDataFromCSV($event)" hidden="true">
+<button (click)="fileUploadSimple.click()"> Import from csv</button> 
+<br><br>
+
+<div>data from csv</div>
+<div *ngFor="let item of importedData"> {{item | json}}</div>
+<br>
+<button (click)="saveProspectInCSV()">Ajouter les prospects</button>
+<br><br>
 
 <!--Liste-->
 <h3 id="idListe">Liste des prospects</h3> <br>

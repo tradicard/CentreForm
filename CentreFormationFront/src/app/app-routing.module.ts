@@ -34,6 +34,8 @@ import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-uti
 import { MyDataComponent } from './EnsConnection/my-data/my-data.component';
 import { AcceuilAllComponent } from './Acceuil/acceuil-all/acceuil-all.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { AfficherQuizzComponent } from './Quizz/afficher-quizz/afficher-quizz.component';
+import { ResultatComponent } from './Quizz/resultat/resultat.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -80,6 +82,11 @@ const routes: Routes = [
 
 
   
+
+
+
+  {path:'afficherQuizz',component:AfficherQuizzComponent},
+  {path:'resultat',component:ResultatComponent},
   
 
 ];

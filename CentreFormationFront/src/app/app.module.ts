@@ -40,6 +40,9 @@ import { FooterComponent } from './footer/footer.component';
 import { CsvService } from './service/csv.service';
 import { AcceuilAllComponent } from './Acceuil/acceuil-all/acceuil-all.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { CreationQuizzComponent } from './Quizz/Formateur/creation-quizz/creation-quizz.component';
+import { AfficherQuizzComponent } from './Quizz/afficher-quizz/afficher-quizz.component';
+import { ResultatComponent } from './Quizz/resultat/resultat.component';
 
 
 @NgModule({
@@ -79,7 +82,10 @@ import { QuizComponent } from './quiz/quiz.component';
     ModifUtilisateurComponent,
     RelancePaiementComponent,
     AcceuilAllComponent,
-    QuizComponent
+    QuizComponent,
+    CreationQuizzComponent,
+    AfficherQuizzComponent,
+    ResultatComponent
  
   ],
   imports: [

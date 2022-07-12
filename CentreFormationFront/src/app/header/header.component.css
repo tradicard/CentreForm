@@ -68,6 +68,7 @@ header{
       line-height: 79px;
       margin-left: 15px;
       
+      position: relative;
   }
   
   .main-menu li:first-child {
@@ -91,6 +92,7 @@ header{
       font-family: "FontAwesome";
       
       
+      margin-left: 5px;
   }
   
   .main-menu li.has-submenu ul li a:after {

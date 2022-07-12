@@ -432,6 +432,7 @@ table{
   padding: 40px;
   display: inline-block;
   width:95%;
+  
   min-width: 540px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;

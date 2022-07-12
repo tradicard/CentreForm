@@ -1,0 +1,50 @@
+<body>
+    <p>{{timeLeft}} Seconds Left....</p>
+<div *ngIf="question=='un'">
+<form (ngSubmit)="saveQ()">
+     
+    Question 1 : La reponse est 1
+    <br>
+    <input type="radio" class="button" name="RQ1" value="0" [(ngModel)]="RQ1"/>
+    <label for="0">0</label>
+    <br>
+    <input type="radio" id="qcu" class="button" name="RQ1" value="un" [(ngModel)]="RQ1" />
+    <label for="un">Un</label>
+    <br>
+    <input type="radio" id="qcm" class="button" name="RQ1" value="1" [(ngModel)]="RQ1" />
+    <label for="1">1</label>
+    <br>
+    <input type="radio" id="qcm" class="button" name="RQ1" value=".1" [(ngModel)]="RQ1" />
+    <label for=".1">.1</label>
+    <br>
+    <button type="submit">Valider</button>
+</form>
+</div>
+
+<div *ngIf="question == 'deux'">
+<form (ngSubmit)="saveQ2()">
+    Question 2 : La reponse est 1 ou un
+    <br>
+    <input type="checkbox" class="button" name="RQ2_1" value="0" [(ngModel)]="RQ2_1"/>
+    <label for="0">0</label>
+    <br>
+    <input type="checkbox" class="button" name="RQ2_1" value="un" [(ngModel)]="RQ2_2" />
+    <label for="un">Un</label>
+    <br>
+    <input type="checkbox" class="button" name="RQ2_3" value="1" [(ngModel)]="RQ2_3" />
+    <label for="1">1</label>
+    <br>
+    <input type="checkbox" class="button" name="RQ2_4" value=".1" [(ngModel)]="RQ2_4" />
+    <label for=".1">.1</label>
+    <br>
+    <button type="submit">Valider</button>
+
+
+</form>
+</div>
+
+<div *ngIf="question == 'trois'">
+    <button (click)="saveQuizz()">Valider le quizz</button>
+</div>
+
+</body>
