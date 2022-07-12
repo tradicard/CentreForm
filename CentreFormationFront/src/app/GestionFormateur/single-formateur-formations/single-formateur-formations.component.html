@@ -1,7 +1,7 @@
 <body>
-<h3>Historique de vos formations</h3>
 
- 
+
+ <!-- 
     <table>
         <tr>
             <td>IdFormation</td>
@@ -30,39 +30,55 @@
         </tr>
   
      
-    </table>
+    </table> -->
     <br>
-    <h3>Liste des Formations du centre</h3>
-    <br>
-    <table>
-        <tr>
-            <td>id</td>
-            <td>libFormation</td>
-            <td>description</td>
-            <td>dateDebut</td>
-            <td>dateFin</td>
-            <td>prix</td>
-        </tr>
+   
+
+
+
+    <h3 id="idListe">Historique de vos formations</h3> <br> <br>
+<table class="table">
+       
+        <thead>
+          <tr>
+            <th scope="col">IdFormation</th>
+            <th scope="col">Nom Formation</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date de début</th>
+            <th scope="col">Date de fin</th>
+            <th scope="col">Prix</th>
+           
+            <th scope="col">Participants</th>
     
-        
-        
-        <tr *ngFor="let f of formations">
+          </tr>
+        </thead>
+      
+        <tbody>
+    
+          <tr *ngFor="let f of formations">
             <td>{{f.idFormation}}</td>
             <td>{{f.libFormation}}</td>
             <td>{{f.description}}</td>
             <td>{{f.dateDebut}}</td>
             <td>{{f.dateFin}}</td>
             <td>{{f.prix}}</td>
-        </tr>
+             
+            <td><p *ngFor="let p of h.formation.participants">{{p.nom}}</p></td>
+           
+            </tr>
     
-        
-        
-    </table>
+        </tbody>
+      </table>
 
 
+
+
+
+
+
+      
     
 <br>
-<button (click)="retour()"> Retour Gestion Formation </button>
-
+<button (click)="retour()" class="btn btn-secondary"> Retour Gestion Formation </button>
 
 </body>

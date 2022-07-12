@@ -67,7 +67,7 @@ header{
       display: inline-block;
       line-height: 79px;
       margin-left: 15px;
-      position: relative;
+      
   }
   
   .main-menu li:first-child {
@@ -83,12 +83,14 @@ header{
       color: #fff;
       border: 2px solid transparent;
       transition: all 0.5s;
+      position: relative;
   }
   
   .main-menu li.has-submenu a:after {
       content: '\f107';
       font-family: "FontAwesome";
-      margin-left: 5px;
+      
+      
   }
   
   .main-menu li.has-submenu ul li a:after {
@@ -102,6 +104,7 @@ header{
       opacity: 0;
       visibility: hidden;
       transition: all 0.5s;
+      
   }
   
   .main-menu li:hover .sub-menu {
@@ -194,6 +197,7 @@ header{
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s;
+    margin-right: 4;
 }
 
 .main-menu li:hover .sub-menu {
@@ -226,6 +230,7 @@ header{
   letter-spacing: 0.5px;
   border: none;
   transition: all 0.5s;
+  margin-right: 4;
 }
 
 .main-menu li .sub-menu li a:hover {
@@ -236,6 +241,7 @@ header{
 .main-nav li:hover a,
 .main-nav li.active a {
   border: 2px solid #f5a425;
+  
 } 
 
 @media (max-width: 950px) {
