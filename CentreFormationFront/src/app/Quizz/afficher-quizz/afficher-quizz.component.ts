@@ -57,7 +57,7 @@ export class AfficherQuizzComponent implements OnInit {
       if(this.timeLeft > 0) {
         this.timeLeft--;
       } else if (this.timeLeft === 0){
-        this.saveQ()
+        this.saveQuizz()
         
         
       }
