@@ -1,0 +1,45 @@
+
+body{
+    position: absolute;
+    top:100px; left:0;
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(183, 247, 225, 0.793);
+}
+div#htmlData{
+    position: absolute;
+    top:100px; left: 200px;
+    text-align: center;
+    /*width: 100%;*/
+    font-size: xx-large;
+    background-color: rgb(255, 211, 65);
+    border-color: rgb(0, 0, 0);
+    border-width: 10px;
+    border-style: groove;
+
+}
+
+/*
+h1#id1{
+    position: absolute;
+    top:100px; left:200px;
+    background-color: inherit;
+}
+
+h4#id2{
+    position: absolute;
+    top:160px; left:200px;
+    background-color: inherit;
+}
+h6#id3{
+    position: absolute;
+    top:200px; left:200px;
+    background-color: inherit;
+}
+*/
+div#butpdf{
+    position: absolute;
+    top:120px; left:50px;
+}

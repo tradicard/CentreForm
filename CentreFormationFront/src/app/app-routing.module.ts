@@ -33,6 +33,7 @@ import { InscriptionComponent } from './EnsConnection/inscription/inscription.co
 import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-utilisateur.component';
 import { MyDataComponent } from './EnsConnection/my-data/my-data.component';
 import { AcceuilAllComponent } from './Acceuil/acceuil-all/acceuil-all.component';
+import { AfficherDiplomeComponent } from './afficher-diplome/afficher-diplome.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -50,7 +51,7 @@ const routes: Routes = [
   {path:'formationsDuParticipant/:id',component:SingleParticipantFormationsComponent},
 
   {path:'modifierUtilisateur/:id',component:ModifUtilisateurComponent},
-  
+  {path:'affichediplome/:id',component:AfficherDiplomeComponent},
   
   //Prospect
   {path:'afficherProspects',component:ListeProspectComponent},

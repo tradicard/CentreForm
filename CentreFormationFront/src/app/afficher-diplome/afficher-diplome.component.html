@@ -1,0 +1,17 @@
+<body>
+    <div class="container">
+
+        <div class="col-md-8" id="htmlData" alig>
+            <img width="100px" height="75px"  src="https://img.freepik.com/vecteurs-libre/modele-carte-felicitations-casquette-graduation_1308-5753.jpg?w=2000">
+            <br>
+                <h1 class="capt" id="id1">Le Diplome de la formation {{f.libFormation}}</h1><br><br><br>
+                <h3 id="id2">est confere a {{user.nom|uppercase}} {{user.prenom}} avec une note de :</h3><br><br><br>
+                <h5 id="id3">{{pts}}/2 a l'examen</h5><br>
+            
+        </div>
+        <div class="col-md-4 text-right" id="butpdf">
+        <button class="btn btn-success btn-block" (click)="openPDF()">Download PDF</button>
+        </div>
+        
+    </div>
+</body>
