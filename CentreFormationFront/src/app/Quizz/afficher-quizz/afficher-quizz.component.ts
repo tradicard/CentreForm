@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { timer } from 'rxjs';
+import { Question } from 'src/app/models/question';
+import { Quizz } from 'src/app/models/quizz';
+import { Reponse } from 'src/app/models/reponse';
+import { QuestionService } from 'src/app/service/question.service';
+import { QuizzService } from 'src/app/service/quizz.service';
+import { ReponseService } from 'src/app/service/reponse.service';
 
 @Component({
   selector: 'app-afficher-quizz',
@@ -8,7 +14,10 @@ import { timer } from 'rxjs';
   styleUrls: ['./afficher-quizz.component.css']
 })
 export class AfficherQuizzComponent implements OnInit {
-
+  quizz!:Quizz
+  quests!:Question[]
+  reponses!:Reponse[]
+  superreponses!:any[]
   RQ1!:string
   RQ2_1:boolean=false
   RQ2_2:boolean=false
@@ -20,10 +29,41 @@ export class AfficherQuizzComponent implements OnInit {
   pts:number=0
   question:string="un"
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private route:ActivatedRoute, private serviceQuizz:QuizzService,
+    private serviceQuestion:QuestionService, private serviceReponse:ReponseService) { }
 
   ngOnInit(): void {
     this.startTimer()
+    this.quizz=new Quizz()
+    this.recupQuizz()
+  }
+
+  recupQuizz(){
+    const idQuizz=+this.route.snapshot.params['id']
+    
+    this.serviceQuizz.getById(idQuizz).subscribe(
+      response=>{
+        this.quizz=response
+
+
+        this.serviceQuestion.getAllbyquizz(this.quizz.idQuizz).subscribe(
+          response=>{
+            this.quests=response
+
+
+            for(let i=0;i<this.quests.length;i++){
+              this.serviceReponse.getAllbyquest(q.idQuestion).subscribe(
+                response=>{
+                  this.reponses=response
+                  this.superreponses.push(this.reponses)
+                }
+              )
+            }
+          }
+        )
+      }
+    )
+    
   }
 
   saveQ () {

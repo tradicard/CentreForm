@@ -45,6 +45,10 @@ public class FormationService implements IFormationService{
 		return liste;
 		
 	}
+	public Formation findByFormateur_Id(int id) {
+		Formation op=fndao.findByFormateur_Id(id);
+		return op;
+	}
 	
 	public List<Formation> findByParticipants_Id(int id){
 		List<Formation> liste=fndao.findByParticipants_Id(id);

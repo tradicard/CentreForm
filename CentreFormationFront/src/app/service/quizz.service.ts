@@ -18,6 +18,10 @@ export class QuizzService {
   {
     return this.http.get<Quizz>('http://localhost:8016/api/quizz/'+idQuizz)
   }
+  getByIdFormation(idQuizz:number)
+  {
+    return this.http.get<Quizz>('http://localhost:8016/api/quizzz/'+idQuizz)
+  }
 
   ajouter(quizz:Quizz)
   {

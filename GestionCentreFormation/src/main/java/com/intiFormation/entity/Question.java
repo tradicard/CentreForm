@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Question {
 	@Id
@@ -19,6 +21,7 @@ public class Question {
 	private int idQuestion;
 	
 	@OneToMany(mappedBy = "question",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
+	@JsonIgnore
 	private List<Reponse> reponses;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -26,6 +29,8 @@ public class Question {
 	private Quizz quizz;
 	
 	private String intitule;
+	
+	private int tempsReponse;
 	
 	
 	
@@ -36,12 +41,21 @@ public class Question {
 
 
 
-	public Question(List<Reponse> reponses, Quizz quizz, String intitule) {
+
+
+
+
+	public Question(List<Reponse> reponses, Quizz quizz, String intitule, int tempsReponse) {
 		super();
 		this.reponses = reponses;
 		this.quizz = quizz;
 		this.intitule = intitule;
+		this.tempsReponse = tempsReponse;
 	}
+
+
+
+
 
 
 
@@ -89,6 +103,18 @@ public class Question {
 
 	public void setIntitule(String intitule) {
 		this.intitule = intitule;
+	}
+
+
+
+	public int getTempsReponse() {
+		return tempsReponse;
+	}
+
+
+
+	public void setTempsReponse(int tempsReponse) {
+		this.tempsReponse = tempsReponse;
 	}
 
 

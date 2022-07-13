@@ -5,17 +5,14 @@
    
 
     Score pour valider question : 
-    <input type="number" name="noteReussite" [(ngModel)]="noteReussite"> <br>
+    <input type="number" name="noteReussite" [(ngModel)]="quizz.noteRequise"> <br>
 
     Nombre de questions que vous voulez ajouter : 
-    <input type="number" name="nbQuestion" [(ngModel)]="nbQuestion"> <br>
+    <input type="number" name="nbQuestion" [(ngModel)]="quizz.nbQuestion"> <br>
 
     Formation concernee : 
-    <input type="formation" name="formation" [(ngModel)]="formation"> <br>
+    <input disabled type="text" name="formation" [(ngModel)]="formation.libFormation"> <br>
     
-    Questions :
-    
-    <button (click)="ajoutQuestion()" class="btn btn-secondary">Ajouter des questions</button>
     <br>
 
     <button type="submit" class="btn btn-secondary">Valider ajout Quizz</button>

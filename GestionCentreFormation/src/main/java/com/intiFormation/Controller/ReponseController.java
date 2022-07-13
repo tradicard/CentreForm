@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.intiFormation.Service.IReponseService;
 import com.intiFormation.entity.Commercial;
+import com.intiFormation.entity.Question;
 import com.intiFormation.entity.Reponse;
 import com.intiFormation.entity.Utilisateur;
 
@@ -30,6 +31,12 @@ public class ReponseController {
 	@GetMapping("/reponses")
 	public List<Reponse> GestionCommercial() {
 		List<Reponse> listec=rSer.getAllService();
+		return listec;
+	}
+	
+	@GetMapping("/reponsesparquest/{id}")
+	public List<Reponse> GestionCommercial2(@PathVariable("id") int id) {
+		List<Reponse> listec=rSer.findByQuestion_IdQuestion(id);
 		return listec;
 	}
 	

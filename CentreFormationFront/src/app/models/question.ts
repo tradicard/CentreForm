@@ -6,4 +6,5 @@ export class Question {
     responses!:Response[]
     quizz!:Quizz
     intitule!:string
+    tempsReponse!:number
 }

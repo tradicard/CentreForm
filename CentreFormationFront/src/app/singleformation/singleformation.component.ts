@@ -4,9 +4,11 @@ import { Formation } from '../models/formation';
 import { HistoriqueParticipant } from '../models/historique-participant';
 import { Paiement } from '../models/paiement';
 import { Participant } from '../models/participant';
+import { Quizz } from '../models/quizz';
 import { FormationService } from '../service/formation.service';
 import { HistoriqueparticipantService } from '../service/historiqueparticipant.service';
 import { PaiementService } from '../service/paiement.service';
+import { QuizzService } from '../service/quizz.service';
 
 @Component({
   selector: 'app-singleformation',
@@ -20,14 +22,16 @@ formations!:Formation[]
 inscrit=false
 historique!:HistoriqueParticipant
 paiement!:Paiement
+quizz!:Quizz
 
   constructor(private service:FormationService,private route:ActivatedRoute,private router:Router,
-     private servicehistp:HistoriqueparticipantService,private servicePaiement:PaiementService) { }
+     private servicehistp:HistoriqueparticipantService,private servicePaiement:PaiementService, private serviceQuizz:QuizzService) { }
 
   ngOnInit(): void {
     this.recupererP()
     this.paiement=new Paiement()
     this.historique=new HistoriqueParticipant()
+    this.quizz=new Quizz()
   }
 
 
@@ -45,6 +49,15 @@ paiement!:Paiement
           this.inscrit=true;
         }
       }
+      }
+    )
+    
+  }
+  fairequizz(){
+    this.serviceQuizz.getByIdFormation(this.f.idFormation).subscribe(
+      response=>{
+        this.quizz=response
+        this.router.navigateByUrl('afficherQuizz/'+this.quizz.idQuizz)
       }
     )
     

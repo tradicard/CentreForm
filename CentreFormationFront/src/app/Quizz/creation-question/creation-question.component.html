@@ -1,13 +1,12 @@
 <body>
 
-<ng-container *ngFor="let _ of [].constructor(4)">🐱
+
 
     <form (ngSubmit)="save()" >
-       
-        Question :
+        🐱🐈
+        Question {{nbreste+1}}:
         <br>
-        <input type="hidden" name="idQuizz" [(ngModel)]="idQuizz">
-        <input type="text" name="question" [(ngModel)]="question"/>
+        <input type="text" name="question" [(ngModel)]="question.intitule"/>
         <br>
         Reponses 
         <br>
@@ -29,10 +28,10 @@
         <br>
         Temps de reponse : 
         <br>
-        <input type="text" name="temps" [(ngModel)]="temps"/>
+        <input type="number" name="temps" [(ngModel)]="question.tempsReponse"/>
         <button type="submit">Valider</button>
     </form>
 
-</ng-container>
+
 
     </body>

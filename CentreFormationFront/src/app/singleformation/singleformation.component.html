@@ -44,27 +44,34 @@
         <th scope="col">LibFormation</th>
         <th scope="col">Description</th>
        
-        <th scope="col">dDateDebut</th>
+        <th scope="col">DateDebut</th>
         <th scope="col">DateFin</th>
         <th scope="col">Prix</th>
         <th scope="col">Inscription</th>
+        <th scope="col">Quizz</th>
       </tr>
     </thead>
   
     <tbody>
-      <tr *ngFor="let f of formations">
-        <th scope="row" >{{f.idFormation}}</th>
+      <tr>
+        <td scope="row" >{{f.idFormation}}</td>
         <td>{{f.libFormation}}</td>
         <td>{{f.description}}</td>
         <td>{{f.dateDebut}}</td>
         <td>{{f.dateFin}}</td>
         <td>{{f.prix}}</td>
-        <div *ngIf="inscrit===false">
-            <td><button (click)="inscription()" type="button" class="btn btn-secondary">Inscription</button></td>
-            </div>
-            <div *ngIf="inscrit">
-                <td>Vous etes deja inscrit</td>
-            </div>
+        
+          <td *ngIf="inscrit===false"><button (click)="inscription()" type="button" class="btn btn-secondary">Inscription</button></td>
+        
+        
+          <td *ngIf="inscrit">Vous etes deja inscrit</td>
+        
+        
+          <td *ngIf="inscrit"><button (click)="fairequizz()" type="button" class="btn btn-secondary">Faire Quizz</button></td>
+        
+        
+          <td *ngIf="inscrit===false">X</td>
+        
       </tr>
       
     </tbody>

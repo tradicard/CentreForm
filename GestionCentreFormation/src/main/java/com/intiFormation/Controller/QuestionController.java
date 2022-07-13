@@ -32,6 +32,11 @@ public class QuestionController {
 		List<Question> listec=rSer.getAllService();
 		return listec;
 	}
+	@GetMapping("/questionsparquizz/{id}")
+	public List<Question> GestionCommercial2(@PathVariable("id") int id) {
+		List<Question> listec=rSer.findByQuizz_IdQuizz(id);
+		return listec;
+	}
 	
 	@GetMapping("/questions/{id}")
 	public Question GestionCommercial(@PathVariable("id") int id) {
@@ -43,8 +48,9 @@ public class QuestionController {
 		return c;
 	}
 	@PostMapping("/questions")
-	public void SaveCommercial(@RequestBody Question u) {
+	public Question SaveCommercial(@RequestBody Question u) {
 		rSer.ajouterService(u);
+		return u;
 	}
 	
 	

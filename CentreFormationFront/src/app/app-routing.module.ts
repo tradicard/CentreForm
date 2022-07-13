@@ -82,12 +82,12 @@ const routes: Routes = [
   {path:'RelancePaiement/:id',component:RelancePaiementComponent},
 
   {path:'creerQuizz',component:CreationQuizzComponent},
-  {path:'creerQuestion',component:CreationQuestionComponent},
+  {path:'creerQuestion/:id',component:CreationQuestionComponent},
   
 
 
 
-  {path:'afficherQuizz',component:AfficherQuizzComponent},
+  {path:'afficherQuizz/:id',component:AfficherQuizzComponent},
   {path:'resultat',component:ResultatComponent},
   
 

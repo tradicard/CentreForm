@@ -35,6 +35,10 @@ public class QuestionService implements IQuestionService{
 		return liste;
 		
 	}
+	public List<Question> findByQuizz_IdQuizz(int id){
+		List<Question> liste=qdao.findByQuizz_IdQuizz(id);
+		return liste;
+	}
 	public void supprimerService(int id) {
 		qdao.deleteById(id);
 	}

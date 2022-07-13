@@ -13,6 +13,10 @@ export class QuestionService {
   {
     return this.http.get<Question[]>('http://localhost:8016/api/questions')
   }
+  getAllbyquizz(id:number)
+  {
+    return this.http.get<Question[]>('http://localhost:8016/api/questionsparquizz/'+id)
+  }
  
   getById(idQuestion:number)
   {
