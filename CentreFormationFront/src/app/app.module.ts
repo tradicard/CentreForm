@@ -36,6 +36,7 @@ import { RelancePaiementComponent } from './GestionPaiement/relance-paiement/rel
 import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-compte/crediter-compte.component';
 import { MyDataComponent } from './EnsConnection/my-data/my-data.component';
 import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-utilisateur.component';
+
 import { CsvService } from './service/csv.service';
 import { AcceuilAllComponent } from './Acceuil/acceuil-all/acceuil-all.component';
 import { AfficherDiplomeComponent } from './afficher-diplome/afficher-diplome.component';
@@ -43,7 +44,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { CreationQuizzComponent } from './Quizz/Formateur/creation-quizz/creation-quizz.component';
 import { AfficherQuizzComponent } from './Quizz/afficher-quizz/afficher-quizz.component';
 import { ResultatComponent } from './Quizz/resultat/resultat.component';
-import { FooterComponent } from './footer/footer.component';
+import { CreationQuestionComponent } from './Quizz/creation-question/creation-question.component';
 
 
 @NgModule({
@@ -87,7 +88,7 @@ import { FooterComponent } from './footer/footer.component';
     CreationQuizzComponent,
     AfficherQuizzComponent,
     ResultatComponent,
-    FooterComponent
+    CreationQuestionComponent
  
   ],
   imports: [

@@ -42,13 +42,17 @@ public class Formation {
 	joinColumns=@JoinColumn(name="idFormation"),
 	inverseJoinColumns=@JoinColumn(name="idParticipant"))
 	private List<Participant> participants ;
+	@OneToMany(mappedBy = "formation",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
+	@JsonIgnore
+	private List<Quizz> quizzs;
+	
 	
 	
 	
 	
 	public Formation(String libFormation, String description, String dateDebut, String dateFin, int prix,
 			Formateur formateur, List<HistoriqueFormateur> historiqueFormateur,
-			List<HistoriqueParticipant> historiqueParticipant, List<Participant> participants) {
+			List<HistoriqueParticipant> historiqueParticipant, List<Participant> participants, List<Quizz> quizzs) {
 		super();
 		this.libFormation = libFormation;
 		this.description = description;
@@ -59,7 +63,9 @@ public class Formation {
 		this.historiqueFormateur = historiqueFormateur;
 		this.historiqueParticipant = historiqueParticipant;
 		this.participants = participants;
+		this.quizzs = quizzs;
 	}
+	
 	public Formation() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -131,6 +137,12 @@ public class Formation {
 	}
 	public void setHistoriqueParticipant(List<HistoriqueParticipant> historiqueParticipant) {
 		this.historiqueParticipant = historiqueParticipant;
+	}
+	public List<Quizz> getQuizzs() {
+		return quizzs;
+	}
+	public void setQuizzs(List<Quizz> quizzs) {
+		this.quizzs = quizzs;
 	}
 	
 	

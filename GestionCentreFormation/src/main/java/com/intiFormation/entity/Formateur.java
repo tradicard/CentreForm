@@ -24,21 +24,21 @@ public class Formateur extends Utilisateur{
 	@OneToMany(mappedBy = "formateur",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonIgnore
 	private List<HistoriqueFormateur> historique;
+	@OneToMany(mappedBy = "formateur",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
+	@JsonIgnore
+	private List<Quizz> quizzs;
 	
 	
 	
 	
 	
 	
-	
-
-	
-
 	public Formateur(String nom, String prenom, String username, String password, String mail, Role role,
-			Formation formation, List<HistoriqueFormateur> historique) {
+			Formation formation, List<HistoriqueFormateur> historique, List<Quizz> quizzs) {
 		super(nom, prenom, username, password, mail, role);
 		this.formation = formation;
 		this.historique = historique;
+		this.quizzs = quizzs;
 	}
 
 	public Formateur() {
@@ -68,6 +68,14 @@ public class Formateur extends Utilisateur{
 
 	public void setHistorique(List<HistoriqueFormateur> historique) {
 		this.historique = historique;
+	}
+
+	public List<Quizz> getQuizzs() {
+		return quizzs;
+	}
+
+	public void setQuizzs(List<Quizz> quizzs) {
+		this.quizzs = quizzs;
 	}
 
 	

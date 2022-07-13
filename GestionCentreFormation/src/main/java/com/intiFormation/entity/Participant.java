@@ -35,6 +35,9 @@ public class Participant extends Utilisateur {
 	@OneToMany(mappedBy = "participant",fetch = FetchType.LAZY, cascade = {CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonIgnore
 	private List<Paiement> paiements;
+	@OneToMany(mappedBy = "participant",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
+	@JsonIgnore
+	private List<Resultat> resultats;
 	
 	
 	public Participant(String nom, String prenom, String username, String password, String mail, Role role) {
@@ -44,15 +47,38 @@ public class Participant extends Utilisateur {
 	
 	
 
-	public Participant(String nom, String prenom, String username, String password, String mail, Role role,
+	
+
+	
+
+
+
+
+
+
+	public Participant(String nom, String prenom, String username, String password, String mail, Role role, int compte,
 			List<Formation> formations, List<HistoriqueParticipant> historique, List<Relance> relances,
-			List<Paiement> paiements) {
+			List<Paiement> paiements, List<Resultat> resultats) {
 		super(nom, prenom, username, password, mail, role);
+		this.compte = compte;
 		this.formations = formations;
 		this.historique = historique;
 		this.relances = relances;
 		this.paiements = paiements;
+		this.resultats = resultats;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
 
 	public Participant() {
 		super();
@@ -97,6 +123,41 @@ public class Participant extends Utilisateur {
 	public void setHistorique(List<HistoriqueParticipant> historique) {
 		this.historique = historique;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public List<Resultat> getResultats() {
+		return resultats;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public void setResultats(List<Resultat> resultats) {
+		this.resultats = resultats;
+	}
+
+
+
 	
 	
 	
