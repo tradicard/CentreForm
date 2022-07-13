@@ -1,8 +1,13 @@
 <body>
-    <form (ngSubmit)="save()">
+
+<ng-container *ngFor="let _ of [].constructor(4)">🐱
+
+    <form (ngSubmit)="save()" >
+       
         Question :
         <br>
-            <input type="text" name="question" [(ngModel)]="question"/>
+        <input type="hidden" name="idQuizz" [(ngModel)]="idQuizz">
+        <input type="text" name="question" [(ngModel)]="question"/>
         <br>
         Reponses 
         <br>
@@ -27,4 +32,7 @@
         <input type="text" name="temps" [(ngModel)]="temps"/>
         <button type="submit">Valider</button>
     </form>
+
+</ng-container>
+
     </body>

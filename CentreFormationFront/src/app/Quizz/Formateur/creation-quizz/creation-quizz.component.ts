@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Formateur } from 'src/app/models/formateur';
 import { Formation } from 'src/app/models/formation';
+import { Question } from 'src/app/models/question';
 import { Quizz } from 'src/app/models/quizz';
 import { FormateurService } from 'src/app/service/formateur.service';
 import { QuizzService } from 'src/app/service/quizz.service';
@@ -30,6 +31,7 @@ export class CreationQuizzComponent implements OnInit {
   noteReussite!:number
   nbQuestion!:number
   formation!:Formation
+ 
 
   constructor(
     private router:Router
@@ -51,6 +53,11 @@ export class CreationQuizzComponent implements OnInit {
   this.serviceQuizz.ajouter(this.quizz).subscribe(
     response=> this.router.navigateByUrl('')
   )
+}
+
+ajoutQuestion()
+{
+  this.router.navigateByUrl('creerQuestion')
 }
 
 }

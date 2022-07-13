@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Question } from 'src/app/models/question';
 
 @Component({
   selector: 'app-creation-question',
@@ -20,6 +21,10 @@ export class CreationQuestionComponent implements OnInit {
   reponse3!:string
   reponse4!:string
   temps!:string
+
+  idQuizz!:number
+
+
 
   constructor(
     private router:Router

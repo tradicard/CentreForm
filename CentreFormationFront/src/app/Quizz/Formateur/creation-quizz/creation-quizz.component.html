@@ -14,25 +14,12 @@
     <input type="formation" name="formation" [(ngModel)]="formation"> <br>
     
     Questions :
-    <input type="text" name="question" [(ngModel)]="question"/> <br>
-  
-
-    Reponse attendue : 
-    <input type="text" name="reponse" [(ngModel)]="reponse"/> <br>
-
-    <div *ngIf="typeReponse === qcu || typeReponse === qcm">
-        Autre reponse fausse : 
-        <br>
-        <input type="text" name="faux1" [(ngModel)]="faux1"/>
-        <br>
-        <input type="text" name="faux2" [(ngModel)]="faux2"/>
-        <br>
-        <input type="text" name="faux3" [(ngModel)]="faux3"/>
-    </div>
+    
+    <button (click)="ajoutQuestion()" class="btn btn-secondary">Ajouter des questions</button>
     <br>
-    Temps de reponse : 
-    <br>
-    <input type="text" name="temps" [(ngModel)]="temps"/>-->
+
+    <button type="submit" class="btn btn-secondary">Valider ajout Quizz</button>
+    
 
 
     <!-- Question :
@@ -72,8 +59,5 @@
 
 </form>
 
-<<<<<<< HEAD
 </body>
-=======
-</body> -->
->>>>>>> 0c2fa1efc75473e5fbeda52be25c41dd32ee45ad
+
