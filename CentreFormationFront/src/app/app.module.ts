@@ -36,10 +36,14 @@ import { RelancePaiementComponent } from './GestionPaiement/relance-paiement/rel
 import { CrediterCompteComponent } from './GestionPaiement/Participant/crediter-compte/crediter-compte.component';
 import { MyDataComponent } from './EnsConnection/my-data/my-data.component';
 import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-utilisateur.component';
-import { FooterComponent } from './footer/footer.component';
 import { CsvService } from './service/csv.service';
 import { AcceuilAllComponent } from './Acceuil/acceuil-all/acceuil-all.component';
 import { AfficherDiplomeComponent } from './afficher-diplome/afficher-diplome.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { CreationQuizzComponent } from './Quizz/Formateur/creation-quizz/creation-quizz.component';
+import { AfficherQuizzComponent } from './Quizz/afficher-quizz/afficher-quizz.component';
+import { ResultatComponent } from './Quizz/resultat/resultat.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -71,7 +75,6 @@ import { AfficherDiplomeComponent } from './afficher-diplome/afficher-diplome.co
     ModifierContactsComponent,
     SingleFormateurFormationsComponent,
     CrediterCompteComponent,
-    FooterComponent,
     SingleParticipantFormationsComponent,
     RelancePaiementComponent,
     CrediterCompteComponent,
@@ -79,7 +82,12 @@ import { AfficherDiplomeComponent } from './afficher-diplome/afficher-diplome.co
     ModifUtilisateurComponent,
     RelancePaiementComponent,
     AcceuilAllComponent,
-    AfficherDiplomeComponent
+    AfficherDiplomeComponent,
+    QuizComponent,
+    CreationQuizzComponent,
+    AfficherQuizzComponent,
+    ResultatComponent,
+    FooterComponent
  
   ],
   imports: [

@@ -1,0 +1,234 @@
+
+
+
+<!--     <p>{{timeLeft}} Seconds Left....</p>
+<div *ngIf="question=='un'">
+<form (ngSubmit)="saveQ()">
+     
+    Question 1 : La reponse est 1
+    <br>
+    <input type="radio" class="button" name="RQ1" value="0" [(ngModel)]="RQ1"/>
+    <label for="0">0</label>
+    <br>
+    <input type="radio" id="qcu" class="button" name="RQ1" value="un" [(ngModel)]="RQ1" />
+    <label for="un">Un</label>
+    <br>
+    <input type="radio" id="qcm" class="button" name="RQ1" value="1" [(ngModel)]="RQ1" />
+    <label for="1">1</label>
+    <br>
+    <input type="radio" id="qcm" class="button" name="RQ1" value=".1" [(ngModel)]="RQ1" />
+    <label for=".1">.1</label>
+    <br>
+    <button type="submit">Valider</button>
+</form>
+</div>
+
+<div *ngIf="question == 'deux'">
+<form (ngSubmit)="saveQ2()">
+    Question 2 : La reponse est 1 ou un
+    <br>
+    <input type="checkbox" class="button" name="RQ2_1" value="0" [(ngModel)]="RQ2_1"/>
+    <label for="0">0</label>
+    <br>
+    <input type="checkbox" class="button" name="RQ2_1" value="un" [(ngModel)]="RQ2_2" />
+    <label for="un">Un</label>
+    <br>
+    <input type="checkbox" class="button" name="RQ2_3" value="1" [(ngModel)]="RQ2_3" />
+    <label for="1">1</label>
+    <br>
+    <input type="checkbox" class="button" name="RQ2_4" value=".1" [(ngModel)]="RQ2_4" />
+    <label for=".1">.1</label>
+    <br>
+    <button type="submit">Valider</button>
+
+
+</form>
+</div>
+
+<div *ngIf="question == 'trois'">
+    <button (click)="saveQuizz()">Valider le quizz</button>
+</div> -->
+
+<body>
+    
+
+
+
+
+<!--Timer-->
+
+<section class="section coming-soon" data-section="section3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 col-xs-12">
+          <div class="continer centerIt">
+            <div>
+              <div class="counter">
+                <div class="seconds">
+                  <div class="value">{{timeLeft}}</div>
+                  <span>Seconds </span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+
+
+<!--Question 1-->
+
+    <!--   <div *ngIf="question == 'deux'">
+<form (ngSubmit)="saveQ2()">
+    Question 2 : La reponse est 1 ou un
+    <br>
+    <input type="checkbox" class="button" name="RQ2_1" value="0" [(ngModel)]="RQ2_1"/>
+    <label for="0">0</label>
+    <br>
+    <input type="checkbox" class="button" name="RQ2_1" value="un" [(ngModel)]="RQ2_2" />
+    <label for="un">Un</label>
+    <br>
+    <input type="checkbox" class="button" name="RQ2_3" value="1" [(ngModel)]="RQ2_3" />
+    <label for="1">1</label>
+    <br>
+    <input type="checkbox" class="button" name="RQ2_4" value=".1" [(ngModel)]="RQ2_4" />
+    <label for=".1">.1</label>
+    <br>
+    <button type="submit">Valider</button>
+
+
+</form>
+</div> -->
+
+<div *ngIf="question=='un'">
+        <div class="container mt-5">
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-10 col-lg-10">
+                    <div class="border">
+                        <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                                <h4>Quiz compétences</h4><span>(1 of tant de questions)</span></div>
+                        </div>
+                        <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row align-items-center question-title">
+                                <h3 class="text-danger">Q.</h3>
+                                <h5 class="mt-1 ml-2">Question 1 : La reponse est 1</h5>
+                            </div><div class="ans ml-2">
+
+                                
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="form-holder">
+                                            <div class="form-content">
+                                                <div class="form-items" >
+                                                    
+                                                    <form (ngSubmit)="saveQ()" class="requires-validation" novalidate>
+                                  
+                                                      
+                                                        <div class="col-md-12">
+                                                          Choisissez une reponse : <br> <br>
+                                                          <div class="col-md-12">
+                                                          <input type="radio" class="button" name="RQ1" value="0" [(ngModel)]="RQ1"/>
+                                                          <label for="0">0</label>
+                                                        </div>
+                                  
+                                                        <div class="col-md-12">
+                                                            <input type="radio" id="qcu" class="button" name="RQ1" value="un" [(ngModel)]="RQ1" />
+                                                            <label for="un">Un</label>
+                                                      </div>
+                                                      
+                                                      <div class="col-md-12">
+                                                        <input type="radio" id="qcm" class="button" name="RQ1" value="1" [(ngModel)]="RQ1" />
+                                                         <label for="1">1</label>
+                                                  </div>
+                                                  <div class="col-md-12">
+                                                  <input type="radio" id="qcm" class="button" name="RQ1" value=".1" [(ngModel)]="RQ1" />
+                                                  <label for=".1">.1</label>
+                                                </div>
+                                                        <div class="form-button mt-3">
+                                                            <button id="submit" type="submit" class="btn btn-secondary">Valider</button>
+                                                        </div>
+                                                        </div>
+                                                      </form>
+                                                  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+</div></div></div></div></div></div>
+</div>
+
+<div *ngIf="question == 'deux'">  
+                                  <div class="container mt-5" >
+                                    <div class="d-flex justify-content-center row">
+                                        <div class="col-md-10 col-lg-10">
+                                            <div class="border">
+                                                <div class="question bg-white p-3 border-bottom">
+                                                    <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                                                        <h4>Quiz compétences</h4><span>(2 of tant de questions)</span></div>
+                                                </div>
+                                                <div class="question bg-white p-3 border-bottom">
+                                                    <div class="d-flex flex-row align-items-center question-title">
+                                                        <h3 class="text-danger">Q.</h3>
+                                                        <h5 class="mt-1 ml-2">Question 2 : La reponse est 1 ou un</h5>
+                                                    </div><div class="ans ml-2">
+                        
+
+                                                        <div class="form-body">
+                                                            <div class="row">
+                                                                <div class="form-holder">
+                                                                    <div class="form-content">
+                                                                        <div class="form-items">
+                                                                            
+                                                                            
+
+                                                                            <form (ngSubmit)="saveQ2()" class="requires-validation" novalidate>
+                                                          
+                                                                              
+                                                                                <div class="col-md-12">
+                                                                                  Choisissez une ou plusieurs reponses: <br> <br>
+                                                                                  <div class="col-md-12">
+                                                                                  <input type="checkbox" class="button" name="RQ2_1" value="0" [(ngModel)]="RQ2_1"/>
+                                                                                <label for="0">0</label>
+                                                                                </div>
+                                                          
+                                                                                <div class="col-md-12">
+                                                                                    <input type="checkbox" class="button" name="RQ2_1" value="un" [(ngModel)]="RQ2_2" />
+                                                                                    <label for="un">Un</label>
+                                                                              </div>
+                                                                              
+                                                                              <div class="col-md-12">
+                                                                                <input type="checkbox" class="button" name="RQ2_3" value="1" [(ngModel)]="RQ2_3" />
+                                                                                <label for="1">1</label>
+                                                                          </div>
+                                                                          <div class="col-md-12">
+                                                                            <input type="checkbox" class="button" name="RQ2_4" value=".1" [(ngModel)]="RQ2_4" />
+                                                                            <label for=".1">.1</label>
+                                                                        </div>
+                                                                                <div class="form-button mt-3">
+                                                                                    <button id="submit" type="submit" class="btn btn-secondary">Valider</button>
+                                                                                </div>
+                                                                                </div>
+                                                                              </form>
+
+                                                                            </div>
+                                                                       
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                          </div>
+</div></div></div></div></div></div>
+                                 
+
+
+
+
+<br>
+  <div *ngIf="question == 'trois'">
+ <button (click)="saveQuizz()" class="btn btn-secondary">Valider le quizz</button>
+ </div>
+
+
+
