@@ -81,7 +81,7 @@ const routes: Routes = [
   {path:'RelancePaiement/:id',component:RelancePaiementComponent},
 
   {path:'quizTest',component:QuizComponent},
-  {path:'creationQuizTest',component:CreationQuizzComponent},
+  {path:'creerQuizz',component:CreationQuizzComponent},
 
   
 
