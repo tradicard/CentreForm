@@ -204,6 +204,27 @@
     </div>
 </div> <br> <br>
 
+<<<<<<< HEAD
+=======
+
+
+<div class="form-body">
+  <div class="row">
+      <div class="form-holder">
+          <div class="form-content">
+              <div class="form-items">
+
+              <form (ngSubmit)="rol()" class="requires-validation" novalidate>
+
+  Afficher seulement les <select [(ngModel)]="selectedValue" name="selectedValue" class="form-select mt-3">
+      <option *ngFor="let r of roles" value="{{r.idRole}}">{{r.librole}}</option>
+  </select> <br>
+
+  <button type="submit" class="btn btn-secondary">Valider</button>
+</form> 
+
+<div class="form-button mt-3">
+>>>>>>> 2ec80ec9a5faf23d1fd981d89e1e512a9d967cf7
 <button (click)="reset()" class="btn btn-secondary" style="text-align:right;">Reset</button> <br> <br>
 
 
@@ -233,7 +254,7 @@
     </tr>
     
   </tbody>
-</table>
+</table> <br>
 
 
 

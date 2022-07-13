@@ -32,16 +32,18 @@ export class AfficherQuizzComponent implements OnInit {
       this.pts=this.pts+1
       console.log(this.pts)
       console.log("q1")
-      this.question="deux"
+      
     }
+    this.question="deux"
     }
     
     saveQ2 () {
       if (this.RQ2_2 && this.RQ2_3 == true) {
         this.pts=this.pts+1
         console.log(this.pts)
-        this.question="trois"
+        
     }
+    this.question="trois"
   }
 
     saveQuizz() {

@@ -33,6 +33,7 @@ import { InscriptionComponent } from './EnsConnection/inscription/inscription.co
 import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-utilisateur.component';
 import { MyDataComponent } from './EnsConnection/my-data/my-data.component';
 import { AcceuilAllComponent } from './Acceuil/acceuil-all/acceuil-all.component';
+import { QuizComponent } from './quiz/quiz.component';
 import { AfficherQuizzComponent } from './Quizz/afficher-quizz/afficher-quizz.component';
 import { ResultatComponent } from './Quizz/resultat/resultat.component';
 
@@ -77,6 +78,10 @@ const routes: Routes = [
 
   {path:'RelancePaiement/:id',component:RelancePaiementComponent},
 
+  {path:'quizTest',component:QuizComponent},
+
+
+  
 
 
 
