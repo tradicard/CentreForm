@@ -8,20 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CreationQuizzComponent implements OnInit {
 
-  qcu!:string
-  qcm!:string
-
-  typeReponse!:string
-  question!:string
-  reponse!:string
-  faux1!:string
-  faux2!:string
-  faux3!:string
-  temps!:string
-
-  constructor(
-    private router:Router
-    ,private route:ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

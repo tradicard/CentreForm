@@ -1,0 +1,30 @@
+<body>
+    <form (ngSubmit)="save()">
+        Question :
+        <br>
+            <input type="text" name="question" [(ngModel)]="question"/>
+        <br>
+        Reponses 
+        <br>
+        <input type="text" name="reponse1" [(ngModel)]="reponse1"/>
+        <input type="checkbox" class="button" name="typeReponse1" [(ngModel)]="typeReponse1">
+        <label for="qcu" id="idRadio">  Bonne reponse</label>
+        <br>
+        <input type="text" name="reponse2" [(ngModel)]="reponse2"/>
+        <input type="checkbox" class="button" name="typeReponse2" [(ngModel)]="typeReponse2">
+        <label for="qcu" id="idRadio">  Bonne reponse</label>
+        <br>
+        <input type="text" name="reponse3" [(ngModel)]="reponse3"/>
+        <input type="checkbox" class="button" name="typeReponse3" [(ngModel)]="typeReponse3">
+        <label for="qcu" id="idRadio">  Bonne reponse</label>
+        <br>
+        <input type="text" name="reponse4" [(ngModel)]="reponse4"/>
+        <input type="checkbox" class="button" name="typeReponse4" [(ngModel)]="typeReponse4">
+        <label for="qcu" id="idRadio">  Bonne reponse</label>
+        <br>
+        Temps de reponse : 
+        <br>
+        <input type="text" name="temps" [(ngModel)]="temps"/>
+        <button type="submit">Valider</button>
+    </form>
+    </body>
