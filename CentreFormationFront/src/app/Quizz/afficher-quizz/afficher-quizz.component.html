@@ -127,17 +127,16 @@
                                                       
                                                         <div class="col-md-12">
                                                           Choisissez une reponse : <br> <br>
-                                                          <div *ngFor="let reponses of superreponses" class="col-md-12">
-                                                            <div *ngFor="let r of reponses{{i}}" class="col-md-12">
+                                                          <div  class="col-md-12">
+                                                            
                                                               <input type="checkbox" class="button" name="RQ1" value="0" [(ngModel)]="RQ1"/>
-                                                            </div>
+                                                            
                                                             <label for="0">0</label>
                                                           </div>
                                                         </div>
                                   
                                                         <div class="form-button mt-3">
                                                             <button id="submit" type="submit" class="btn btn-secondary">Valider</button>
-                                                        </div>
                                                         </div>
                                                       </form>
                                                   

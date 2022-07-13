@@ -16,7 +16,11 @@ import { ReponseService } from 'src/app/service/reponse.service';
 export class AfficherQuizzComponent implements OnInit {
   quizz!:Quizz
   quests!:Question[]
-  reponses!:Reponse[]
+  reponses1!:Reponse[]
+  reponses2!:Reponse[]
+  reponses3!:Reponse[]
+  reponses4!:Reponse[]
+
   superreponses!:any[]
   RQ1!:string
   RQ2_1:boolean=false
@@ -51,19 +55,35 @@ export class AfficherQuizzComponent implements OnInit {
             this.quests=response
 
 
-            for(let i=0;i<this.quests.length;i++){
-              this.serviceReponse.getAllbyquest(q.idQuestion).subscribe(
+            
+              this.serviceReponse.getAllbyquest(this.quests[0].idQuestion).subscribe(
                 response=>{
-                  this.reponses=response
-                  this.superreponses.push(this.reponses)
+                  this.reponses1=response
+                
                 }
               )
-            }
+              this.serviceReponse.getAllbyquest(this.quests[1].idQuestion).subscribe(
+                response=>{
+                  this.reponses2=response
+                
+                }
+              )
+              this.serviceReponse.getAllbyquest(this.quests[2].idQuestion).subscribe(
+                response=>{
+                  this.reponses3=response
+                
+                }
+              )
+              this.serviceReponse.getAllbyquest(this.quests[3].idQuestion).subscribe(
+                response=>{
+                  this.reponses4=response
+                
+                }
+              )
+            })
           }
         )
-      }
-    )
-    
+
   }
 
   saveQ () {

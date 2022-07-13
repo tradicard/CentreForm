@@ -50,8 +50,9 @@ public class ReponseController {
 		return c;
 	}
 	@PostMapping("/reponses")
-	public void SaveCommercial(@RequestBody Reponse u) {
+	public Reponse SaveCommercial(@RequestBody Reponse u) {
 		rSer.ajouterService(u);
+		return u;
 	}
 	
 	
