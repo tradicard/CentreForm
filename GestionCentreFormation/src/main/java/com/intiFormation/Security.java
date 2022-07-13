@@ -62,6 +62,7 @@ public class Security extends WebSecurityConfigurerAdapter{
 		//.antMatchers("/addUtilisateur").permitAll()
 		.antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
 		.antMatchers("/authenticate").permitAll()
+		.antMatchers("/pdfreport/**").permitAll()
 		.antMatchers("/api/utilisateurs/**").hasAnyAuthority("admin")
 		.antMatchers("/api/utilisateursByRole/**").hasAnyAuthority("admin")
 		.antMatchers("/api/utilisateursus/**").permitAll()

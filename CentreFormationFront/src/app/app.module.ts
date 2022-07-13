@@ -39,6 +39,7 @@ import { ModifUtilisateurComponent } from './Acceuil/modif-utilisateur/modif-uti
 
 import { CsvService } from './service/csv.service';
 import { AcceuilAllComponent } from './Acceuil/acceuil-all/acceuil-all.component';
+import { AfficherDiplomeComponent } from './afficher-diplome/afficher-diplome.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { CreationQuizzComponent } from './Quizz/Formateur/creation-quizz/creation-quizz.component';
 import { AfficherQuizzComponent } from './Quizz/afficher-quizz/afficher-quizz.component';
@@ -81,6 +82,7 @@ import { ResultatComponent } from './Quizz/resultat/resultat.component';
     ModifUtilisateurComponent,
     RelancePaiementComponent,
     AcceuilAllComponent,
+    AfficherDiplomeComponent,
     QuizComponent,
     CreationQuizzComponent,
     AfficherQuizzComponent,
