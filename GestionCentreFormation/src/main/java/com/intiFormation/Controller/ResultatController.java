@@ -43,8 +43,9 @@ public class ResultatController {
 		return c;
 	}
 	@PostMapping("/resultats")
-	public void SaveCommercial(@RequestBody Resultat u) {
+	public Resultat SaveCommercial(@RequestBody Resultat u) {
 		rSer.ajouterService(u);
+		return u;
 	}
 	
 	

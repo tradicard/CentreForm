@@ -1,0 +1,36 @@
+<body>
+
+    <section class="section coming-soon" data-section="section3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7 col-xs-12">
+              <div class="continer centerIt">
+                <div>
+                  <div class="counter">
+                    <div class="seconds">
+                      <div class="value">{{q.tempsReponse}}</div>
+                        <span>Seconds </span>
+                    </div>
+    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+        Question {{nbreste+1}}: {{q.intitule}}
+        <form  (ngSubmit)="saveQ2()">
+        
+            <input type="checkbox" name="RQ2_1" value="un" [(ngModel)]="RQ2_1"/>{{reponses[0].detail}}
+            <input type="checkbox" name="RQ2_2" value="deux" [(ngModel)]="RQ2_2"/>{{reponses[1].detail}}
+            <input type="checkbox" name="RQ2_3" value="trois" [(ngModel)]="RQ2_3"/>{{reponses[2].detail}}
+            <input type="checkbox" name="RQ2_4" value="quatre" [(ngModel)]="RQ2_4"/>{{reponses[3].detail}}
+        <button id="submit" type="submit" class="btn btn-secondary">Valider</button>
+
+        </form>
+
+    
+</body>

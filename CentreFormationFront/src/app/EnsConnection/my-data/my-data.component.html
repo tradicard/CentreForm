@@ -57,43 +57,45 @@
     </div> <br> <br>
     
 
-<h4 *ngIf="b!==undefined">Historique de vos formations</h4>
-<table *ngIf="b===true">
+<h3 id="idListe" *ngIf="b!==undefined">Historique de vos formations</h3>
+<table *ngIf="b===true" class="table">
+    <thead>
     <tr>
-        <td>id</td>
-        <td>libFormation</td>
-        <td>description</td>
-        <td>dateDebut</td>
-        <td>dateFin</td>
-        <td>prix</td>
+        <th scope="col">id</th>
+        <th scope="col">libFormation</th>
+        <th scope="col">description</th>
+        <th scope="col">dateDebut</th>
+        <th scope="col">dateFin</th>
+        <th scope="col">prix</th>
     </tr>
-
+</thead>
     
-    
+    <tbody>
     <tr *ngFor="let h of hist">
-        <td>{{h.formation.idFormation}}</td>
+        <th scope="row" >{{h.formation.idFormation}}</th>
         <td>{{h.formation.libFormation}}</td>
         <td>{{h.formation.description}}</td>
         <td>{{h.formation.dateDebut}}</td>
         <td>{{h.formation.dateFin}}</td>
         <td>{{h.formation.prix}}</td>
     </tr>
-
+</tbody>
     
     
 </table>
-<table *ngIf="b===false">
+<table *ngIf="b===false" class="table">
+    <thead>
     <tr>
-        <td>id</td>
-        <td>libFormation</td>
-        <td>description</td>
-        <td>dateDebut</td>
-        <td>dateFin</td>
-        <td>prix</td>
+        <th scope="col">id</th>
+        <th scope="col">libFormation</th>
+        <th scope="col">description</th>
+        <th scope="col">dateDebut</th>
+        <th scope="col">dateFin</th>
+        <th scope="col">prix</th>
     </tr>
-
+</thead>
     
-    
+    <tbody>
     <tr *ngFor="let h of histf">
         <td>{{h.formation.idFormation}}</td>
         <td>{{h.formation.libFormation}}</td>
@@ -102,10 +104,10 @@
         <td>{{h.formation.dateFin}}</td>
         <td>{{h.formation.prix}}</td>
     </tr>
-
+</tbody>
     
     
-</table>
+</table><br>
 <button *ngIf="user.role.librole===part" (click)="paye()" type="button" class="btn btn-secondary">Vos paiements</button>
 
 <button *ngIf="user.role.librole===part" (click)="retour1()" type="button" class="btn btn-secondary">retour</button>

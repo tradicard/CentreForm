@@ -1,38 +1,22 @@
-<!-- <body>
+ <body>
 
 <form (ngSubmit)="ajoutQuizz()">
 
    
 
     Score pour valider question : 
-    <input type="number" name="noteReussite" [(ngModel)]="noteReussite"> <br>
+    <input type="number" name="noteReussite" [(ngModel)]="quizz.noteRequise"> <br>
 
     Nombre de questions que vous voulez ajouter : 
-    <input type="number" name="nbQuestion" [(ngModel)]="nbQuestion"> <br>
+    <input type="number" name="nbQuestion" [(ngModel)]="quizz.nbQuestion"> <br>
 
     Formation concernee : 
-    <input type="resultat" name="resultats" [(ngModel)]="resultats"> <br>
+    <input disabled type="text" name="formation" [(ngModel)]="formation.libFormation"> <br>
     
-    Questions :
-    <input type="text" name="question" [(ngModel)]="question"/> <br>
-  
-
-    Reponse attendue : 
-    <input type="text" name="reponse" [(ngModel)]="reponse"/> <br>
-
-    <div *ngIf="typeReponse === qcu || typeReponse === qcm">
-        Autre reponse fausse : 
-        <br>
-        <input type="text" name="faux1" [(ngModel)]="faux1"/>
-        <br>
-        <input type="text" name="faux2" [(ngModel)]="faux2"/>
-        <br>
-        <input type="text" name="faux3" [(ngModel)]="faux3"/>
-    </div>
     <br>
-    Temps de reponse : 
-    <br>
-    <input type="text" name="temps" [(ngModel)]="temps"/>-->
+
+    <button type="submit" class="btn btn-secondary">Valider ajout Quizz</button>
+    
 
 
     <!-- Question :
@@ -68,8 +52,9 @@
     <br>
     Temps de reponse : 
     <br>
-    <input type="text" name="temps" [(ngModel)]="temps"/>
+    <input type="text" name="temps" [(ngModel)]="temps"/> -->
 
 </form>
 
-</body> -->
+</body>
+

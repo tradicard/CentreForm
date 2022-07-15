@@ -1,0 +1,15 @@
+
+<table>
+    <tr>
+        <td>Question</td>
+        <td>Reponse</td>
+        <td>Commentaire</td>
+    </tr>
+
+    <tr *ngFor="let r of reponses">
+        <td>{{r.question.intitule}}</td>
+        <td *ngIf="r.correct === true">{{r.detail}}</td>
+        <td>{{r.question.commentaire}}</td>
+    </tr>
+
+</table>

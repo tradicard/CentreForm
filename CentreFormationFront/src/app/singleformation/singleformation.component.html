@@ -44,7 +44,7 @@
         <th scope="col">LibFormation</th>
         <th scope="col">Description</th>
        
-        <th scope="col">dDateDebut</th>
+        <th scope="col">DateDebut</th>
         <th scope="col">DateFin</th>
         <th scope="col">Prix</th>
         <th scope="col">Inscription</th>
@@ -52,23 +52,48 @@
     </thead>
   
     <tbody>
-      <tr *ngFor="let f of formations">
-        <th scope="row" >{{f.idFormation}}</th>
+      <tr>
+        <td scope="row" >{{f.idFormation}}</td>
         <td>{{f.libFormation}}</td>
         <td>{{f.description}}</td>
         <td>{{f.dateDebut}}</td>
         <td>{{f.dateFin}}</td>
         <td>{{f.prix}}</td>
-        <div *ngIf="inscrit===false">
-            <td><button (click)="inscription()" type="button" class="btn btn-secondary">Inscription</button></td>
-            </div>
-            <div *ngIf="inscrit">
-                <td>Vous etes deja inscrit</td>
-            </div>
+        
+          <td *ngIf="inscrit===false"><button (click)="inscription()" type="button" class="btn btn-secondary">Inscription</button></td>
+        
+        
+          <td *ngIf="inscrit">Vous etes deja inscrit</td>
+        
       </tr>
       
     </tbody>
   </table>
+  
+<table *ngIf="inscrit" class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id Quizz</th>
+      <th scope="col">Faire Quizz</th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let q of quizzz;index as i">
+      <td scope="row" >{{q.idQuizz}}</td>
+      <td *ngIf="verifs[i]===false"><button (click)="fairequizz(q.idQuizz)" type="button" class="btn btn-secondary">Faire Quizz</button></td>
+      <td *ngIf="verifs[i]"><button (click)="afficherdipl(q.idQuizz)" type="button" class="btn btn-secondary">Page des resultats</button></td>
+      
+    </tr>
+    
+  </tbody>
+
+
+
+
+</table>
+
 
 
 

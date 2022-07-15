@@ -34,6 +34,12 @@ public class ReponseService implements IReponseService{
 		return liste;
 		
 	}
+	
+	public List<Reponse> findByQuestion_IdQuestion(int id){
+		List<Reponse> liste=rdao.findByQuestion_IdQuestion(id);
+		return liste;
+	}
+	
 	public void supprimerService(int id) {
 		rdao.deleteById(id);
 	}

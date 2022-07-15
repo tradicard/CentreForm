@@ -19,5 +19,6 @@ public interface IFormationService {
 	public Optional<Formation> selectByIdService(int id);
 	public void ajouterService(Formation r);
 	public List<Formation> findByParticipants_Id(int id);
+	public Formation findByFormateur_Id(int id);
 
 }

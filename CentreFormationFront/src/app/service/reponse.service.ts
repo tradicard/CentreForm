@@ -13,7 +13,11 @@ export class ReponseService {
   {
     return this.http.get<Reponse[]>('http://localhost:8016/api/reponses')
   }
- 
+  getAllbyquest(id:number)
+  {
+    return this.http.get<Reponse[]>('http://localhost:8016/api/reponsesparquest/'+id)
+  }
+  
   getById(idReponse:number)
   {
     return this.http.get<Reponse>('http://localhost:8016/api/reponses/'+idReponse)

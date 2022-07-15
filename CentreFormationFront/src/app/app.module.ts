@@ -45,6 +45,8 @@ import { CreationQuizzComponent } from './Quizz/Formateur/creation-quizz/creatio
 import { AfficherQuizzComponent } from './Quizz/afficher-quizz/afficher-quizz.component';
 import { ResultatComponent } from './Quizz/resultat/resultat.component';
 import { CreationQuestionComponent } from './Quizz/creation-question/creation-question.component';
+import { TestComponent } from './test/test.component';
+import { CorrectionComponent } from './Quizz/correction/correction.component';
 
 
 @NgModule({
@@ -88,7 +90,9 @@ import { CreationQuestionComponent } from './Quizz/creation-question/creation-qu
     CreationQuizzComponent,
     AfficherQuizzComponent,
     ResultatComponent,
-    CreationQuestionComponent
+    CreationQuestionComponent,
+    TestComponent,
+    CorrectionComponent
  
   ],
   imports: [

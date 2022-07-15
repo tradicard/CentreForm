@@ -1,9 +1,12 @@
 import { Quizz } from "./quizz"
+import { Reponse } from "./reponse"
 
 export class Question {
 
     idQuestion!:number
-    responses!:Response[]
+    reponses!:Reponse[]
     quizz!:Quizz
     intitule!:string
+    tempsReponse!:number
+    commentaire!:string
 }

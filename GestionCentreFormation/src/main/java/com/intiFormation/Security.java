@@ -85,6 +85,12 @@ public class Security extends WebSecurityConfigurerAdapter{
 		.antMatchers("/GiveScheduleEmailRequest/**").hasAnyAuthority("admin","commercial")
 		.antMatchers("/sendSimpleEmail/**").hasAnyAuthority("admin","commercial")
 		.antMatchers("/sendSimpleEmailRelancePaiement/**").hasAnyAuthority("admin","assistant")
+		.antMatchers("/api/resultats/**").permitAll()
+		.antMatchers("/api/reponses/**").permitAll()
+		.antMatchers("/api/quizz/**").permitAll()
+		.antMatchers("/api/quizzz/**").permitAll()
+		
+		.antMatchers("/api/questions/**").permitAll()
 		//.antMatchers("/**").permitAll()
 		
 		

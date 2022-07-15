@@ -42,9 +42,18 @@ public class QuizzController {
 		}
 		return c;
 	}
+	
+	@GetMapping("/quizzz/{id}")
+	public List<Quizz> GestionCommercial2(@PathVariable("id") int id) {
+		List<Quizz> op=rSer.findByFormation_IdFormation(id);
+
+		return op;
+	}
+	
 	@PostMapping("/quizz")
-	public void SaveCommercial(@RequestBody Quizz u) {
+	public Quizz SaveCommercial(@RequestBody Quizz u) {
 		rSer.ajouterService(u);
+		return u;
 	}
 	
 	

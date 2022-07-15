@@ -96,7 +96,14 @@ export class SingleFormateurFormationsComponent implements OnInit {
       }
     )
   }
-
+  participantsAssocies(idFormation:number)
+  {
+   //Faire nnouveau component
+    this.router.navigateByUrl('ParticipantsAssocies/'+idFormation)
+  }
+  crerquizz(){
+    this.router.navigateByUrl('creerQuizz')
+  }
 
 
   retour(): void {

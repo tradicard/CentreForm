@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Quizz {
 
@@ -20,6 +22,7 @@ public class Quizz {
 	private int idQuizz;
 	
 	@OneToMany(mappedBy = "quizz",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
+	@JsonIgnore
 	private List<Question> questions;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -31,6 +34,7 @@ public class Quizz {
 	private Formateur formateur;
 	
 	@OneToMany (mappedBy = "quizz",fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE, CascadeType.MERGE})
+	@JsonIgnore
 	private List<Resultat> resultats;
 	private int noteRequise;
 	private int nbQuestion;

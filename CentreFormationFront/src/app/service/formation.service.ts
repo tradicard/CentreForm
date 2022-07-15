@@ -18,7 +18,11 @@ export class FormationService {
   {
     return this.http.get<Formation[]>('http://localhost:8016/api/formationsparid/'+idPart)
   }
-
+  
+  getByIdFormateur(idFormation:number)
+  {
+    return this.http.get<Formation>('http://localhost:8016/api/formationsparidformateur/'+idFormation)
+  }
  
   getById(idFormation:number)
   {
