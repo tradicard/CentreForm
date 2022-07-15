@@ -38,6 +38,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { AfficherQuizzComponent } from './Quizz/afficher-quizz/afficher-quizz.component';
 import { ResultatComponent } from './Quizz/resultat/resultat.component';
 import { CreationQuizzComponent } from './Quizz/Formateur/creation-quizz/creation-quizz.component';
+import { CreationQuestionComponent } from './Quizz/creation-question/creation-question.component';
 
 const routes: Routes = [
   {path:'Connection',component:ConnectionComponent},
@@ -81,7 +82,7 @@ const routes: Routes = [
   {path:'RelancePaiement/:id',component:RelancePaiementComponent},
 
   {path:'quizTest',component:QuizComponent},
-  {path:'creerQuizz',component:CreationQuizzComponent},
+  {path:'creerQuizz',component:CreationQuestionComponent},
 
   
 
