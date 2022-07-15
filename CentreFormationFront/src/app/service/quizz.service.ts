@@ -20,7 +20,7 @@ export class QuizzService {
   }
   getByIdFormation(idQuizz:number)
   {
-    return this.http.get<Quizz>('http://localhost:8016/api/quizzz/'+idQuizz)
+    return this.http.get<Quizz[]>('http://localhost:8016/api/quizzz/'+idQuizz)
   }
 
   ajouter(quizz:Quizz)

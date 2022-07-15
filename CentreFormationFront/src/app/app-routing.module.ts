@@ -84,12 +84,12 @@ const routes: Routes = [
 
   {path:'creerQuizz',component:CreationQuizzComponent},
   {path:'creerQuestion/:id',component:CreationQuestionComponent},
-  {path:'test',component:TestComponent},
+  {path:'test/:id',component:TestComponent},
 
 
 
   {path:'afficherQuizz/:id',component:AfficherQuizzComponent},
-  {path:'resultat',component:ResultatComponent},
+  {path:'resultat/:id',component:ResultatComponent},
   
 
 ];

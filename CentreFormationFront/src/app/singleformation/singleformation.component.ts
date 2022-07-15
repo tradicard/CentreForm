@@ -5,10 +5,12 @@ import { HistoriqueParticipant } from '../models/historique-participant';
 import { Paiement } from '../models/paiement';
 import { Participant } from '../models/participant';
 import { Quizz } from '../models/quizz';
+import { Resultat } from '../models/resultat';
 import { FormationService } from '../service/formation.service';
 import { HistoriqueparticipantService } from '../service/historiqueparticipant.service';
 import { PaiementService } from '../service/paiement.service';
 import { QuizzService } from '../service/quizz.service';
+import { ResultatService } from '../service/resultat.service';
 
 @Component({
   selector: 'app-singleformation',
@@ -22,16 +24,29 @@ formations!:Formation[]
 inscrit=false
 historique!:HistoriqueParticipant
 paiement!:Paiement
-quizz!:Quizz
+quizzz!:Quizz[]
+resultats!:Resultat[]
+resultats2!:Resultat[]
+r!:Resultat
+resultats3!:Resultat[]
+verif:boolean=false
+verifs!:boolean[]
 
   constructor(private service:FormationService,private route:ActivatedRoute,private router:Router,
-     private servicehistp:HistoriqueparticipantService,private servicePaiement:PaiementService, private serviceQuizz:QuizzService) { }
+     private servicehistp:HistoriqueparticipantService,private servicePaiement:PaiementService, private serviceQuizz:QuizzService,
+     private serviceResultat:ResultatService) { }
 
   ngOnInit(): void {
+    this.verifs=[]
+    this.resultats2=[]
     this.recupererP()
+
     this.paiement=new Paiement()
     this.historique=new HistoriqueParticipant()
-    this.quizz=new Quizz()
+
+
+    this.r=new Resultat()
+
   }
 
 
@@ -44,23 +59,65 @@ quizz!:Quizz
     console.log(idProduit)
     this.service.getById(idProduit).subscribe(
     response=>{this.f=response
-      for(let pa of this.f.participants){
-        if(pa.username===this.p.username){
-          this.inscrit=true;
-        }
-      }
+      
+      this.serviceQuizz.getByIdFormation(this.f.idFormation).subscribe(
+        response=>{
+          this.quizzz=response
+          console.log(this.quizzz)
+          for(let pa of this.f.participants){
+            if(pa.username===this.p.username){
+              this.inscrit=true;
+              console.log(this.inscrit)
+            }
+          }
+          this.serviceResultat.getAll().subscribe(
+            response=>{
+              this.resultats=response
+
+              for(let q of this.quizzz){
+                for(let r of this.resultats){
+                  if(r.quizz.idQuizz===q.idQuizz && r.participant.id===this.p.id){
+                    this.verif=true
+                  }
+                }
+                this.verifs.push(this.verif)
+                this.verif=false
+              }
+              console.log(this.verifs)
+            }
+            
+          )
+
+          
+  
+        })
+
+      
       }
     )
     
   }
-  fairequizz(){
-    this.serviceQuizz.getByIdFormation(this.f.idFormation).subscribe(
+
+
+
+
+
+  fairequizz(id:number){
+
+        this.router.navigateByUrl('afficherQuizz/'+id)
+    
+  }
+  afficherdipl(idQuizz:number){
+    this.serviceResultat.getAll().subscribe(
       response=>{
-        this.quizz=response
-        this.router.navigateByUrl('afficherQuizz/'+this.quizz.idQuizz)
+        this.resultats3=response
+        for(let q of this.resultats3){
+          if(q.quizz.idQuizz===idQuizz && q.participant.id===this.p.id){
+            this.router.navigateByUrl('affichediplome/'+q.idResultat)
+          }
+        }
       }
     )
-    
   }
 
   inscription(){

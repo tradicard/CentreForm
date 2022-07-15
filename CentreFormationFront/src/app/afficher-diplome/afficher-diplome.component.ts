@@ -6,6 +6,8 @@ import { UtilisateurService } from '../service/utilisateur.service';
 import { Formation } from '../models/formation';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormationService } from '../service/formation.service';
+import { ResultatService } from '../service/resultat.service';
+import { Resultat } from '../models/resultat';
 
 @Component({
   selector: 'app-afficher-diplome',
@@ -19,7 +21,9 @@ export class AfficherDiplomeComponent implements OnInit {
   user!:Utilisateur
   f!:Formation
   pts!:number
-  constructor(private route:ActivatedRoute,private router:Router, private serviceFormation:FormationService) { }
+  r!:Resultat
+  constructor(private route:ActivatedRoute,private router:Router, private serviceFormation:FormationService,
+    private serviceResultat:ResultatService) { }
 
   ngOnInit(): void {
     this.recupere()
@@ -35,9 +39,12 @@ export class AfficherDiplomeComponent implements OnInit {
   }
   recupereF(){
     const id=+this.route.snapshot.params['id']
-    this.serviceFormation.getById(id).subscribe
+    this.serviceResultat.getById(id).subscribe
     (
-    response=>this.f=response
+    response=>{this.r=response
+      console.log(this.r.reussite)
+    }
+   
     )
     
   }

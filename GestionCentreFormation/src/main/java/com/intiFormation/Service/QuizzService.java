@@ -35,8 +35,8 @@ public class QuizzService implements IQuizzService{
 		return liste;
 		
 	}
-	public Quizz findByFormation_IdFormation(int id) {
-		Quizz q=qdao.findByFormation_IdFormation(id);
+	public List<Quizz> findByFormation_IdFormation(int id) {
+		List<Quizz> q=qdao.findByFormation_IdFormation(id);
 		return q;
 	}
 	public void supprimerService(int id) {

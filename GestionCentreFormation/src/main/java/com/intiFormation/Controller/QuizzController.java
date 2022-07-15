@@ -44,8 +44,8 @@ public class QuizzController {
 	}
 	
 	@GetMapping("/quizzz/{id}")
-	public Quizz GestionCommercial2(@PathVariable("id") int id) {
-		Quizz op=rSer.findByFormation_IdFormation(id);
+	public List<Quizz> GestionCommercial2(@PathVariable("id") int id) {
+		List<Quizz> op=rSer.findByFormation_IdFormation(id);
 
 		return op;
 	}

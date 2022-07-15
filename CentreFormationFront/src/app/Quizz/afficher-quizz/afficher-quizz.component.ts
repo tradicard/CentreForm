@@ -49,37 +49,21 @@ export class AfficherQuizzComponent implements OnInit {
       response=>{
         this.quizz=response
 
-
+        
         this.serviceQuestion.getAllbyquizz(this.quizz.idQuizz).subscribe(
           response=>{
             this.quests=response
 
-
+            for(let q of this.quests){
             
-              this.serviceReponse.getAllbyquest(this.quests[0].idQuestion).subscribe(
+              this.serviceReponse.getAllbyquest(q.idQuestion).subscribe(
                 response=>{
                   this.reponses1=response
-                
+                  this.superreponses.push(this.reponses1)
                 }
               )
-              this.serviceReponse.getAllbyquest(this.quests[1].idQuestion).subscribe(
-                response=>{
-                  this.reponses2=response
-                
-                }
-              )
-              this.serviceReponse.getAllbyquest(this.quests[2].idQuestion).subscribe(
-                response=>{
-                  this.reponses3=response
-                
-                }
-              )
-              this.serviceReponse.getAllbyquest(this.quests[3].idQuestion).subscribe(
-                response=>{
-                  this.reponses4=response
-                
-                }
-              )
+            }
+              
             })
           }
         )

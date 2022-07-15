@@ -12,5 +12,5 @@ public interface IQuizzService {
 	public List<Quizz> getAllService();
 	public void modifierService(Quizz q);
 	public void supprimerService(int id);
-	public Quizz findByFormation_IdFormation(int id);
+	public List<Quizz> findByFormation_IdFormation(int id);
 }

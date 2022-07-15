@@ -106,6 +106,8 @@ export class CreationQuestionComponent implements OnInit {
             sessionStorage.setItem("nbrest",this.nbreste.toString())
             this.ngOnInit()}
             else{
+              this.nbreste=0
+              sessionStorage.setItem("nbrest",this.nbreste.toString())
               this.router.navigateByUrl('creerQuizz')
             }
           }

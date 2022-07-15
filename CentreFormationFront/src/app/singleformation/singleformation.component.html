@@ -48,7 +48,6 @@
         <th scope="col">DateFin</th>
         <th scope="col">Prix</th>
         <th scope="col">Inscription</th>
-        <th scope="col">Quizz</th>
       </tr>
     </thead>
   
@@ -66,16 +65,35 @@
         
           <td *ngIf="inscrit">Vous etes deja inscrit</td>
         
-        
-          <td *ngIf="inscrit"><button (click)="fairequizz()" type="button" class="btn btn-secondary">Faire Quizz</button></td>
-        
-        
-          <td *ngIf="inscrit===false">X</td>
-        
       </tr>
       
     </tbody>
   </table>
+  
+<table *ngIf="inscrit" class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id Quizz</th>
+      <th scope="col">Faire Quizz</th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let q of quizzz;index as i">
+      <td scope="row" >{{q.idQuizz}}</td>
+      <td *ngIf="verifs[i]===false"><button (click)="fairequizz(q.idQuizz)" type="button" class="btn btn-secondary">Faire Quizz</button></td>
+      <td *ngIf="verifs[i]"><button (click)="afficherdipl(q.idQuizz)" type="button" class="btn btn-secondary">Page des resultats</button></td>
+      
+    </tr>
+    
+  </tbody>
+
+
+
+
+</table>
+
 
 
 

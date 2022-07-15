@@ -8,5 +8,5 @@ import com.intiFormation.entity.Quizz;
 import com.intiFormation.entity.Utilisateur;
 
 public interface IQuizzDao extends JpaRepository<Quizz, Integer>{
-	public Quizz findByFormation_IdFormation(int id);
+	public List<Quizz> findByFormation_IdFormation(int id);
 }
