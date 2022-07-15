@@ -1,21 +1,12 @@
-<<<<<<< HEAD
 <body><br><br><br><br><br>
     <form (ngSubmit)="save()">
         Question :
-=======
-<body>
-
-
-
-    <form (ngSubmit)="save()" >
-        🐱🐈
-        Question {{nbreste+1}}:
->>>>>>> 48bc05195fd55d34f4e7c27c6570b4af28ed9bb4
         <br>
-        <input type="text" name="question" [(ngModel)]="question.intitule"/>
+            <input type="text" name="question" [(ngModel)]="question"/>
         <br>
         Reponses 
         <br>
+
         <input type="text" name="reponse1" [(ngModel)]="reponse1"/>
         <input type="checkbox" class="button" name="typeReponse1" [(ngModel)]="typeReponse1">
         <label for="qcu" id="idRadio">  Bonne reponse</label>
@@ -34,10 +25,7 @@
         <br>
         Temps de reponse : 
         <br>
-        <input type="number" name="temps" [(ngModel)]="question.tempsReponse"/>
+        <input type="text" name="temps" [(ngModel)]="temps"/>
         <button type="submit">Valider</button>
     </form>
-
-
-
     </body>

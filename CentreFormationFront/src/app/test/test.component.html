@@ -1,36 +1,69 @@
 <body>
 
-    <section class="section coming-soon" data-section="section3">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-7 col-xs-12">
-              <div class="continer centerIt">
-                <div>
-                  <div class="counter">
-                    <div class="seconds">
-                      <div class="value">{{q.tempsReponse}}</div>
-                        <span>Seconds </span>
-                    </div>
-    
+  <section class="section coming-soon" data-section="section3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-xs-12">
+            <div class="continer centerIt">
+              <div>
+                <div class="counter">
+                  <div class="seconds">
+                    <div class="value">{{q.tempsReponse}}</div>
+                      <span>Seconds </span>
                   </div>
+  
                 </div>
               </div>
             </div>
           </div>
         </div>
-    </section>
+      </div>
+  
 
+  <div class="container mt-5">
+      <div class="d-flex justify-content-center row">
+          <div class="col-md-10 col-lg-10">
+              <div class="border">
+                  <div class="question bg-white p-3 border-bottom">
+                    <div class="d-flex flex-row justify-content-between align-items-center mcq">
+      Question {{nbreste+1}} sur {{quizz.nbQuestion}}: {{q.intitule}}
+      <div class="form-body">
+          <div class="row">
+              <div class="form-holder">
+                  <div class="form-content">
+                      <div class="form-items" >
+      <form  (ngSubmit)="saveQ2()" class="requires-validation" novalidate>
+          <div class="col-md-12">
+              Choisissez une ou plusieurs reponses: <br> <br>
+          </div>
+                  <div class="col-md-12">
+          <input type="checkbox" class="button" name="RQ2_1" value="un" [(ngModel)]="RQ2_1"/>
+          <label for="0">{{reponses[0].detail}}</label>
+              </div>
+              <div class="col-md-12">
+          <input type="checkbox" class="button" name="RQ2_2" value="deux" [(ngModel)]="RQ2_2"/>
+          <label for="0">{{reponses[1].detail}}</label>
+      </div>
+          <div class="col-md-12">
+          <input type="checkbox" class="button" name="RQ2_3" value="trois" [(ngModel)]="RQ2_3"/>
+          <label for="0">{{reponses[2].detail}}</label>
+      </div>
+          <div class="col-md-12">
+          <input type="checkbox" class="button" name="RQ2_4" value="quatre" [(ngModel)]="RQ2_4"/>
+          <label for="0">{{reponses[3].detail}}</label>
+          </div>
+          <div class="form-button mt-3">
+              <button id="submit" type="submit" class="btn btn-secondary">Valider</button>
+          </div>
+      </form>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+                  </div></div></div></div></div>
+  
 
-        Question {{nbreste+1}}: {{q.intitule}}
-        <form  (ngSubmit)="saveQ2()">
-        
-            <input type="checkbox" name="RQ2_1" value="un" [(ngModel)]="RQ2_1"/>{{reponses[0].detail}}
-            <input type="checkbox" name="RQ2_2" value="deux" [(ngModel)]="RQ2_2"/>{{reponses[1].detail}}
-            <input type="checkbox" name="RQ2_3" value="trois" [(ngModel)]="RQ2_3"/>{{reponses[2].detail}}
-            <input type="checkbox" name="RQ2_4" value="quatre" [(ngModel)]="RQ2_4"/>{{reponses[3].detail}}
-        <button id="submit" type="submit" class="btn btn-secondary">Valider</button>
-
-        </form>
-
-    
+</section>  
 </body>

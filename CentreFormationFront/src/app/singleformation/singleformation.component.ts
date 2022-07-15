@@ -104,7 +104,7 @@ verifs!:boolean[]
 
   fairequizz(id:number){
 
-        this.router.navigateByUrl('afficherQuizz/'+id)
+        this.router.navigateByUrl('test/'+id)
     
   }
   afficherdipl(idQuizz:number){
