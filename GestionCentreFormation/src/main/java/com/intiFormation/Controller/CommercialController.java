@@ -79,7 +79,6 @@ public class CommercialController {
 	
 	
 	
-	
 	@DeleteMapping("/commercials/{id}")
 	public void SupprimerCommercial(@PathVariable("id") int id) {
 		coms.supprimerService(id);
